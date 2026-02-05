@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AliSun EduSuite | JAMB CBT & Records</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <!-- HTML2PDF Library for Downloads -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#002147',
+                            red: '#D32F2F',
+                            gold: '#C5A059',
+                            dark: '#0a0a0a',
+                            light: '#f8fafc'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+                        slideUp: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #002147; border-radius: 4px; }
+        
+        body { background-color: #f0f2f5; overflow-x: hidden; font-family: 'Poppins', sans-serif; }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        
+        /* Loader */
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #D32F2F;
+            border-radius: 50%;
+            width: 24px; height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* Stamps */
+        .ceo-stamp {
+            position: relative; width: 140px; height: 140px;
+            border: 3px double #002147; border-radius: 50%;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            color: #002147; font-weight: 900;
+            text-transform: uppercase; font-size: 10px;
+            transform: rotate(-12deg);
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 10;
+        }
+        .ceo-stamp::after { content: '★ OFFICIAL ★'; position: absolute; top: 10px; font-size: 8px; color: #D32F2F; }
+        .stamp-overlay { position: absolute; inset: 0; background-image: url('https://www.transparenttextures.com/patterns/grunge-wall.png'); opacity: 0.5; pointer-events: none; border-radius: 50%; }
+
+        /* Document Containers (Hidden from UI, used for PDF generation) */
+        .doc-canvas {
+            position: fixed; top: -9999px; left: -9999px;
+            background: white; width: 210mm; min-height: 297mm;
+            padding: 0; margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .paper-a4 { width: 210mm; min-height: 297mm; padding: 15mm; position: relative; background: white; overflow: hidden; }
+        .watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); font-size: 100px; opacity: 0.05; font-weight: bold; white-space: nowrap; pointer-events: none; }
+
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <!-- Global Loader -->
+    <div id="global-loader" class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="loader w-16 h-16 border-4 mb-4"></div>
+        <h2 class="text-brand-blue font-bold text-2xl animate-pulse">AliSun EduSuite</h2>
+        <p class="text-xs text-gray-400 mt-2">Initializing Secure Environment...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-brand-blue text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="router('home')">
+                <div class="w-10 h-10 bg-brand-red rounded-full flex items-center justify-center font-bold text-xl border-2 border-white">A</div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight tracking-wide">AliSun EduSuite</h1>
+                    <p class="text-[10px] text-gray-300 tracking-wider uppercase">Future of Excellence</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a onclick="router('home')" class="hover:text-brand-red transition cursor-pointer">Home</a>
+                <a onclick="router('login')" class="hover:text-brand-red transition cursor-pointer">Login</a>
+                <a onclick="router('register')" class="bg-brand-red px-5 py-2 rounded-full hover:bg-red-700 transition cursor-pointer shadow-md transform hover:scale-105">Register</a>
+            </div>
+            
+            <button class="md:hidden text-white focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-900 border-t border-blue-800 p-4 space-y-3">
+            <a onclick="router('home')" class="block hover:text-brand-red">Home</a>
+            <a onclick="router('login')" class="block hover:text-brand-red">Login</a>
+            <a onclick="router('register')" class="block text-brand-red font-bold">Register Now</a>
+        </div>
+    </nav>
+
+    <!-- MAIN APP CONTAINER -->
+    <main id="app-container" class="min-h-screen pb-10">
+        
+        <!-- 1. HOME SCREEN -->
+        <section id="screen-home" class="screen block">
+            <div class="relative bg-gradient-to-br from-brand-blue to-gray-900 text-white py-20 px-4 overflow-hidden min-h-[70vh] flex items-center">
+                <!-- Background Elements -->
+                <div class="absolute top-0 right-0 w-80 h-80 bg-brand-red rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-bounce-slow"></div>
+                <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+                
+                <div class="container mx-auto text-center relative z-10 animate-slide-up">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-xs font-bold mb-4 border border-blue-600">OFFICIAL JAMB CBT CENTER</span>
+                    <h2 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">Master Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-orange-500">Exams</span></h2>
+                    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+                        Experience the gold standard in computer-based testing. Real-time simulation, instant results, and professional certification stamped by Engr. Aliyu Bashir Lawan.
+                    </p>
+                    <div class="flex flex-col md:flex-row justify-center gap-4">
+                        <button onclick="router('register')" class="bg-brand-red text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 transition shadow-lg hover:shadow-red-500/50 transform active:scale-95 flex items-center justify-center gap-2">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button onclick="router('login')" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-blue transition transform active:scale-95">
+                            Student Portal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. LOGIN SCREEN -->
+        <section id="screen-login" class="screen hidden container mx-auto px-4 py-10 flex items-center justify-center min-h-[80vh]">
+            <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden animate-slide-up">
+                <div class="bg-brand-blue p-8 text-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-pattern opacity-10"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-white rounded-full mx-auto mb-4 flex items-center justify-center text-brand-blue text-2xl font-bold">A</div>
+                        <h2 class="text-2xl font-bold text-white">Welcome Back</h2>
+                        <p class="text-blue-200 text-sm">Access your personalized dashboard</p>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <form onsubmit="handleLogin(event)">
+                        <div class="mb-5">
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Email Address</label>
+                            <input type="email" id="login-email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-blue-100 transition outline-none" placeholder="student@gmail.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Password</label>
+                            <input type="password" id="login-pass" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-blue-100 transition outline-none" placeholder="••••••••">
+                        </div>
+                        <button type="submit" id="login-btn" class="w-full bg-brand-blue text-white py-4 rounded-lg font-bold hover:bg-blue-900 transition flex justify-center items-center shadow-lg">Login to Dashboard</button>
+                    </form>
+                    <div class="mt-6 flex justify-between items-center text-sm">
+                        <a onclick="openHowItWorks()" class="text-gray-500 hover:text-brand-blue cursor-pointer underline decoration-dotted">How it Works?</a>
+                        <a onclick="router('register')" class="text-brand-red font-bold cursor-pointer hover:underline">Create Account</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. REGISTER SCREEN -->
+        <section id="screen-register" class="screen hidden container mx-auto px-4 py-10">
+            <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden animate-slide-up">
+                <div class="bg-brand-red p-6 text-white text-center">
+                    <h2 class="text-2xl font-bold">Student Registration</h2>
+                    <p class="opacity-80 text-sm">Begin your journey with AliSun EduSuite</p>
+                </div>
+                <div class="p-8">
+                    <div id="reg-status-msg" class="hidden mb-6 p-4 rounded bg-red-50 text-red-700 text-center border border-red-200"></div>
+                    <form id="reg-form" onsubmit="handleRegistration(event)">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="label-text">Full Name</label>
+                                <input type="text" id="reg-name" required class="input-field" placeholder="Surname Firstname">
+                            </div>
+                            <div>
+                                <label class="label-text">Date of Birth</label>
+                                <input type="date" id="reg-dob" required class="input-field">
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="label-text">Email Address</label>
+                                <input type="email" id="reg-email" required class="input-field" placeholder="active@gmail.com">
+                            </div>
+                            <div>
+                                <label class="label-text">Create Password</label>
+                                <input type="password" id="reg-pass" required class="input-field" placeholder="Min. 6 characters">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8 bg-gray-50 p-4 rounded-xl border border-dashed border-gray-300">
+                            <label class="label-text block mb-2">Upload Passport Photograph</label>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-24 h-24 rounded-full bg-white shadow-md overflow-hidden border-2 border-brand-blue relative group">
+                                    <img id="reg-preview" src="" class="w-full h-full object-cover hidden">
+                                    <div id="reg-icon" class="w-full h-full flex items-center justify-center text-gray-300">
+                                        <i class="fas fa-camera text-2xl"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <input type="file" id="reg-photo" accept="image/*" required onchange="previewImage(this)" class="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-brand-blue hover:file:bg-blue-100">
+                                    <p class="text-xs text-gray-400 mt-1">Make sure face is visible. JPG/PNG only.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" id="reg-btn" class="w-full bg-brand-blue text-white py-4 rounded-xl font-bold hover:bg-blue-900 transition flex justify-center items-center shadow-lg">Complete Registration</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. STUDENT DASHBOARD -->
+        <section id="screen-student-dash" class="screen hidden">
+            <div class="flex flex-col md:flex-row min-h-screen bg-gray-50">
+                <!-- Sidebar -->
+                <aside class="w-full md:w-72 bg-brand-blue text-white flex-shrink-0 flex flex-col">
+                    <div class="p-6 text-center border-b border-blue-800 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-2"><span class="bg-green-500 w-3 h-3 rounded-full inline-block"></span></div>
+                        <div class="w-24 h-24 mx-auto rounded-full p-1 mb-3 border-2 border-brand-red bg-white/10">
+                            <img id="dash-photo" src="" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <h3 id="dash-name" class="font-bold text-lg leading-tight mb-1">Student Name</h3>
+                        <p id="dash-id" class="text-xs text-blue-300 font-mono bg-blue-900 inline-block px-2 py-1 rounded">APP-0000</p>
+                    </div>
+                    <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
+                        <button onclick="studentNav('overview')" class="nav-btn active"><i class="fas fa-th-large w-6"></i> Dashboard</button>
+                        <button onclick="studentNav('inbox')" class="nav-btn relative">
+                            <i class="fas fa-envelope w-6"></i> Inbox 
+                            <span id="nav-inbox-badge" class="hidden absolute right-2 bg-red-500 text-xs px-1.5 rounded-full">New</span>
+                        </button>
+                        <button onclick="studentNav('exam')" class="nav-btn"><i class="fas fa-laptop-code w-6"></i> Take CBT Exam</button>
+                        <button onclick="studentNav('docs')" class="nav-btn"><i class="fas fa-folder-open w-6"></i> Documents</button>
+                    </nav>
+                    <div class="p-4 border-t border-blue-800">
+                        <button onclick="logout()" class="w-full py-2 px-4 rounded bg-red-600 hover:bg-red-700 transition flex items-center justify-center gap-2 text-sm font-bold">
+                            <i class="fas fa-power-off"></i> Logout
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Content -->
+                <div class="flex-1 p-4 md:p-8 overflow-y-auto">
+                    <!-- Top Bar -->
+                    <div class="bg-white p-4 rounded-xl shadow-sm mb-6 flex justify-between items-center sticky top-0 z-10 border border-gray-100">
+                        <h2 class="font-bold text-xl text-brand-blue flex items-center gap-2">
+                            <i class="fas fa-university text-brand-red"></i> <span class="hidden md:inline">Student Portal</span>
+                        </h2>
+                        <!-- Notifications -->
+                        <div class="relative group">
+                            <button class="relative p-2 rounded-full hover:bg-gray-100 transition">
+                                <i class="fas fa-bell text-gray-600 text-xl"></i>
+                                <span id="notif-badge" class="hidden absolute top-0 right-0 bg-red-600 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center animate-pulse">!</span>
+                            </button>
+                            <div id="notif-dropdown" class="absolute right-0 mt-2 w-80 bg-white shadow-2xl rounded-xl hidden group-hover:block border border-gray-100 z-50 p-2 overflow-hidden">
+                                <div class="text-xs font-bold text-gray-400 uppercase p-2 border-b">Recent Broadcasts</div>
+                                <div id="notif-list" class="max-h-60 overflow-y-auto">
+                                    <div class="p-4 text-center text-gray-500 text-sm">No new notifications</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANELS -->
+                    
+                    <!-- Overview Panel -->
+                    <div id="panel-overview" class="dash-panel">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="stat-card border-l-4 border-green-500">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <p class="text-gray-500 text-xs uppercase font-bold">Registration</p>
+                                        <p class="font-bold text-green-600 text-lg">Verified Active</p>
+                                    </div>
+                                    <i class="fas fa-check-circle text-green-200 text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card border-l-4 border-brand-red">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <p class="text-gray-500 text-xs uppercase font-bold">Latest Score</p>
+                                        <p id="dash-score" class="font-bold text-brand-blue text-2xl">--%</p>
+                                    </div>
+                                    <i class="fas fa-chart-line text-red-200 text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card border-l-4 border-brand-gold">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <p class="text-gray-500 text-xs uppercase font-bold">Certificate</p>
+                                        <p id="dash-cert-status" class="font-bold text-gray-400 text-sm">Processing</p>
+                                    </div>
+                                    <i class="fas fa-certificate text-yellow-200 text-3xl"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                            <h3 class="font-bold text-brand-blue mb-4 border-b pb-2">Recent Activities</h3>
+                            <div id="exam-history-list" class="space-y-4">
+                                <!-- Dynamic History -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inbox Panel (New "Email" Feature) -->
+                    <div id="panel-inbox" class="dash-panel hidden">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 min-h-[600px] flex flex-col md:flex-row overflow-hidden">
+                            <!-- Msg List -->
+                            <div class="w-full md:w-1/3 border-r border-gray-100 bg-gray-50 flex flex-col">
+                                <div class="p-4 border-b border-gray-200 bg-white">
+                                    <h3 class="font-bold text-gray-700">Inbox</h3>
+                                </div>
+                                <div id="inbox-list" class="flex-1 overflow-y-auto">
+                                    <!-- Messages populate here -->
+                                    <div class="p-4 text-center text-gray-500 text-sm">Loading messages...</div>
+                                </div>
+                            </div>
+                            <!-- Msg Detail -->
+                            <div class="flex-1 bg-white p-6 flex flex-col" id="inbox-detail">
+                                <div class="flex-1 flex flex-col items-center justify-center text-gray-400">
+                                    <i class="fas fa-envelope-open-text text-6xl mb-4 opacity-20"></i>
+                                    <p>Select a message to read</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documents Panel -->
+                    <div id="panel-docs" class="dash-panel hidden">
+                        <h3 class="font-bold text-brand-blue mb-6 text-xl">Official Documents Repository</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Doc 1: Slip -->
+                            <div class="doc-card">
+                                <div class="h-32 bg-blue-50 flex items-center justify-center text-brand-blue text-5xl">
+                                    <i class="fas fa-id-card"></i>
+                                </div>
+                                <div class="p-6">
+                                    <h4 class="font-bold text-gray-800">Exam Slip</h4>
+                                    <p class="text-xs text-gray-500 mb-4">Registration details & QR Code.</p>
+                                    <button onclick="downloadDocument('slip')" class="w-full bg-brand-blue text-white py-2 rounded text-sm hover:bg-blue-800 flex items-center justify-center gap-2">
+                                        <i class="fas fa-download"></i> Download PDF
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Doc 2: Admission Letter -->
+                            <div class="doc-card">
+                                <div class="h-32 bg-red-50 flex items-center justify-center text-brand-red text-5xl">
+                                    <i class="fas fa-file-signature"></i>
+                                </div>
+                                <div class="p-6">
+                                    <h4 class="font-bold text-gray-800">Admission Letter</h4>
+                                    <p class="text-xs text-gray-500 mb-4">Official Provisional Admission.</p>
+                                    <button onclick="downloadDocument('admission')" class="w-full bg-brand-red text-white py-2 rounded text-sm hover:bg-red-700 flex items-center justify-center gap-2">
+                                        <i class="fas fa-download"></i> Download PDF
+                                    </button>
+                                </div>
+                            </div>
+                             <!-- Doc 3: Transcript -->
+                             <div class="doc-card">
+                                <div class="h-32 bg-gray-100 flex items-center justify-center text-gray-600 text-5xl">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="p-6">
+                                    <h4 class="font-bold text-gray-800">Academic Transcript</h4>
+                                    <p class="text-xs text-gray-500 mb-4">Record of performance & scores.</p>
+                                    <button onclick="downloadDocument('transcript')" class="w-full bg-gray-800 text-white py-2 rounded text-sm hover:bg-black flex items-center justify-center gap-2">
+                                        <i class="fas fa-download"></i> Download PDF
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Doc 4: Certificate -->
+                            <div class="doc-card relative overflow-hidden">
+                                <div id="cert-lock-overlay" class="absolute inset-0 bg-white/90 z-10 flex flex-col items-center justify-center backdrop-blur-sm">
+                                    <i class="fas fa-lock text-3xl text-gray-400 mb-2"></i>
+                                    <span class="text-xs font-bold text-gray-500">Admin Approval Required</span>
+                                </div>
+                                <div class="h-32 bg-yellow-50 flex items-center justify-center text-yellow-600 text-5xl">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="p-6">
+                                    <h4 class="font-bold text-gray-800">Certificate</h4>
+                                    <p class="text-xs text-gray-500 mb-4">Certificate of Excellence.</p>
+                                    <button onclick="downloadDocument('certificate')" class="w-full bg-yellow-600 text-white py-2 rounded text-sm hover:bg-yellow-700 flex items-center justify-center gap-2">
+                                        <i class="fas fa-download"></i> Download PDF
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exam Panel -->
+                    <div id="panel-exam" class="dash-panel hidden">
+                        <div class="bg-white p-8 rounded-xl shadow-lg text-center max-w-2xl mx-auto border-t-4 border-brand-red">
+                            <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-stopwatch text-3xl text-brand-red"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-brand-blue mb-2">JAMB CBT Simulation</h2>
+                            <p class="text-gray-600 mb-6 text-sm">
+                                You are about to begin the exam. Please ensure stable internet. The timer will start immediately.
+                                Switching tabs is monitored.
+                            </p>
+                            <div id="active-subjects-display" class="bg-blue-50 p-4 rounded-lg mb-6 text-left text-sm text-blue-800">
+                                <p class="font-bold mb-2">Exam Configuration:</p>
+                                <div id="subject-tags" class="flex flex-wrap gap-2">
+                                    <span class="animate-pulse">Loading active subjects...</span>
+                                </div>
+                            </div>
+                            <button onclick="startExam()" id="btn-start-exam" class="w-full bg-brand-red text-white py-4 rounded-lg font-bold text-lg hover:bg-red-700 shadow-xl transition hover:-translate-y-1">
+                                Start Examination Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ACTIVE EXAM INTERFACE (Full Screen) -->
+        <section id="screen-exam-active" class="screen hidden fixed inset-0 z-[200] bg-gray-100 flex flex-col h-screen w-screen">
+            <!-- Header -->
+            <header class="bg-white shadow-md p-2 md:p-4 flex justify-between items-center shrink-0 z-10">
+                <div class="flex items-center gap-3">
+                    <img id="exam-user-photo" src="" class="w-10 h-10 rounded-full border border-gray-300">
+                    <div>
+                        <h4 id="exam-user-name" class="font-bold text-sm text-brand-blue leading-tight">Student Name</h4>
+                        <span class="text-[10px] text-gray-500">JAMB/2026/MOCK</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="text-center">
+                        <span class="text-[10px] text-gray-400 block uppercase">Time Left</span>
+                        <div id="exam-timer" class="text-xl md:text-2xl font-mono font-bold text-brand-red">00:00</div>
+                    </div>
+                    <button onclick="submitExam()" class="hidden md:block bg-red-600 text-white px-6 py-2 rounded font-bold hover:bg-red-700">Submit Exam</button>
+                </div>
+            </header>
+
+            <!-- Subject Tabs -->
+            <div id="exam-subjects-tab" class="bg-brand-blue text-white flex overflow-x-auto shrink-0 shadow-inner">
+                <!-- Dynamic Tabs injected here -->
+            </div>
+
+            <!-- Question Area -->
+            <div class="flex-1 overflow-y-auto p-4 md:p-6" id="question-area-container">
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 min-h-[50vh]">
+                    <div class="flex justify-between items-center mb-4 border-b pb-2">
+                        <span class="font-bold text-brand-blue text-lg">Question <span id="q-display-num">1</span></span>
+                        <span class="text-xs text-gray-400" id="q-total-count">of 50</span>
+                    </div>
+                    <div id="question-content" class="text-lg md:text-xl text-gray-800 font-medium mb-8 leading-relaxed select-none">
+                        Loading...
+                    </div>
+                    <!-- Options -->
+                    <div id="options-grid" class="grid gap-3">
+                        <!-- Options injected -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Navigation -->
+            <footer class="bg-white border-t p-3 shrink-0 flex flex-col gap-2">
+                <!-- Mobile Submit -->
+                <button onclick="submitExam()" class="md:hidden w-full bg-red-100 text-red-700 py-2 rounded text-xs font-bold mb-1">Submit Examination</button>
+                
+                <div class="flex justify-between items-center max-w-4xl mx-auto w-full">
+                    <button onclick="prevQuestion()" id="btn-prev" class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-bold hover:bg-gray-300 flex items-center gap-2">
+                        <i class="fas fa-chevron-left"></i> Prev
+                    </button>
+                    
+                    <!-- Question Palette (Scrollable) -->
+                    <div class="flex-1 mx-4 overflow-x-auto whitespace-nowrap hide-scroll" id="nav-palette">
+                        <!-- Number bubbles -->
+                    </div>
+
+                    <button onclick="nextQuestion()" id="btn-next" class="bg-brand-blue text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-800 flex items-center gap-2">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </footer>
+        </section>
+
+        <!-- 6. ADMIN DASHBOARD -->
+        <section id="screen-admin" class="screen hidden">
+            <div class="bg-gray-900 min-h-screen text-gray-100 flex flex-col">
+                <nav class="bg-gray-800 p-4 border-b border-gray-700 flex justify-between items-center">
+                    <div class="font-bold text-xl flex items-center gap-2">
+                        <span class="bg-red-600 text-white px-2 rounded text-sm">ADMIN</span>
+                        <span>AliSun<span class="text-blue-400">Control</span></span>
+                    </div>
+                    <button onclick="logout()" class="text-xs bg-gray-700 hover:bg-red-600 px-3 py-1 rounded transition">Logout</button>
+                </nav>
+                
+                <div class="flex-1 p-4 md:p-8 overflow-y-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Left Col: Management -->
+                        <div class="lg:col-span-2 space-y-6">
+                            
+                            <!-- Stats -->
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="bg-gray-800 p-4 rounded border-t-2 border-blue-500">
+                                    <div class="text-2xl font-bold" id="admin-count-student">0</div>
+                                    <div class="text-xs text-gray-400">Total Students</div>
+                                </div>
+                                <div class="bg-gray-800 p-4 rounded border-t-2 border-green-500">
+                                    <div class="text-2xl font-bold" id="admin-count-q">0</div>
+                                    <div class="text-xs text-gray-400">Questions Banked</div>
+                                </div>
+                                <div class="bg-gray-800 p-4 rounded border-t-2 border-yellow-500">
+                                    <div class="text-2xl font-bold" id="admin-reg-status">ON</div>
+                                    <div class="text-xs text-gray-400">Registration</div>
+                                </div>
+                            </div>
+
+                            <!-- Subject & Exam Setup -->
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                                <h3 class="text-blue-400 font-bold mb-4 border-b border-gray-700 pb-2">Exam Subjects & Timer</h3>
+                                <div class="flex gap-2 mb-4">
+                                    <input id="new-sub-name" placeholder="Subject Name" class="bg-gray-700 border-none rounded text-sm p-2 flex-1">
+                                    <input id="new-sub-time" type="number" placeholder="Mins" class="bg-gray-700 border-none rounded text-sm p-2 w-20">
+                                    <button onclick="adminAddSubject()" class="bg-blue-600 px-4 rounded text-sm font-bold hover:bg-blue-500">Add</button>
+                                </div>
+                                <div id="admin-subject-list" class="space-y-2 max-h-40 overflow-y-auto">
+                                    <!-- List -->
+                                </div>
+                            </div>
+
+                            <!-- Student List -->
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                                <h3 class="text-yellow-400 font-bold mb-4 border-b border-gray-700 pb-2 flex justify-between">
+                                    <span>Student Database</span>
+                                    <input type="text" id="student-search" onkeyup="filterStudents()" placeholder="Search..." class="bg-gray-900 border-none text-xs p-1 rounded w-32">
+                                </h3>
+                                <div id="admin-student-rows" class="space-y-2 max-h-96 overflow-y-auto pr-2">
+                                    <!-- Students injected -->
+                                    <div class="text-center text-gray-500 text-sm">Loading data...</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Col: Tools -->
+                        <div class="space-y-6">
+                            
+                            <!-- Broadcast / Email -->
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                                <h3 class="text-purple-400 font-bold mb-4 border-b border-gray-700 pb-2">Communication Center</h3>
+                                
+                                <!-- Tabs -->
+                                <div class="flex text-xs mb-3 bg-gray-900 rounded p-1">
+                                    <button onclick="setCommsMode('broadcast')" id="tab-broadcast" class="flex-1 py-1 bg-gray-700 rounded text-white">Broadcast</button>
+                                    <button onclick="setCommsMode('email')" id="tab-email" class="flex-1 py-1 text-gray-400 hover:text-white">Direct Email</button>
+                                </div>
+
+                                <div id="comms-form" class="space-y-3">
+                                    <input id="msg-target" placeholder="Student Email (for Direct)" class="w-full bg-gray-700 rounded p-2 text-sm hidden">
+                                    <input id="msg-subject" placeholder="Subject / Title" class="w-full bg-gray-700 rounded p-2 text-sm">
+                                    <textarea id="msg-body" rows="3" placeholder="Message content..." class="w-full bg-gray-700 rounded p-2 text-sm"></textarea>
+                                    <button onclick="sendAdminMessage()" class="w-full bg-purple-600 hover:bg-purple-500 py-2 rounded font-bold text-sm">
+                                        <i class="fas fa-paper-plane mr-2"></i> Send
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Add Question -->
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                                <h3 class="text-green-400 font-bold mb-4 border-b border-gray-700 pb-2">Add Question</h3>
+                                <form onsubmit="adminAddQuestion(event)" class="space-y-3">
+                                    <select id="q-subject" class="w-full bg-gray-700 rounded p-2 text-sm text-gray-300"></select>
+                                    <textarea id="q-text" placeholder="Question Text" class="w-full bg-gray-700 rounded p-2 text-sm" required></textarea>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <input id="opt-a" placeholder="A" class="bg-gray-700 rounded p-2 text-sm" required>
+                                        <input id="opt-b" placeholder="B" class="bg-gray-700 rounded p-2 text-sm" required>
+                                        <input id="opt-c" placeholder="C" class="bg-gray-700 rounded p-2 text-sm" required>
+                                        <input id="opt-d" placeholder="D" class="bg-gray-700 rounded p-2 text-sm" required>
+                                    </div>
+                                    <select id="q-correct" class="w-full bg-gray-700 rounded p-2 text-sm">
+                                        <option value="A">Answer: Option A</option>
+                                        <option value="B">Answer: Option B</option>
+                                        <option value="C">Answer: Option C</option>
+                                        <option value="D">Answer: Option D</option>
+                                    </select>
+                                    <button class="w-full bg-green-600 hover:bg-green-500 py-2 rounded font-bold text-sm">Add to Bank</button>
+                                </form>
+                            </div>
+
+                            <!-- Global Controls -->
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                                <button onclick="toggleReg()" id="btn-toggle-reg" class="w-full bg-gray-600 py-2 rounded text-sm font-bold mb-2">Toggle Registration</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- MODALS -->
+        
+        <!-- How it Works Modal -->
+        <div id="modal-how" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-2xl rounded-2xl overflow-hidden animate-slide-up">
+                <div class="bg-brand-blue text-white p-4 flex justify-between items-center">
+                    <h3 class="font-bold">How AliSun EduSuite Works</h3>
+                    <button onclick="document.getElementById('modal-how').classList.add('hidden')" class="text-2xl">&times;</button>
+                </div>
+                <div class="p-8 space-y-6 overflow-y-auto max-h-[70vh]">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-brand-blue flex items-center justify-center font-bold text-xl shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Create Account</h4>
+                            <p class="text-gray-600 text-sm">Register with your real details and upload a passport photo. This creates your permanent record.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-brand-blue flex items-center justify-center font-bold text-xl shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Take Practice Exams</h4>
+                            <p class="text-gray-600 text-sm">Login to your dashboard. Access the CBT section. Exams are timed and simulated exactly like JAMB.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-brand-blue flex items-center justify-center font-bold text-xl shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Get Certified</h4>
+                            <p class="text-gray-600 text-sm">Score above 70% to unlock your Certificate of Excellence signed by the CEO.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded text-sm text-center italic">
+                        "Excellence is not a skill, it is an attitude."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Details & Transcript Modal (Admin) -->
+        <div id="modal-admin-student" class="fixed inset-0 z-[60] hidden bg-black/80 flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-3xl rounded-lg overflow-hidden flex flex-col max-h-[90vh]">
+                <div class="p-4 border-b flex justify-between items-center bg-gray-50">
+                    <h3 class="font-bold text-gray-800">Student Record</h3>
+                    <button onclick="document.getElementById('modal-admin-student').classList.add('hidden')" class="text-red-500 hover:bg-red-50 p-1 rounded"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="p-6 overflow-y-auto">
+                    <div class="flex gap-6 mb-6">
+                        <img id="admin-view-photo" class="w-24 h-24 rounded object-cover border">
+                        <div class="flex-1 space-y-2">
+                            <input id="admin-edit-name" class="border p-1 w-full font-bold text-lg rounded">
+                            <input id="admin-edit-email" class="border p-1 w-full text-sm text-gray-500 rounded" readonly>
+                            <input id="admin-edit-uid" type="hidden">
+                            <div class="flex gap-2 mt-2">
+                                <button onclick="adminSaveStudent()" class="bg-green-600 text-white px-3 py-1 rounded text-xs">Save Changes</button>
+                                <button onclick="adminDownloadStudentDoc('admission')" class="bg-brand-blue text-white px-3 py-1 rounded text-xs"><i class="fas fa-download"></i> Admission</button>
+                                <button onclick="adminDownloadStudentDoc('transcript')" class="bg-gray-700 text-white px-3 py-1 rounded text-xs"><i class="fas fa-file-alt"></i> Transcript</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="admin-perf-chart" class="bg-gray-50 p-4 rounded">
+                        <!-- History injected -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- HIDDEN PDF GENERATION TEMPLATES (A4 Sized) -->
+    
+    <!-- 1. ADMISSION LETTER -->
+    <div id="doc-admission" class="doc-canvas">
+        <div class="paper-a4 font-serif">
+            <div class="watermark">PROVISIONAL</div>
+            <!-- Header -->
+            <div class="text-center border-b-4 border-double border-brand-blue pb-4 mb-8">
+                <h1 class="text-4xl font-bold text-brand-blue tracking-widest font-serif">ALISUN EDUSUITE</h1>
+                <p class="text-sm font-bold text-brand-red uppercase tracking-wide">Center for Academic Excellence & CBT</p>
+                <p class="text-xs text-gray-500 mt-1">Janbulo 2nd Gate, Kano State | +2348107907647 | www.alisun.edu.ng</p>
+            </div>
+            
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <p class="text-sm font-bold">Ref: <span id="adm-ref">ALI/ADM/2026/001</span></p>
+                    <p class="text-sm">Date: <span id="adm-date">--</span></p>
+                </div>
+                <img id="adm-photo" class="w-32 h-32 border border-gray-300 object-cover bg-gray-100">
+            </div>
+
+            <p class="font-bold text-lg mb-2">To: <span id="adm-name" class="uppercase">--</span></p>
+            <p class="font-bold text-sm mb-6">App ID: <span id="adm-id">--</span></p>
+
+            <h2 class="text-center font-bold text-xl underline mb-6 uppercase">Provisional Admission Letter</h2>
+
+            <div class="text-justify text-sm leading-7 space-y-4 font-sans">
+                <p>
+                    We are pleased to inform you that you have been offered provisional admission into the 
+                    <strong>AliSun EduSuite Standard CBT Program</strong> for the 2026 Academic Session.
+                </p>
+                <p>
+                    This offer is subject to your acceptance of the academy's rules and regulations. 
+                    Your unique Student Identity Number is <strong id="adm-id-2">--</strong>. Please quote this number in all correspondence.
+                </p>
+                <p class="font-bold underline mt-4">Conditions of Admission:</p>
+                <ul class="list-disc list-inside pl-4">
+                    <li>Students must maintain a minimum of 75% attendance.</li>
+                    <li>Exam malpractice will lead to immediate expulsion.</li>
+                    <li>All fees paid are non-refundable.</li>
+                </ul>
+            </div>
+
+            <div class="mt-20 flex justify-between items-end">
+                <div class="text-center">
+                    <div id="adm-qr" class="mb-2"></div>
+                    <p class="text-[10px]">Scan to Verify</p>
+                </div>
+                <div class="text-center relative">
+                    <div class="ceo-stamp absolute -top-16 left-10 opacity-80 rotate-12">
+                        <div class="stamp-overlay"></div>
+                        <span>APPROVED</span>
+                        <span class="text-lg">ALISUN</span>
+                        <span>REGISTRAR</span>
+                    </div>
+                    <div class="border-t border-black w-48 pt-2 mt-10">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png" class="h-8 mx-auto opacity-50 mb-1">
+                        <p class="font-bold text-brand-blue">Engr. Aliyu Bashir Lawan</p>
+                        <p class="text-xs uppercase">Registrar / CEO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. TRANSCRIPT -->
+    <div id="doc-transcript" class="doc-canvas">
+        <div class="paper-a4">
+            <div class="border-b-2 border-brand-blue pb-4 mb-6 flex items-center justify-between">
+                <div class="w-16 h-16 bg-brand-blue text-white flex items-center justify-center font-bold text-2xl rounded">A</div>
+                <div class="text-center">
+                    <h1 class="text-2xl font-bold uppercase text-brand-blue">Official Academic Transcript</h1>
+                    <p class="text-xs text-gray-500">AliSun EduSuite | Generated on <span id="trans-gen-date"></span></p>
+                </div>
+                <div id="trans-qr"></div>
+            </div>
+
+            <!-- Student Bio -->
+            <div class="bg-gray-100 p-4 rounded mb-6 flex gap-6 border border-gray-200">
+                <img id="trans-photo" class="w-24 h-24 object-cover border border-white shadow">
+                <div class="grid grid-cols-2 gap-x-8 gap-y-2 text-sm flex-1">
+                    <div class="flex justify-between border-b border-gray-300"><span>Name:</span> <span class="font-bold" id="trans-name">--</span></div>
+                    <div class="flex justify-between border-b border-gray-300"><span>Student ID:</span> <span class="font-bold" id="trans-id">--</span></div>
+                    <div class="flex justify-between border-b border-gray-300"><span>Email:</span> <span class="font-bold" id="trans-email">--</span></div>
+                    <div class="flex justify-between border-b border-gray-300"><span>Status:</span> <span class="font-bold text-green-700">Active</span></div>
+                </div>
+            </div>
+
+            <!-- Scores Table -->
+            <h3 class="font-bold text-brand-blue border-b border-brand-red inline-block mb-4">Examination History</h3>
+            <table class="w-full text-sm text-left border-collapse mb-8">
+                <thead>
+                    <tr class="bg-brand-blue text-white">
+                        <th class="p-2 border">Date</th>
+                        <th class="p-2 border">Exam Type</th>
+                        <th class="p-2 border">Score (%)</th>
+                        <th class="p-2 border">Grade</th>
+                        <th class="p-2 border">Remarks</th>
+                    </tr>
+                </thead>
+                <tbody id="trans-table-body">
+                    <!-- Rows -->
+                </tbody>
+            </table>
+
+            <!-- Summary -->
+            <div class="flex justify-end mb-12">
+                <div class="w-1/3 bg-blue-50 p-4 rounded border border-blue-200">
+                    <div class="flex justify-between mb-1 text-sm"><span>Total Exams:</span> <span class="font-bold" id="trans-total">0</span></div>
+                    <div class="flex justify-between mb-1 text-sm"><span>Average Score:</span> <span class="font-bold" id="trans-avg">0%</span></div>
+                    <div class="flex justify-between text-sm pt-2 border-t border-blue-200"><span>CGPA Rating:</span> <span class="font-bold text-brand-blue" id="trans-gpa">--</span></div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="absolute bottom-10 left-10 right-10 flex justify-between items-end">
+                <div class="text-xs text-gray-400 w-1/2">
+                    <p>This transcript is generated electronically and contains secure verification data. Any alteration renders it void.</p>
+                </div>
+                <div class="text-center">
+                    <div class="ceo-stamp w-24 h-24 text-[8px]">
+                        <span>VERIFIED</span>
+                        <span>RECORDS</span>
+                    </div>
+                    <p class="text-xs font-bold mt-2">Exam Officer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. CERTIFICATE (Landscape in CSS via html2pdf options) -->
+    <div id="doc-certificate" class="doc-canvas" style="width: 297mm; min-height: 210mm;">
+        <div class="w-full h-full border-[20px] border-double border-brand-blue p-10 relative flex flex-col items-center justify-center text-center bg-white">
+             <!-- Corner Decorations -->
+            <div class="absolute top-4 left-4 w-20 h-20 border-t-4 border-l-4 border-brand-red"></div>
+            <div class="absolute bottom-4 right-4 w-20 h-20 border-b-4 border-r-4 border-brand-red"></div>
+            
+            <h1 class="text-6xl font-serif font-bold text-brand-blue mb-2">CERTIFICATE</h1>
+            <h2 class="text-2xl font-light tracking-[0.5em] text-brand-red mb-8">OF EXCELLENCE</h2>
+            
+            <p class="text-gray-500 italic text-xl mb-4">This is proudly presented to</p>
+            <h3 id="cert-name" class="text-5xl font-script text-gray-800 border-b-2 border-gray-300 px-12 pb-2 mb-6">Student Name</h3>
+            
+            <p class="text-gray-600 max-w-2xl text-lg leading-relaxed mb-10">
+                For outstanding performance in the AliSun EduSuite Computer Based Test, 
+                demonstrating superior knowledge and academic proficiency.
+            </p>
+            
+            <div class="flex gap-20 items-center justify-center w-full px-20">
+                <div class="text-center pt-8 border-t border-gray-400 w-64">
+                     <p class="font-bold text-brand-blue text-xl">Abu-Abdurrahman</p>
+                     <p class="text-xs uppercase tracking-wide">Tech Lead</p>
+                </div>
+                
+                <div class="ceo-stamp w-32 h-32 text-xs bg-white">
+                    <span>SEAL OF</span>
+                    <span class="text-lg font-black">QUALITY</span>
+                </div>
+
+                <div class="text-center pt-8 border-t border-gray-400 w-64">
+                    <p class="font-bold text-brand-blue text-xl">Engr. Aliyu Bashir</p>
+                     <p class="text-xs uppercase tracking-wide">Chief Executive Officer</p>
+                </div>
+            </div>
+            <p class="absolute bottom-4 text-xs text-gray-300">ID: <span id="cert-id">--</span></p>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script type="module">
+        // --- FIREBASE IMPORTS ---
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, doc, setDoc, getDoc, getDocs, updateDoc, onSnapshot, query, where, deleteDoc, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // --- FIREBASE CONFIG ---
+        const firebaseConfig = {
+            apiKey: "AIzaSyA0UOe1BsUYisRSKzRZgOSulOHQQ_BvkMk",
+            authDomain: "codeverge-academy.firebaseapp.com",
+            projectId: "codeverge-academy",
+            storageBucket: "codeverge-academy.firebasestorage.app",
+            messagingSenderId: "1006598787151",
+            appId: "1:1006598787151:web:acd69f706564548dac1a3a"
+        };
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // --- STATE VARIABLES ---
+        let currentUser = null;
+        let isAdmin = false;
+        
+        // Exam State
+        let allQuestions = [];
+        let examQuestions = []; // Filtered & Shuffled
+        let activeSubjects = []; 
+        let currentSubjectIndex = 0;
+        let currentQuestionGlobalIndex = 0;
+        let userAnswers = {}; // { qId: 'A' }
+        let examTimerInterval;
+        let timeRemaining = 0;
+        
+        // Admin View State
+        let selectedStudentId = null;
+        let commsMode = 'broadcast';
+
+        // --- NAVIGATION & UI ---
+        
+        window.router = (screen) => {
+            document.querySelectorAll('.screen').forEach(el => el.classList.add('hidden'));
+            document.getElementById('mobile-menu').classList.add('hidden');
+            
+            // Guards
+            if((screen === 'student-dash') && !currentUser && !isAdmin) screen = 'login';
+            if(screen === 'admin' && !isAdmin) screen = 'login';
+
+            const active = document.getElementById(`screen-${screen}`);
+            if(active) {
+                active.classList.remove('hidden');
+                active.classList.add('animate-fade-in');
+            }
+            window.scrollTo(0,0);
+        };
+
+        window.studentNav = (tab) => {
+            document.querySelectorAll('.dash-panel').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active', 'bg-blue-800'));
+            document.getElementById(`panel-${tab}`).classList.remove('hidden');
+            // Highlight nav
+            const btn = event.currentTarget;
+            if(btn) btn.classList.add('active', 'bg-blue-800');
+            
+            if(tab === 'inbox') loadInbox();
+        };
+
+        window.openHowItWorks = () => document.getElementById('modal-how').classList.remove('hidden');
+
+        // --- AUTHENTICATION ---
+
+        window.handleLogin = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const pass = document.getElementById('login-pass').value;
+            const btn = document.getElementById('login-btn');
+            
+            btn.innerHTML = '<div class="loader w-5 h-5 border-white border-t-transparent"></div>';
+            
+            // Admin Bypass
+            if(email === 'dambazaualiyu@gmail.com' && pass === 'Habeeb@1') {
+                isAdmin = true;
+                currentUser = { name: "Admin", email: email, role: 'admin' };
+                initAdmin();
+                router('admin');
+                btn.innerText = "Login";
+                return;
+            }
+
+            try {
+                await signInWithEmailAndPassword(auth, email, pass);
+            } catch (err) {
+                alert("Login Failed: " + err.message);
+                btn.innerText = "Login";
+            }
+        };
+
+        window.handleRegistration = async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('reg-btn');
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = "Processing...";
+
+            // Check if open
+            const configSnap = await getDoc(doc(db, "settings", "config"));
+            if(configSnap.exists() && configSnap.data().regOpen === false) {
+                alert("Registration is currently closed.");
+                btn.innerHTML = originalText; btn.disabled = false; return;
+            }
+
+            const email = document.getElementById('reg-email').value;
+            const pass = document.getElementById('reg-pass').value;
+            const name = document.getElementById('reg-name').value;
+            const dob = document.getElementById('reg-dob').value;
+            const photoSrc = document.getElementById('reg-preview').src;
+
+            if(!photoSrc || photoSrc.length < 100) {
+                alert("Please upload a photo.");
+                btn.innerHTML = originalText; btn.disabled = false; return;
+            }
+
+            try {
+                const cred = await createUserWithEmailAndPassword(auth, email, pass);
+                const uid = cred.user.uid;
+                const appNo = 'ALI' + Math.floor(10000 + Math.random() * 90000);
+                
+                await setDoc(doc(db, "users", uid), {
+                    name, dob, email, photo: photoSrc, appNo,
+                    role: 'student',
+                    createdAt: new Date().toISOString(),
+                    certApproved: false,
+                    lastScore: 0,
+                    examHistory: []
+                });
+                
+                // Welcome Message
+                await addDoc(collection(db, "messages"), {
+                    target: uid,
+                    subject: "Welcome to AliSun EduSuite",
+                    body: `Dear ${name}, Welcome to the platform. Complete your profile and attempt the mock exams. Good luck! - CEO`,
+                    date: new Date().toISOString(),
+                    read: false
+                });
+
+                alert("Registration Successful!");
+                router('login');
+            } catch (err) {
+                alert(err.message);
+            } finally {
+                btn.innerHTML = originalText; btn.disabled = false;
+            }
+        };
+
+        window.previewImage = (input) => {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('reg-preview').src = e.target.result;
+                    document.getElementById('reg-preview').classList.remove('hidden');
+                    document.getElementById('reg-icon').classList.add('hidden');
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        };
+
+        window.logout = () => {
+            signOut(auth).then(() => {
+                window.location.reload();
+            });
+        };
+
+        onAuthStateChanged(auth, async (user) => {
+            document.getElementById('global-loader').classList.add('opacity-0', 'pointer-events-none');
+            if (user) {
+                const snap = await getDoc(doc(db, "users", user.uid));
+                if (snap.exists()) {
+                    currentUser = { uid: user.uid, ...snap.data() };
+                    if(!isAdmin) initStudentDash();
+                }
+            }
+        });
+
+        // --- STUDENT FEATURES ---
+
+        function initStudentDash() {
+            // UI Populate
+            document.getElementById('dash-name').innerText = currentUser.name;
+            document.getElementById('dash-id').innerText = currentUser.appNo;
+            document.getElementById('dash-photo').src = currentUser.photo;
+            document.getElementById('dash-score').innerText = (currentUser.lastScore || 0) + "%";
+            
+            if(currentUser.certApproved) {
+                document.getElementById('dash-cert-status').innerText = "Ready to Download";
+                document.getElementById('dash-cert-status').classList.replace('text-gray-400', 'text-green-600');
+                document.getElementById('cert-lock-overlay').classList.add('hidden');
+            }
+
+            // Listen for Global Notifications
+            onSnapshot(collection(db, "notifications"), (snap) => {
+                const list = document.getElementById('notif-list');
+                const badge = document.getElementById('notif-badge');
+                list.innerHTML = '';
+                if(!snap.empty) {
+                    badge.classList.remove('hidden');
+                    snap.forEach(d => {
+                        const n = d.data();
+                        list.innerHTML += `<div class="p-3 border-b hover:bg-gray-50 text-xs">
+                            <p class="font-bold text-brand-blue">${n.subject || 'System Update'}</p>
+                            <p class="text-gray-600">${n.message}</p>
+                            <span class="text-[10px] text-gray-400">${new Date(n.date).toLocaleDateString()}</span>
+                        </div>`;
+                    });
+                }
+            });
+
+            // Listen for Direct Messages (Inbox)
+            const qMsg = query(collection(db, "messages"), where("target", "==", currentUser.uid));
+            onSnapshot(qMsg, (snap) => {
+                const unread = snap.docs.filter(d => !d.data().read).length;
+                const badge = document.getElementById('nav-inbox-badge');
+                if(unread > 0) {
+                    badge.innerText = unread;
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+            });
+
+            // Load Active Exams for Preview
+            onSnapshot(collection(db, "subjects"), (snap) => {
+                activeSubjects = [];
+                const tags = document.getElementById('subject-tags');
+                tags.innerHTML = '';
+                snap.forEach(d => {
+                    const s = d.data();
+                    if(s.active) {
+                        activeSubjects.push(s);
+                        tags.innerHTML += `<span class="bg-white border border-blue-200 text-brand-blue px-2 py-1 rounded text-xs font-bold">${s.name} (${s.duration}m)</span>`;
+                    }
+                });
+                if(activeSubjects.length === 0) tags.innerHTML = '<span class="text-red-500">No exams scheduled.</span>';
+            });
+            
+            // Render History
+            const histList = document.getElementById('exam-history-list');
+            histList.innerHTML = '';
+            const history = currentUser.examHistory || [];
+            if(history.length === 0) {
+                histList.innerHTML = '<p class="text-gray-400 text-sm italic">No exams taken yet.</p>';
+            } else {
+                history.reverse().slice(0, 5).forEach(h => {
+                    histList.innerHTML += `
+                        <div class="flex justify-between items-center bg-gray-50 p-3 rounded hover:bg-gray-100 transition">
+                            <div>
+                                <p class="font-bold text-sm text-gray-700">JAMB Mock</p>
+                                <p class="text-xs text-gray-400">${new Date(h.date).toLocaleDateString()}</p>
+                            </div>
+                            <span class="font-bold ${h.score >= 50 ? 'text-green-600' : 'text-red-500'}">${h.score}%</span>
+                        </div>
+                    `;
+                });
+            }
+
+            router('student-dash');
+        }
+
+        window.loadInbox = async () => {
+            const list = document.getElementById('inbox-list');
+            const q = query(collection(db, "messages"), where("target", "==", currentUser.uid), orderBy("date", "desc"));
+            const snap = await getDocs(q);
+            list.innerHTML = '';
+            if(snap.empty) {
+                list.innerHTML = '<p class="p-4 text-center text-sm text-gray-400">Inbox Empty</p>';
+                return;
+            }
+            snap.forEach(d => {
+                const m = d.data();
+                const div = document.createElement('div');
+                div.className = `p-4 border-b cursor-pointer hover:bg-blue-50 transition ${m.read ? 'bg-white' : 'bg-blue-50 border-l-4 border-blue-500'}`;
+                div.innerHTML = `
+                    <h4 class="font-bold text-sm truncate">${m.subject}</h4>
+                    <p class="text-xs text-gray-500 truncate">${m.body}</p>
+                    <span class="text-[10px] text-gray-400 mt-1 block">${new Date(m.date).toLocaleDateString()}</span>
+                `;
+                div.onclick = () => showMessageDetail(d.id, m);
+                list.appendChild(div);
+            });
+        };
+
+        const showMessageDetail = async (id, msg) => {
+            const container = document.getElementById('inbox-detail');
+            container.innerHTML = `
+                <div class="border-b pb-4 mb-4">
+                    <h3 class="text-xl font-bold text-brand-blue">${msg.subject}</h3>
+                    <p class="text-xs text-gray-500">From: Admin | ${new Date(msg.date).toLocaleString()}</p>
+                </div>
+                <div class="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">${msg.body}</div>
+            `;
+            // Mark read
+            if(!msg.read) {
+                await updateDoc(doc(db, "messages", id), { read: true });
+                // Badge update handled by listener
+            }
+        };
+
+        // --- DOCUMENTS DOWNLOADER (PDF) ---
+        
+        window.downloadDocument = (type) => {
+            // Populate hidden templates
+            if(type === 'admission') {
+                document.getElementById('adm-name').innerText = currentUser.name;
+                document.getElementById('adm-id').innerText = currentUser.appNo;
+                document.getElementById('adm-id-2').innerText = currentUser.appNo;
+                document.getElementById('adm-date').innerText = new Date().toLocaleDateString();
+                document.getElementById('adm-photo').src = currentUser.photo;
+                document.getElementById('adm-qr').innerHTML = '';
+                new QRCode(document.getElementById('adm-qr'), { text: `VALID|${currentUser.appNo}|ADM`, width: 80, height: 80 });
+                generatePDF('doc-admission', 'Admission_Letter.pdf');
+            }
+            else if(type === 'transcript') {
+                document.getElementById('trans-name').innerText = currentUser.name;
+                document.getElementById('trans-id').innerText = currentUser.appNo;
+                document.getElementById('trans-email').innerText = currentUser.email;
+                document.getElementById('trans-photo').src = currentUser.photo;
+                document.getElementById('trans-gen-date').innerText = new Date().toLocaleDateString();
+                
+                const tbody = document.getElementById('trans-table-body');
+                tbody.innerHTML = '';
+                let total = 0;
+                (currentUser.examHistory || []).forEach(h => {
+                    total += h.score;
+                    let grade = h.score >= 70 ? 'A' : (h.score >= 60 ? 'B' : (h.score >= 50 ? 'C' : 'F'));
+                    tbody.innerHTML += `
+                        <tr class="border-b">
+                            <td class="p-2">${new Date(h.date).toLocaleDateString()}</td>
+                            <td class="p-2">JAMB Simulation</td>
+                            <td class="p-2 font-bold">${h.score}%</td>
+                            <td class="p-2">${grade}</td>
+                            <td class="p-2 italic">${h.score >= 50 ? 'Pass' : 'Fail'}</td>
+                        </tr>
+                    `;
+                });
+                const count = (currentUser.examHistory || []).length;
+                const avg = count > 0 ? Math.round(total / count) : 0;
+                document.getElementById('trans-total').innerText = count;
+                document.getElementById('trans-avg').innerText = avg + "%";
+                document.getElementById('trans-gpa').innerText = (avg / 20).toFixed(2); // Mock GPA 5.0 scale
+
+                document.getElementById('trans-qr').innerHTML = '';
+                new QRCode(document.getElementById('trans-qr'), { text: `TRANSCRIPT|${currentUser.appNo}|${avg}`, width: 60, height: 60 });
+                generatePDF('doc-transcript', 'Academic_Transcript.pdf');
+            }
+            else if(type === 'slip') {
+                // Not requested explicitly to redesign, but using same logic if needed or just simple admission letter template logic
+                alert("Downloading Exam Slip...");
+                // Reuse Admission logic for demo or separate if strict design needed
+            }
+            else if(type === 'certificate') {
+                if(!currentUser.certApproved) return alert("Certificate not approved.");
+                document.getElementById('cert-name').innerText = currentUser.name;
+                document.getElementById('cert-id').innerText = currentUser.appNo;
+                generatePDF('doc-certificate', 'Certificate.pdf', true); // landscape
+            }
+        };
+
+        function generatePDF(elementId, filename, landscape = false) {
+            const element = document.getElementById(elementId);
+            const opt = {
+                margin: 0,
+                filename: filename,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: landscape ? 'landscape' : 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save().catch(err => alert("Download Error: " + err.message));
+        }
+
+        // --- EXAM SYSTEM ---
+
+        window.startExam = async () => {
+            if(activeSubjects.length === 0) return alert("No exams available.");
+            
+            // Prep UI
+            document.getElementById('btn-start-exam').innerText = "Loading Questions...";
+            
+            // Fetch Questions
+            const qSnap = await getDocs(collection(db, "questions"));
+            allQuestions = [];
+            qSnap.forEach(d => allQuestions.push({id: d.id, ...d.data()}));
+            
+            // Filter & Organize by Subject
+            examQuestions = {}; // { English: [q1, q2], Maths: [q3] }
+            activeSubjects.forEach(sub => {
+                // Get qs for this subject
+                const qs = allQuestions.filter(q => q.subject === sub.name);
+                // Shuffle & Pick 20 (or less)
+                examQuestions[sub.name] = qs.sort(() => 0.5 - Math.random()).slice(0, 40);
+            });
+
+            // Calculate Time
+            const totalMins = activeSubjects.reduce((acc, s) => acc + parseInt(s.duration), 0);
+            timeRemaining = totalMins * 60;
+            
+            // Setup User State
+            userAnswers = {};
+            currentSubjectIndex = 0;
+            currentQuestionGlobalIndex = 0;
+
+            // Render Header
+            document.getElementById('exam-user-name').innerText = currentUser.name;
+            document.getElementById('exam-user-photo').src = currentUser.photo;
+
+            // Render Tabs
+            const tabContainer = document.getElementById('exam-subjects-tab');
+            tabContainer.innerHTML = '';
+            activeSubjects.forEach((sub, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `px-6 py-3 font-bold text-sm whitespace-nowrap transition ${idx === 0 ? 'bg-white text-brand-blue' : 'text-blue-200 hover:bg-blue-800'}`;
+                btn.innerText = sub.name;
+                btn.onclick = () => switchSubject(idx);
+                btn.id = `tab-sub-${idx}`;
+                tabContainer.appendChild(btn);
+            });
+
+            // Start Timer
+            clearInterval(examTimerInterval);
+            examTimerInterval = setInterval(() => {
+                timeRemaining--;
+                const m = Math.floor(timeRemaining / 60);
+                const s = timeRemaining % 60;
+                document.getElementById('exam-timer').innerText = `${m}:${s < 10 ? '0'+s : s}`;
+                if(timeRemaining <= 0) submitExam();
+            }, 1000);
+
+            document.getElementById('screen-exam-active').classList.remove('hidden');
+            loadQuestion(0);
+        };
+
+        window.switchSubject = (index) => {
+            currentSubjectIndex = index;
+            // Update Tab UI
+            document.querySelectorAll('#exam-subjects-tab button').forEach((b, i) => {
+                b.className = i === index ? 'px-6 py-3 font-bold text-sm bg-white text-brand-blue border-t-2 border-brand-red' : 'px-6 py-3 font-bold text-sm text-blue-200 hover:bg-blue-800';
+            });
+            // Go to first question of this subject
+            loadQuestion(0); 
+        };
+
+        window.loadQuestion = (idx) => {
+            const subName = activeSubjects[currentSubjectIndex].name;
+            const qs = examQuestions[subName];
+            
+            if(!qs || qs.length === 0) {
+                document.getElementById('question-content').innerText = "No questions for this subject.";
+                return;
+            }
+
+            // Boundary Check
+            if(idx < 0) idx = 0;
+            if(idx >= qs.length) idx = qs.length - 1;
+            
+            currentQuestionGlobalIndex = idx; // Local to subject actually
+            
+            const q = qs[idx];
+            
+            // Render Content
+            document.getElementById('q-display-num').innerText = idx + 1;
+            document.getElementById('q-total-count').innerText = `of ${qs.length}`;
+            document.getElementById('question-content').innerText = q.text;
+
+            const grid = document.getElementById('options-grid');
+            grid.innerHTML = '';
+            
+            // Unique ID for answers: subject_qId
+            const ansKey = `${subName}_${q.id}`;
+            const selected = userAnswers[ansKey];
+
+            ['A', 'B', 'C', 'D'].forEach(opt => {
+                const val = q['opt'+opt.toLowerCase()] || q[opt.toLowerCase()]; // handle different key casing
+                const activeClass = selected === opt ? 'border-brand-blue bg-blue-50 ring-2 ring-blue-200' : 'border-gray-200 hover:bg-gray-50';
+                
+                grid.innerHTML += `
+                    <div onclick="pickAnswer('${ansKey}', '${opt}')" class="p-4 rounded-lg border cursor-pointer transition flex gap-3 items-center ${activeClass}">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${selected === opt ? 'bg-brand-blue text-white' : 'bg-gray-200 text-gray-600'}">${opt}</div>
+                        <div class="text-gray-700 text-sm md:text-base">${val || 'Option'}</div>
+                    </div>
+                `;
+            });
+
+            // Render Palette
+            const palette = document.getElementById('nav-palette');
+            palette.innerHTML = '';
+            qs.forEach((_q, i) => {
+                const k = `${subName}_${_q.id}`;
+                const isAns = userAnswers[k] !== undefined;
+                const isCurr = i === idx;
+                let color = isCurr ? 'bg-brand-blue text-white shadow-lg scale-110' : (isAns ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-500');
+                
+                palette.innerHTML += `<button onclick="loadQuestion(${i})" class="w-8 h-8 rounded mx-1 text-xs font-bold transition-all ${color}">${i+1}</button>`;
+            });
+        };
+
+        window.pickAnswer = (key, opt) => {
+            userAnswers[key] = opt;
+            loadQuestion(currentQuestionGlobalIndex); // Re-render to show selection
+        };
+
+        window.nextQuestion = () => loadQuestion(currentQuestionGlobalIndex + 1);
+        window.prevQuestion = () => loadQuestion(currentQuestionGlobalIndex - 1);
+
+        window.submitExam = async () => {
+            clearInterval(examTimerInterval);
+            if(!confirm("Are you sure you want to submit?")) return;
+
+            let totalQs = 0;
+            let correct = 0;
+            const historyDetails = [];
+
+            // Calc Score
+            activeSubjects.forEach(sub => {
+                const qs = examQuestions[sub.name];
+                if(qs) {
+                    qs.forEach(q => {
+                        totalQs++;
+                        const key = `${sub.name}_${q.id}`;
+                        const ans = userAnswers[key];
+                        const isCorrect = ans === q.correct;
+                        if(isCorrect) correct++;
+                        // Detailed record (optional storage)
+                    });
+                }
+            });
+
+            const score = Math.round((correct / totalQs) * 100) || 0;
+            
+            // Save
+            const newHistory = [...(currentUser.examHistory || []), {
+                date: new Date().toISOString(),
+                score: score,
+                total: totalQs
+            }];
+
+            await updateDoc(doc(db, "users", currentUser.uid), {
+                lastScore: score,
+                examHistory: newHistory
+            });
+
+            // Notification
+            if(score >= 70) {
+                 await addDoc(collection(db, "messages"), {
+                    target: currentUser.uid,
+                    subject: "Excellent Performance!",
+                    body: `Congratulations! You scored ${score}%. Your certificate is now being processed by Admin.`,
+                    date: new Date().toISOString(),
+                    read: false
+                });
+            }
+
+            document.getElementById('screen-exam-active').classList.add('hidden');
+            currentUser.lastScore = score;
+            currentUser.examHistory = newHistory;
+            
+            initStudentDash();
+            alert(`Exam Submitted. You scored ${score}%`);
+        };
+
+        // --- ADMIN FUNCTIONS ---
+
+        function initAdmin() {
+            // Stats listeners
+            onSnapshot(collection(db, "users"), snap => {
+                document.getElementById('admin-count-student').innerText = snap.size;
+                const list = document.getElementById('admin-student-rows');
+                list.innerHTML = '';
+                snap.forEach(d => {
+                    const u = d.data();
+                    if(u.role === 'admin') return;
+                    list.innerHTML += `
+                        <div class="flex items-center justify-between bg-gray-700 p-2 rounded text-sm hover:bg-gray-600 cursor-pointer" onclick="adminViewStudent('${d.id}')">
+                            <div class="flex items-center gap-2">
+                                <img src="${u.photo}" class="w-6 h-6 rounded-full">
+                                <div>
+                                    <div class="font-bold text-gray-200">${u.name}</div>
+                                    <div class="text-[10px] text-gray-400">${u.email}</div>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="bg-blue-900 px-1 rounded text-xs text-blue-200">${u.lastScore || 0}%</span>
+                                <button onclick="event.stopPropagation(); adminToggleCert('${d.id}', ${!u.certApproved})" class="text-xs px-2 rounded ${u.certApproved ? 'bg-green-600' : 'bg-gray-500'}">Cert</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+
+            onSnapshot(collection(db, "subjects"), snap => {
+                const list = document.getElementById('admin-subject-list');
+                const select = document.getElementById('q-subject');
+                list.innerHTML = '';
+                select.innerHTML = '';
+                
+                snap.forEach(d => {
+                    const s = d.data();
+                    select.innerHTML += `<option value="${s.name}">${s.name}</option>`;
+                    list.innerHTML += `
+                        <div class="flex justify-between items-center bg-gray-700 p-2 rounded text-xs">
+                            <span>${s.name} (${s.duration}m)</span>
+                            <div class="flex gap-2">
+                                <button onclick="adminToggleSubject('${d.id}', ${!s.active})" class="${s.active ? 'text-green-400' : 'text-red-400'} font-bold">${s.active ? 'ON' : 'OFF'}</button>
+                                <button onclick="deleteDoc(doc(db, 'subjects', '${d.id}'))" class="text-gray-400 hover:text-red-500"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+
+            onSnapshot(collection(db, "questions"), snap => {
+                document.getElementById('admin-count-q').innerText = snap.size;
+            });
+        }
+
+        window.adminAddSubject = async () => {
+            const name = document.getElementById('new-sub-name').value;
+            const dur = document.getElementById('new-sub-time').value;
+            if(name && dur) {
+                await addDoc(collection(db, "subjects"), { name, duration: parseInt(dur), active: true });
+                document.getElementById('new-sub-name').value = '';
+            }
+        };
+
+        window.adminToggleSubject = async (id, status) => updateDoc(doc(db, "subjects", id), { active: status });
+        
+        window.adminAddQuestion = async (e) => {
+            e.preventDefault();
+            const form = {
+                subject: document.getElementById('q-subject').value,
+                text: document.getElementById('q-text').value,
+                optA: document.getElementById('opt-a').value,
+                optB: document.getElementById('opt-b').value,
+                optC: document.getElementById('opt-c').value,
+                optD: document.getElementById('opt-d').value,
+                correct: document.getElementById('q-correct').value
+            };
+            await addDoc(collection(db, "questions"), form);
+            alert("Question added.");
+            e.target.reset();
+        };
+
+        window.toggleReg = async () => {
+            const ref = doc(db, "settings", "config");
+            const snap = await getDoc(ref);
+            let current = true;
+            if(snap.exists()) current = snap.data().regOpen;
+            await setDoc(ref, { regOpen: !current });
+            document.getElementById('admin-reg-status').innerText = !current ? "ON" : "OFF";
+        };
+
+        window.adminToggleCert = async (uid, status) => {
+            await updateDoc(doc(db, "users", uid), { certApproved: status });
+        };
+
+        // Admin Student View
+        window.adminViewStudent = async (uid) => {
+            selectedStudentId = uid;
+            const snap = await getDoc(doc(db, "users", uid));
+            if(!snap.exists()) return;
+            const u = snap.data();
+            
+            // Populate Modal
+            document.getElementById('admin-view-photo').src = u.photo;
+            document.getElementById('admin-edit-name').value = u.name;
+            document.getElementById('admin-edit-email').value = u.email;
+            document.getElementById('admin-edit-uid').value = uid; // store for download use
+            
+            // Set global current user temporarily for the download functions to work on this student
+            // This is a hack for the single-file structure to reuse logic
+            // Ideally we pass data to the generate function
+            
+            document.getElementById('modal-admin-student').classList.remove('hidden');
+        };
+
+        window.adminSaveStudent = async () => {
+            if(!selectedStudentId) return;
+            const name = document.getElementById('admin-edit-name').value;
+            await updateDoc(doc(db, "users", selectedStudentId), { name: name });
+            alert("Updated.");
+        };
+
+        window.adminDownloadStudentDoc = async (type) => {
+            // Fetch fresh data of selected student
+            const snap = await getDoc(doc(db, "users", selectedStudentId));
+            const tempUser = { uid: selectedStudentId, ...snap.data() };
+            
+            // Swap global currentUser momentarily
+            const realUser = currentUser;
+            currentUser = tempUser;
+            
+            downloadDocument(type);
+            
+            // Swap back
+            currentUser = realUser;
+        };
+
+        // Comms
+        window.setCommsMode = (mode) => {
+            commsMode = mode;
+            document.getElementById('tab-broadcast').className = mode === 'broadcast' ? 'flex-1 py-1 bg-gray-700 rounded text-white' : 'flex-1 py-1 text-gray-400';
+            document.getElementById('tab-email').className = mode === 'email' ? 'flex-1 py-1 bg-gray-700 rounded text-white' : 'flex-1 py-1 text-gray-400';
+            
+            if(mode === 'email') document.getElementById('msg-target').classList.remove('hidden');
+            else document.getElementById('msg-target').classList.add('hidden');
+        };
+
+        window.sendAdminMessage = async () => {
+            const subject = document.getElementById('msg-subject').value;
+            const body = document.getElementById('msg-body').value;
+            
+            if(!subject || !body) return alert("Fill all fields");
+
+            if(commsMode === 'broadcast') {
+                // Save to Notifications collection (Public)
+                await addDoc(collection(db, "notifications"), {
+                    subject, message: body, date: new Date().toISOString()
+                });
+                alert("Broadcast sent to all students.");
+            } else {
+                // Direct Message
+                const targetEmail = document.getElementById('msg-target').value;
+                // Find uid
+                const q = query(collection(db, "users"), where("email", "==", targetEmail));
+                const snap = await getDocs(q);
+                if(snap.empty) return alert("Student email not found.");
+                
+                const targetUid = snap.docs[0].id;
+                await addDoc(collection(db, "messages"), {
+                    target: targetUid, subject, body, date: new Date().toISOString(), read: false
+                });
+                alert("Message sent to inbox.");
+            }
+            
+            document.getElementById('msg-body').value = '';
+            document.getElementById('msg-subject').value = '';
+        };
+
+    </script>
+</body>
+</html>
