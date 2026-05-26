@@ -45,7 +45,6 @@
       "postalCode": "700241",
       "addressCountry": "NG"
     },
-    "taxID": "1093395034",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+234-802-799-5335",
@@ -239,7 +238,7 @@
         <a href="https://twitter.com" target="_blank" class="hover:text-gold"><i data-lucide="twitter" class="w-5 h-5"></i></a>
         <a href="https://instagram.com" target="_blank" class="hover:text-gold"><i data-lucide="instagram" class="w-5 h-5"></i></a>
       </div>
-      <p class="text-[10px] text-center text-mutedText">© 2026 AJUBCO Global. Registered with FIRS & Joint Tax Board.</p>
+      <p class="text-[10px] text-center text-mutedText">© 2026 AJUBCO Global. Fully FIRS & Joint Tax Board Audited.</p>
     </div>
   </div>
 
@@ -330,8 +329,8 @@
                   <i data-lucide="shield-check" class="w-6 h-6"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-sm">CAC & JTB Audited</h4>
-                  <p class="text-xs text-gray-300">TIN: 1093395034</p>
+                  <h4 class="font-bold text-sm">CAC & Joint Tax Board Audited</h4>
+                  <p class="text-xs text-gray-300">Verified Compliance Records</p>
                 </div>
               </div>
               <p class="text-xs text-gray-300 leading-relaxed">
@@ -346,30 +345,30 @@
         </div>
       </div>
 
-      <!-- Verified Financial/Operational Statistics Row (Actual values extracted from FIRS profile page 5) -->
+      <!-- Verified Financial/Operational Statistics Row (Actual values extracted from FIRS profile with smooth writing animations) -->
       <div class="bg-primary text-white py-12 px-4 lg:px-8 border-y border-gold/15">
         <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div class="space-y-2">
             <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold tracking-tight font-montserrat">
-              ₦196.7M+
+              <span class="stat-counter" data-prefix="₦" data-target="196.7" data-suffix="M+">0</span>
             </div>
             <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Peak Annual Revenue</p>
           </div>
           <div class="space-y-2">
             <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold tracking-tight font-montserrat">
-              100%
+              <span class="stat-counter" data-prefix="" data-target="100" data-suffix="%">0</span>
             </div>
             <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Tax & Pension Clearance</p>
           </div>
           <div class="space-y-2">
             <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold tracking-tight font-montserrat">
-              11+ Years
+              <span class="stat-counter" data-prefix="" data-target="11" data-suffix="+ Years">0</span>
             </div>
             <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Trade Expertise</p>
           </div>
           <div class="space-y-2">
             <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold tracking-tight font-montserrat">
-              <span class="counter-num" data-target="30">0</span>+
+              <span class="stat-counter" data-prefix="" data-target="30" data-suffix="+">0</span>
             </div>
             <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Active Machinery Inverters</p>
           </div>
@@ -435,10 +434,10 @@
         <div class="lg:col-span-6 space-y-6">
           <h2 class="text-2xl font-bold font-montserrat text-primary">Headquarters & Corporate Footprint</h2>
           <p class="text-mutedText leading-relaxed text-sm">
-            Our corporate headquarters located at <strong>No 92 Kabuga Layout Kano, Nigeria</strong> serves as our primary operational hub. Certified by the <strong>Joint Tax Board (TIN: 1093395034)</strong> and verified as fully compliant with the National Pension Commission (PenCom) and NSITF guidelines. 
+            Our corporate headquarters located at <strong>No 92 Kabuga Layout Kano, Nigeria</strong> serves as our primary operational hub. Certified by the <strong>Joint Tax Board</strong> and verified as fully compliant with the National Pension Commission (PenCom) and NSITF guidelines. 
           </p>
           <p class="text-mutedText leading-relaxed text-sm">
-            AJUBCO is officially certified as a member of the **African Business Club (Registration Number 018)** and holds a **CMC Certification (Number CMCABJ.4850.21)** from the **Institute of Management Consultants - Nigeria**, validating our capacity to perform advisory programs that comply with international standards.
+            AJUBCO is officially certified as a member of the **African Business Club** and holds a **CMC Certification** from the **Institute of Management Consultants - Nigeria**, validating our capacity to perform advisory programs that comply with international standards.
           </p>
           
           <div class="grid grid-cols-2 gap-4 text-xs font-montserrat text-primary">
@@ -586,7 +585,7 @@
             </div>
             <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Road Transport & Logistics</h3>
             <p class="text-sm text-mutedText leading-relaxed">
-              Trustway Logistics networks designed for safe carriage of industrial cargo, agricultural harvests, and machinery across West Africa.
+              Road logistics networks designed for safe carriage of industrial cargo, agricultural harvests, and machinery across West Africa.
             </p>
           </div>
           <div class="pt-6 mt-6 border-t border-gray-100">
@@ -956,9 +955,14 @@
               <div id="reply-generator-block" class="hidden bg-white p-6 rounded-2xl border border-gray-200 space-y-4">
                 <div class="flex justify-between items-center">
                   <h4 class="font-bold text-xs uppercase tracking-widest text-gold font-montserrat">Interactive Message Reply Preview</h4>
-                  <button onclick="copyGeneratedReply()" class="bg-primary hover:bg-black text-white px-3 py-1 rounded text-[10px] font-bold inline-flex items-center gap-1">
-                    <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Clean Copy
-                  </button>
+                  <div class="flex gap-2">
+                    <button id="reply-whatsapp-btn" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-[10px] font-bold inline-flex items-center gap-1">
+                      <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Send on WhatsApp
+                    </button>
+                    <button onclick="copyGeneratedReply()" class="bg-primary hover:bg-black text-white px-3 py-1 rounded text-[10px] font-bold inline-flex items-center gap-1">
+                      <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Text
+                    </button>
+                  </div>
                 </div>
                 
                 <!-- Stylized Email Reply template -->
@@ -995,6 +999,12 @@
                     <label class="block text-xs font-bold text-mutedText uppercase mb-1">Project Image URL</label>
                     <input type="url" id="p-image" placeholder="https://i.postimg.cc/..." class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
                   </div>
+                  <div>
+                    <label class="block text-xs font-bold text-mutedText uppercase mb-1">Project Video URL (Optional YouTube link)</label>
+                    <input type="url" id="p-video" placeholder="https://www.youtube.com/embed/..." class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
                   <div>
                     <label class="block text-xs font-bold text-mutedText uppercase mb-1">Location City/State</label>
                     <input type="text" id="p-location" placeholder="e.g. Kano, Nigeria" required class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
@@ -1105,6 +1115,26 @@
 
   </main>
 
+  <!-- ==============================================
+       INTEGRATED MODAL: VIDEO PLAYER DIALOG
+       ============================================== -->
+  <div id="video-player-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-[999] flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl overflow-hidden w-full max-w-2xl relative shadow-2xl border border-gray-200">
+      <button onclick="closeVideoPlayer()" class="absolute top-4 right-4 text-white bg-black/50 p-2 rounded-full hover:bg-gold z-10">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div class="p-6 bg-primary text-white space-y-4 animate-[slideIn_0.3s_ease-out]">
+        <div class="inline-block px-3 py-1 bg-gold/10 text-gold text-[10px] tracking-wider rounded font-montserrat uppercase font-bold">AJUBCO Global Portfolio Sourcing</div>
+        <h3 class="text-xl font-bold font-montserrat" id="video-modal-title">Presentation Showcase</h3>
+        <p class="text-xs text-gray-300">View real-time progress, structural blueprints, and operational timelines for this asset portfolio.</p>
+      </div>
+      <!-- Adaptive Presentation Embed -->
+      <div class="aspect-video relative bg-black flex items-center justify-center">
+        <iframe id="video-modal-iframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
 
   <!-- ==============================================
        FOOTER
@@ -1124,7 +1154,7 @@
         <p class="text-xs text-gray-400 leading-relaxed">
           Pioneering premium real estate construction, customized industrial manufacturing, global procurement, and mechanized agribusiness in Kano State and across West Africa.
         </p>
-        <p class="text-[10px] text-gold font-bold">RC: 1235281 | JTB TIN: 1093395034</p>
+        <p class="text-[10px] text-gold font-bold">RC: 1235281 | Cleared & Tax Registered</p>
         
         <div class="flex gap-3 pt-2">
           <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-gold hover:text-primary flex items-center justify-center transition-colors text-gray-400">
@@ -1165,7 +1195,7 @@
         </div>
       </div>
 
-      <!-- Direct Assistance Column -->
+      <!-- Direct Sourcing Helpline -->
       <div class="space-y-4">
         <h4 class="font-bold text-xs uppercase tracking-widest text-gold font-montserrat">Direct Sourcing Helpline</h4>
         <p class="text-xs text-gray-400 font-bold">
@@ -1366,6 +1396,7 @@
             location: "Kabuga Layout, Kano",
             desc: "The primary base complex of AJUBCO containing modern facilities, compliance offices, and project design boards.",
             image: "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png",
+            videoUrl: "https://www.youtube.com/embed/-DHmsaE-5v4",
             timestamp: Date.now()
           });
           await setDoc(getPublicDocPath('projects', 'p2'), {
@@ -1374,6 +1405,7 @@
             location: "Kano, Nigeria",
             desc: "Active clean borehole system built to run water pumping machinery for crop harvesting.",
             image: "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png",
+            videoUrl: "",
             timestamp: Date.now() + 1
           });
           await setDoc(getPublicDocPath('projects', 'p3'), {
@@ -1382,6 +1414,7 @@
             location: "Kano Metropolitan Area",
             desc: "Active fabrication center supplying crop dusters, water hydrants, and customized organic fertilizers.",
             image: "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png",
+            videoUrl: "",
             timestamp: Date.now() + 2
           });
 
@@ -1396,8 +1429,8 @@
 
           // Seed mock Feed post
           await setDoc(getPublicDocPath('feed', 'f1'), {
-            title: "AJUBCO Obtains Full National Pension & JTB Compliance Certificate",
-            content: "We are pleased to share that AJUBCO has completed its official annual tax audit with the FIRS and Joint Tax Board, maintaining zero tax liabilities and securing full operational approvals for public tenders.",
+            title: "AJUBCO Obtains Full National Pension & Regulatory Compliance Clearance",
+            content: "We are pleased to share that AJUBCO has completed its official annual audit, maintaining zero outstanding liabilities and securing full operational approvals for public tenders.",
             image: "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png",
             timestamp: Date.now(),
             likes: 42,
@@ -1442,6 +1475,7 @@
 
       list.forEach(proj => {
         const img = proj.image || 'https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png';
+        const hasVideo = !!proj.videoUrl;
         const card = document.createElement('div');
         card.className = "bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 group flex flex-col justify-between";
         card.innerHTML = `
@@ -1451,6 +1485,13 @@
               <span class="absolute top-4 left-4 bg-primary/90 text-gold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-gold/30">
                 ${proj.category || 'Portfolio Piece'}
               </span>
+              ${hasVideo ? `
+                <button onclick="launchVideoModal('${proj.title}', '${proj.videoUrl}')" class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span class="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-white shadow-xl animate-pulse">
+                    <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                  </span>
+                </button>
+              ` : ''}
             </div>
             <div class="p-6 space-y-3">
               <div class="flex items-center gap-1 text-[10px] text-gold font-bold uppercase tracking-wider">
@@ -1460,7 +1501,12 @@
               <p class="text-xs text-mutedText leading-relaxed">${proj.desc}</p>
             </div>
           </div>
-          <div class="p-6 pt-0">
+          <div class="p-6 pt-0 space-y-2">
+            ${hasVideo ? `
+              <button onclick="launchVideoModal('${proj.title}', '${proj.videoUrl}')" class="w-full bg-primary hover:bg-black text-white text-xs font-bold py-2.5 rounded-xl transition-all font-montserrat flex items-center justify-center gap-2">
+                <i data-lucide="video" class="w-4 h-4"></i> Watch Presentation Video
+              </button>
+            ` : ''}
             <a href="https://wa.me/2348027995335?text=Hello%20AJUBCO%2C%20I%20am%20interested%20in%20the%20following%20project%3A%20${encodeURIComponent(proj.title)}" target="_blank" class="w-full inline-block text-center bg-lightGray hover:bg-gold hover:text-white text-primary text-xs font-bold py-2.5 rounded-xl transition-all font-montserrat">
               Inquire About Project
             </a>
@@ -1722,36 +1768,48 @@
       // Create a highly professional reply template representing AJUBCO Global
       const htmlTemplate = `
 --------------------------------------------------------------------------------
-AJUBCO GLOBAL INVESTMENT NIG LTD (RC: 1235281)
+*AJUBCO GLOBAL INVESTMENT NIG LTD (RC: 1235281)*
 Office Headquarters: No 92 Kabuga Layout Kano, Nigeria
 Direct Sourcing Helpdesk: +234 (0) 802 799 5335 | info@ajubco.com
 --------------------------------------------------------------------------------
 
-Dear ${lead.name},
+Dear *${lead.name}*,
 
-Thank you for contacting the Sourcing Advisory Desk at AJUBCO Global Investment Nig Ltd. We have officially received your inquiry regarding "${lead.projectType}".
+Thank you for contacting the Sourcing Advisory Desk at AJUBCO Global Investment Nig Ltd. We have officially received your inquiry regarding *"${lead.projectType}"*.
 
-CUSTOMER INQUIRY BRIEF:
-- Prospective Client: ${lead.name}
+*CUSTOMER INQUIRY BRIEF:*
+- Prospective Client: *${lead.name}*
 - Email Registered: ${lead.email}
 - Contact Number: ${lead.phone}
-- Category Requested: ${lead.projectType}
-- Projected Budget (NGN): ${lead.budget || 'N/A'}
+- Category Requested: *${lead.projectType}*
+- Projected Budget (NGN): *₦${lead.budget || 'N/A'}*
 
-MESSAGE DETAILS:
-"${lead.message}"
+*MESSAGE DETAILS:*
+_"${lead.message}"_
 
-We are currently assessing your sourcing or construction parameters. A Certified Management Consultant (CMC) will contact you shortly on WhatsApp to coordinate.
+We are currently assessing your sourcing or construction parameters. A representative will contact you shortly on WhatsApp to coordinate.
 
 Sincerely,
 
-Operations & Corporate Sourcing Advisory Desk
+*Operations & Corporate Sourcing Advisory Desk*
 AJUBCO Global Investment Nig Ltd
-"Trust & Integrity is Our Pride"
+_"Trust & Integrity is Our Pride"_
 --------------------------------------------------------------------------------
 `;
       container.innerText = htmlTemplate;
-      showGlobalFeedback("Reply draft template populated below. Scroll down to preview.");
+
+      // Direct WhatsApp dynamic reply link generator
+      const formattedMessage = encodeURIComponent(htmlTemplate);
+      const rawPhone = lead.phone || "";
+      const numericPhone = rawPhone.replace(/\D/g, "");
+      const finalWaLink = `https://wa.me/${numericPhone.startsWith('0') ? '234' + numericPhone.slice(1) : numericPhone}?text=${formattedMessage}`;
+      
+      const waButton = document.getElementById('reply-whatsapp-btn');
+      if (waButton) {
+        waButton.setAttribute('onclick', `window.open('${finalWaLink}', '_blank')`);
+      }
+
+      showGlobalFeedback("Reply draft template populated below. Click 'Send on WhatsApp' to send.");
     };
 
     window.copyGeneratedReply = () => {
@@ -1823,6 +1881,7 @@ AJUBCO Global Investment Nig Ltd
       const title = sanitizeInput(document.getElementById('p-title').value);
       const category = sanitizeInput(document.getElementById('p-category').value);
       const image = sanitizeInput(document.getElementById('p-image').value) || "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png";
+      const videoUrl = sanitizeInput(document.getElementById('p-video').value);
       const location = sanitizeInput(document.getElementById('p-location').value);
       const desc = sanitizeInput(document.getElementById('p-desc').value);
 
@@ -1831,6 +1890,7 @@ AJUBCO Global Investment Nig Ltd
           title,
           category,
           image,
+          videoUrl,
           location,
           desc,
           timestamp: Date.now()
@@ -2030,17 +2090,21 @@ AJUBCO Global Investment Nig Ltd
       const icon = document.getElementById('video-playback-icon');
       const statusText = document.getElementById('playback-status-text');
       
-      if (isVideoPlaying) {
-        // Post mute/pause message safely to iframe wrapper
-        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        icon.setAttribute('data-lucide', 'play');
-        statusText.innerText = "Background Loop Paused";
-        isVideoPlaying = false;
-      } else {
-        iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-        icon.setAttribute('data-lucide', 'pause');
-        statusText.innerText = "Muted Background Loop Active";
-        isVideoPlaying = true;
+      try {
+        if (isVideoPlaying) {
+          // Post mute/pause message safely to iframe wrapper
+          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+          icon.setAttribute('data-lucide', 'play');
+          statusText.innerText = "Background Loop Paused";
+          isVideoPlaying = false;
+        } else {
+          iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+          icon.setAttribute('data-lucide', 'pause');
+          statusText.innerText = "Muted Background Loop Active";
+          isVideoPlaying = true;
+        }
+      } catch (err) {
+        console.warn("Iframe command interaction restricted due to origin protocol limitations.");
       }
       lucide.createIcons();
     }
@@ -2125,18 +2189,36 @@ AJUBCO Global Investment Nig Ltd
       setTimeout(startTypewriter, speed);
     }
 
+    // Advanced Stats Counter Animation mapping exact target values with smooth precision
     function animateNumericCounters() {
-      const counters = document.querySelectorAll('.counter-num');
+      const counters = document.querySelectorAll('.stat-counter');
       counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
+        const targetStr = counter.getAttribute('data-target');
+        const targetValue = parseFloat(targetStr);
+        const prefix = counter.getAttribute('data-prefix') || "";
+        const suffix = counter.getAttribute('data-suffix') || "";
+        const isDecimal = targetStr.includes('.');
+
+        let startValue = 0;
+        const duration = 2000; // Animation duration in milliseconds
+        const frameRate = 60;
+        const totalFrames = (duration / 1000) * frameRate;
+        const step = targetValue / totalFrames;
+        let currentFrame = 0;
+
         const updateCount = () => {
-          const current = +counter.innerText;
-          const increment = Math.ceil(target / 40);
-          if (current < target) {
-            counter.innerText = current + increment;
-            setTimeout(updateCount, 40);
+          if (currentFrame < totalFrames) {
+            startValue += step;
+            currentFrame++;
+            let formattedValue = isDecimal ? startValue.toFixed(1) : Math.ceil(startValue);
+            // Lock exact value on final frames
+            if (parseFloat(formattedValue) >= targetValue) {
+              formattedValue = targetStr;
+            }
+            counter.innerText = prefix + formattedValue + suffix;
+            requestAnimationFrame(updateCount);
           } else {
-            counter.innerText = target;
+            counter.innerText = prefix + targetStr + suffix;
           }
         };
         updateCount();
@@ -2231,6 +2313,36 @@ AJUBCO Global Investment Nig Ltd
       }
     }
 
+    // Dynamic Video Modal launcher
+    function launchVideoModal(title, url) {
+      const modal = document.getElementById('video-player-modal');
+      const modalTitle = document.getElementById('video-modal-title');
+      const iframe = document.getElementById('video-modal-iframe');
+
+      if (modal && iframe) {
+        modalTitle.innerText = title;
+        // Clean URL to handle potential Youtube video link conversions
+        let embedUrl = url;
+        if (url.includes("youtube.com/watch?v=")) {
+          embedUrl = url.replace("watch?v=", "embed/");
+        } else if (url.includes("youtu.be/")) {
+          embedUrl = url.replace("youtu.be/", "youtube.com/embed/");
+        }
+        iframe.src = embedUrl;
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeVideoPlayer() {
+      const modal = document.getElementById('video-player-modal');
+      const iframe = document.getElementById('video-modal-iframe');
+      if (modal && iframe) {
+        iframe.src = ""; // Stop video playback on close
+        modal.classList.add('hidden');
+      }
+    }
+
+    // Export globally for inline button actions
     window.navigateTo = navigateTo;
     window.switchAdminTab = switchAdminTab;
     window.handleAdminLogout = handleAdminLogout;
@@ -2238,6 +2350,8 @@ AJUBCO Global Investment Nig Ltd
     window.handleWhatsAppInitiate = handleWhatsAppInitiate;
     window.dismissNotification = dismissNotification;
     window.toggleVideoPlayback = toggleVideoPlayback;
+    window.launchVideoModal = launchVideoModal;
+    window.closeVideoPlayer = closeVideoPlayer;
 
   </script>
 
