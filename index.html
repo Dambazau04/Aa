@@ -8,23 +8,23 @@
   <link rel="icon" type="image/png" href="https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png">
 
   <!-- Primary SEO Meta Tags -->
-  <title>AJUBCO Global Investment Nig Ltd | Building Value & Industrial Solutions</title>
-  <meta name="description" content="AJUBCO Global Investment Nig Ltd (RC: 1235281) is a diversified holding company in Nigeria, specializing in Real Estate, Mechanized Agriculture, Industrial Manufacturing, and Global Procurement. Headquartered in Kano.">
-  <meta name="keywords" content="AJUBCO, AJUBCO Global Investment, Jafar Usman Abubakar, Mikail Jafar Usman, Kano Real Estate, Agribusiness Nigeria, Agricultural Implements Kano, Manufacturing Nigeria, RC 1235281, Kabuga Kano, FIRS compliant Nigeria, IMC-Nigeria Certified">
+  <title>AJUBCO Global Investment Nig Ltd | General Contracting, Investment & Multi‑Service Enterprise</title>
+  <meta name="description" content="AJUBCO Global Investment Nig Ltd is a diversified Nigerian company headquartered in Abuja. We offer General Contracting, Real Estate, Asset Management, Logistics, Agro‑Allied, Consultancy, and Oil & Gas services. Driven by integrity and innovation.">
+  <meta name="keywords" content="AJUBCO, AJUBCO Global Investment, Abuja contracting, real estate Abuja, logistics Nigeria, oil and gas services Nigeria, asset management, consultancy Nigeria, Wuse Market Road Abuja">
   <meta name="author" content="Abu-Abdurrahman CodeVerge Technology">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ajubco-df100.firebaseapp.com/">
   <meta property="og:title" content="AJUBCO Global Investment Nig Ltd">
-  <meta property="og:description" content="Official Portal of AJUBCO Global Investment Nig Ltd. Leading Real Estate, Mechanized Agribusiness, and Industrial Sourcing Partner in Nigeria.">
+  <meta property="og:description" content="Official Portal of AJUBCO Global Investment Nig Ltd. Trusted General Contracting, Real Estate, Asset Management, Logistics, Agro‑Allied, Consultancy, and Oil & Gas partner in Nigeria.">
   <meta property="og:image" content="https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://ajubco-df100.firebaseapp.com/">
   <meta property="twitter:title" content="AJUBCO Global Investment Nig Ltd">
-  <meta property="twitter:description" content="Providing robust Real Estate Development, Agribusiness structures, and customized Manufacturing across West Africa.">
+  <meta property="twitter:description" content="General Contracting, Real Estate, Asset Management, Logistics, Agro‑Allied, Consultancy, and Oil & Gas services across Nigeria.">
   <meta property="twitter:image" content="https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png">
 
   <!-- Structured Schema Markup (JSON-LD) -->
@@ -34,15 +34,14 @@
     "@type": "Corporation",
     "name": "AJUBCO Global Investment Nig Ltd",
     "alternateName": "AJUBCO GLOBAL",
-    "id": "https://ajubco-df100.firebaseapp.com/",
     "url": "https://ajubco-df100.firebaseapp.com/",
     "logo": "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "No 92 Kabuga Layout Kano",
-      "addressLocality": "Kano",
-      "addressRegion": "Kano State",
-      "postalCode": "700241",
+      "streetAddress": "92 Wuse Market Road, Area",
+      "addressLocality": "Abuja",
+      "addressRegion": "FCT",
+      "postalCode": "904101",
       "addressCountry": "NG"
     },
     "contactPoint": {
@@ -100,12 +99,8 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- GSAP Core -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
   <!-- Custom CSS overrides -->
   <style>
-    /* Premium elegant background glow with increased transparency */
     .hero-glow {
       background: radial-gradient(circle at 50% 50%, rgba(16, 24, 38, 0.35) 0%, rgba(10, 15, 26, 0.65) 100%);
     }
@@ -136,7 +131,10 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
-    /* Absolute background video containment with high visibility */
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to   { transform: translateX(0); opacity: 1; }
+    }
     .video-background-container {
       position: absolute;
       top: 0;
@@ -151,12 +149,12 @@
       top: 50%;
       left: 50%;
       width: 100vw;
-      height: 56.25vw; /* 16:9 aspect ratio */
+      height: 56.25vw;
       min-height: 100vh;
-      min-width: 177.77vh; /* 1.77 * height */
+      min-width: 177.77vh;
       transform: translate(-50%, -50%);
       pointer-events: none;
-      opacity: 0.9; /* Beautiful high-transparency visibility */
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -181,7 +179,7 @@
         <a href="#" onclick="navigateTo('home'); return false;" class="nav-link text-primary hover:text-gold transition-colors active-link py-1">Home</a>
         <a href="#" onclick="navigateTo('about'); return false;" class="nav-link text-mutedText hover:text-gold transition-colors py-1">About Us</a>
         <a href="#" onclick="navigateTo('services'); return false;" class="nav-link text-mutedText hover:text-gold transition-colors py-1">Services</a>
-        <a href="#" onclick="navigateTo('projects'); return false;" class="nav-link text-mutedText hover:text-gold transition-colors py-1">Projects & Assets</a>
+        <a href="#" onclick="navigateTo('projects'); return false;" class="nav-link text-mutedText hover:text-gold transition-colors py-1">Projects</a>
         <a href="#" onclick="navigateTo('reviews'); return false;" class="nav-link text-mutedText hover:text-gold transition-colors py-1">Reviews</a>
         <a href="#" onclick="navigateTo('blog'); return false;" class="nav-link text-mutedText hover:text-gold transition-colors py-1">Insights Feed</a>
         <a href="#" onclick="navigateTo('contact'); return false;" class="nav-link text-mutedText hover:text-gold transition-colors py-1">Contact</a>
@@ -220,7 +218,7 @@
         <a href="#" onclick="navigateTo('home'); return false;" class="mobile-nav-link text-lg font-semibold text-primary hover:text-gold py-1">Home</a>
         <a href="#" onclick="navigateTo('about'); return false;" class="mobile-nav-link text-lg font-semibold text-mutedText hover:text-gold py-1">About Us</a>
         <a href="#" onclick="navigateTo('services'); return false;" class="mobile-nav-link text-lg font-semibold text-mutedText hover:text-gold py-1">Services</a>
-        <a href="#" onclick="navigateTo('projects'); return false;" class="mobile-nav-link text-lg font-semibold text-mutedText hover:text-gold py-1">Projects & Assets</a>
+        <a href="#" onclick="navigateTo('projects'); return false;" class="mobile-nav-link text-lg font-semibold text-mutedText hover:text-gold py-1">Projects</a>
         <a href="#" onclick="navigateTo('reviews'); return false;" class="mobile-nav-link text-lg font-semibold text-mutedText hover:text-gold py-1">Reviews</a>
         <a href="#" onclick="navigateTo('blog'); return false;" class="mobile-nav-link text-lg font-semibold text-mutedText hover:text-gold py-1">Insights Feed</a>
         <a href="#" onclick="navigateTo('contact'); return false;" class="mobile-nav-link text-lg font-semibold text-mutedText hover:text-gold py-1">Contact</a>
@@ -240,7 +238,7 @@
         <a href="https://twitter.com" target="_blank" class="hover:text-gold"><i data-lucide="twitter" class="w-5 h-5"></i></a>
         <a href="https://instagram.com" target="_blank" class="hover:text-gold"><i data-lucide="instagram" class="w-5 h-5"></i></a>
       </div>
-      <p class="text-[10px] text-center text-mutedText">© 2026 AJUBCO Global. Fully FIRS & Joint Tax Board Audited.</p>
+      <p class="text-[10px] text-center text-mutedText">© 2026 AJUBCO Global. All rights reserved.</p>
     </div>
   </div>
 
@@ -252,7 +250,7 @@
       </div>
       <div class="flex-1">
         <h4 class="font-bold text-sm font-montserrat">👋 AJUBCO Support Desk</h4>
-        <p class="text-xs text-gray-300 mt-1">Need instant investment, procurement, or manufacturing advice? Chat with Jafar Usman now.</p>
+        <p class="text-xs text-gray-300 mt-1">Need immediate advice on contracting, real estate, or logistics? Chat with us now.</p>
         <div class="mt-3 flex items-center gap-2">
           <a href="https://wa.me/2348027995335" target="_blank" class="text-[11px] font-bold text-gold uppercase tracking-wider hover:underline">Launch Chat</a>
           <button onclick="dismissNotification()" class="text-[11px] text-gray-400 hover:text-white uppercase tracking-wider ml-4">Dismiss</button>
@@ -271,59 +269,41 @@
          HOME SECTION
          ============================================== -->
     <section id="page-home" class="page-view flex flex-col">
-      <!-- Background Video Implementation -->
       <div class="relative min-h-[92vh] flex items-center py-20 px-4 lg:px-8">
-        <!-- Embedded Secure Background Video Sourced from Shorts (using looping embed syntax) -->
         <div class="video-background-container">
           <iframe id="hero-yt-video" src="https://www.youtube.com/embed/-DHmsaE-5v4?autoplay=1&mute=1&loop=1&playlist=-DHmsaE-5v4&controls=0&showinfo=0&rel=0&iv_load_policy=3&cc_load_policy=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
         
-        <!-- Highly Transparent Glassmorphism Overlays to let background video shine clearly -->
         <div class="absolute inset-0 bg-primary/35 z-[1] pointer-events-none"></div>
         <div class="absolute inset-0 hero-glow z-[2] pointer-events-none bg-black/10"></div>
-        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/10 blur-[150px] rounded-full z-[2] pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           <div class="lg:col-span-8 space-y-6 text-white p-6 lg:p-10 rounded-3xl bg-black/35 backdrop-blur-sm shadow-xl" style="text-shadow: 0 4px 12px rgba(0,0,0,0.85);">
             <div class="inline-flex items-center gap-2 px-3 py-1 bg-gold/30 border border-gold/40 rounded-full text-gold text-xs font-bold tracking-wide font-montserrat">
               <span class="w-1.5 h-1.5 bg-gold rounded-full animate-ping"></span>
-              ESTABLISHED IN 2015 | RC: 1235281
+              HEADQUARTERED IN ABUJA, NIGERIA
             </div>
             
             <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight font-montserrat leading-tight text-white">
-              Investing in Growth,<br>
+              Building Trust,<br>
               <span class="text-gold" id="typewriter-headline"></span>
               <span class="typing-cursor text-gold"></span>
             </h1>
 
             <p class="text-gray-100 text-sm sm:text-lg leading-relaxed max-w-2xl font-medium">
-              AJUBCO Global Investment Nig Ltd is a verified multi-sector leader dealing in premium real estate holdings, mechanized agriculture networks, customizable agrochemical manufacturing, and global trade consultancies.
+              AJUBCO Global Investment Nig Ltd is a diversified enterprise delivering General Contracting, Real Estate, Asset Management, Logistics, Agro‑Allied, Consultancy, and Oil & Gas services with integrity and innovation.
             </p>
 
             <div class="flex flex-wrap gap-4 pt-2">
               <button onclick="navigateTo('services')" class="bg-gold hover:bg-gold-hover text-white font-semibold font-montserrat text-sm px-8 py-4 rounded-xl shadow-lg transition-transform hover:-translate-y-0.5">
-                Explore Core Services
+                Explore Our Services
               </button>
               <button onclick="navigateTo('projects')" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold font-montserrat text-sm px-8 py-4 rounded-xl backdrop-blur-sm transition-transform hover:-translate-y-0.5">
                 View Project Portfolio
               </button>
             </div>
-
-            <!-- Enhanced Playback Controls inside Hero -->
-            <div class="flex items-center gap-6 pt-4">
-              <div class="flex items-center gap-2">
-                <button onclick="toggleVideoPlayback()" id="video-playback-btn" class="w-12 h-12 rounded-full bg-gold/20 hover:bg-gold/30 flex items-center justify-center text-gold transition-all">
-                  <i data-lucide="pause" id="video-playback-icon" class="w-5 h-5"></i>
-                </button>
-                <div class="text-xs">
-                  <p class="font-bold text-white text-sm" id="playback-status-text">Muted Background Loop Active</p>
-                  <p class="text-gray-400">Press button to pause or play background showcase</p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <!-- Quick statistics verification badge (Data matching official JTB / CAC Certificate) -->
           <div class="lg:col-span-4 relative flex justify-center">
             <div class="relative w-full max-w-sm bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 text-white space-y-4">
               <div class="flex items-center gap-3">
@@ -331,23 +311,23 @@
                   <i data-lucide="shield-check" class="w-6 h-6"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-sm">CAC & Joint Tax Board Audited</h4>
-                  <p class="text-xs text-gray-300">Verified Compliance Records</p>
+                  <h4 class="font-bold text-sm">CAC & FIRS Compliant</h4>
+                  <p class="text-xs text-gray-300">Registered Business (RC: 1235281)</p>
                 </div>
               </div>
               <p class="text-xs text-gray-300 leading-relaxed">
-                Directly certified by the Corporate Affairs Commission and Joint Tax Board. Proud members of the African Business Club and IMC-Nigeria.
+                Fully certified by the Corporate Affairs Commission and tax compliant. Proud member of the African Business Club and IMC‑Nigeria.
               </p>
               <div class="border-t border-white/10 pt-4 flex justify-between items-center text-xs">
-                <span>FOUNDING: 12 JAN 2015</span>
-                <span class="text-gold font-bold">KABUGA METROPOLIS</span>
+                <span>FOUNDING: 2015</span>
+                <span class="text-gold font-bold">ABUJA, NIGERIA</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Verified Financial/Operational Statistics Row (Actual values extracted from FIRS profile with smooth writing animations) -->
+      <!-- Statistics Row -->
       <div class="bg-primary text-white py-12 px-4 lg:px-8 border-y border-gold/15">
         <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div class="space-y-2">
@@ -360,19 +340,19 @@
             <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold tracking-tight font-montserrat">
               <span class="stat-counter" data-prefix="" data-target="100" data-suffix="%">0</span>
             </div>
-            <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Tax & Pension Clearance</p>
+            <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Tax & Regulatory Clearance</p>
           </div>
           <div class="space-y-2">
             <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold tracking-tight font-montserrat">
               <span class="stat-counter" data-prefix="" data-target="11" data-suffix="+ Years">0</span>
             </div>
-            <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Trade Expertise</p>
+            <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Industry Expertise</p>
           </div>
           <div class="space-y-2">
             <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold tracking-tight font-montserrat">
               <span class="stat-counter" data-prefix="" data-target="30" data-suffix="+">0</span>
             </div>
-            <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Active Machinery Inverters</p>
+            <p class="text-xs text-gray-400 font-montserrat tracking-widest uppercase">Active Contracts</p>
           </div>
         </div>
       </div>
@@ -381,9 +361,9 @@
       <div class="py-16 lg:py-24 px-4 lg:px-8 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div class="lg:col-span-1 space-y-6">
           <span class="text-xs font-bold tracking-widest text-gold uppercase font-montserrat">OPERATIONAL CAPACITY</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary font-montserrat">A Dynamic Powerhouse of Local Trade & Industry</h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary font-montserrat">A Diversified Enterprise with Proven Impact</h2>
           <p class="text-mutedText leading-relaxed">
-            AJUBCO Global Investment Nig Ltd drives scalable initiatives in partnership with major institutions including the World Bank, Islamic Development Bank, and NGOs. We bridge critical gaps in mechanized agriculture, housing projects, and industrial manufacturing.
+            From general contracting to oil & gas support, AJUBCO delivers scalable solutions. Our experienced team partners with public institutions, private investors, and international bodies to drive growth.
           </p>
           <button onclick="navigateTo('about')" class="inline-flex items-center gap-2 text-gold font-bold hover:text-gold-hover transition-colors text-sm font-montserrat">
             See Company Timeline <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -391,31 +371,28 @@
         </div>
 
         <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <!-- Card 1 (Agribusiness & Agrochemicals) -->
           <div class="bg-lightGray hover:bg-white hover:shadow-xl p-8 rounded-2xl border border-gray-100 transition-all duration-300 group">
             <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 group-hover:bg-gold group-hover:text-white transition-all">
-              <i data-lucide="sprout" class="w-6 h-6"></i>
+              <i data-lucide="briefcase" class="w-6 h-6"></i>
             </div>
-            <h3 class="font-bold text-lg mb-3 font-montserrat">Agro-Allied Systems</h3>
-            <p class="text-xs text-mutedText leading-relaxed">From solar tube-wells to green houses and chemical distributions, we supply reliable frameworks for modern food security.</p>
+            <h3 class="font-bold text-lg mb-3 font-montserrat">General Contracting</h3>
+            <p class="text-xs text-mutedText leading-relaxed">Reliable project execution for public and private sector contracts, on time and within budget.</p>
           </div>
 
-          <!-- Card 2 (Premium Infrastructure & Real Estate) -->
           <div class="bg-lightGray hover:bg-white hover:shadow-xl p-8 rounded-2xl border border-gray-100 transition-all duration-300 group">
             <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 group-hover:bg-gold group-hover:text-white transition-all">
-              <i data-lucide="building" class="w-6 h-6"></i>
+              <i data-lucide="home" class="w-6 h-6"></i>
             </div>
-            <h3 class="font-bold text-lg mb-3 font-montserrat">Real Estate & Works</h3>
-            <p class="text-xs text-mutedText leading-relaxed">Expert execution of building layouts, complex demolitions, borehole drilling, and elite structural developments.</p>
+            <h3 class="font-bold text-lg mb-3 font-montserrat">Real Estate Development</h3>
+            <p class="text-xs text-mutedText leading-relaxed">Property acquisition, construction, and facility management creating lasting value for investors.</p>
           </div>
 
-          <!-- Card 3 (New: Industrial Manufacturing) -->
           <div class="bg-lightGray hover:bg-white hover:shadow-xl p-8 rounded-2xl border border-gray-100 transition-all duration-300 group">
             <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 group-hover:bg-gold group-hover:text-white transition-all">
-              <i data-lucide="factory" class="w-6 h-6"></i>
+              <i data-lucide="truck" class="w-6 h-6"></i>
             </div>
-            <h3 class="font-bold text-lg mb-3 font-montserrat">Industrial Manufacturing</h3>
-            <p class="text-xs text-mutedText leading-relaxed">Fabrication of specialized agricultural implements, fertilizer formulations, solar water machinery, and structural parts.</p>
+            <h3 class="font-bold text-lg mb-3 font-montserrat">Logistics & Haulage</h3>
+            <p class="text-xs text-mutedText leading-relaxed">Efficient transportation and supply chain solutions to move goods safely across Nigeria.</p>
           </div>
         </div>
       </div>
@@ -427,41 +404,39 @@
     <section id="page-about" class="page-view hidden py-12 px-4 lg:px-8 max-w-7xl mx-auto w-full space-y-16">
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold tracking-widest text-gold uppercase font-montserrat">ABOUT US</span>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-montserrat text-primary">Uncompromising Integrity, Unlocking Value</h1>
-        <p class="text-mutedText">Founded under the leadership of Abubakar Jafar Usman and Mikail Jafar Usman, we bring stable solutions to public and private sectors.</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-montserrat text-primary">Integrity, Innovation & Sustainable Growth</h1>
+        <p class="text-mutedText">Discover the vision and mission that drive our diversified operations across Nigeria.</p>
       </div>
 
-      <!-- Real HQ / Company Building Block -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-lightGray rounded-3xl p-8 lg:p-12 border border-gray-150">
         <div class="lg:col-span-6 space-y-6">
-          <h2 class="text-2xl font-bold font-montserrat text-primary">Headquarters & Corporate Footprint</h2>
+          <h2 class="text-2xl font-bold font-montserrat text-primary">Head Office & Corporate Footprint</h2>
           <p class="text-mutedText leading-relaxed text-sm">
-            Our corporate headquarters located at <strong>No 92 Kabuga Layout Kano, Nigeria</strong> serves as our primary operational hub. Certified by the <strong>Joint Tax Board</strong> and verified as fully compliant with the National Pension Commission (PenCom) and NSITF guidelines. 
+            Our headquarters is strategically located at <strong>92 Wuse Market Road, Area, Abuja, 904101, Nigeria.</strong> We are registered with the Corporate Affairs Commission (RC: 1235281) and maintain full tax compliance.
           </p>
           <p class="text-mutedText leading-relaxed text-sm">
-            AJUBCO is officially certified as a member of the **African Business Club** and holds a **CMC Certification** from the **Institute of Management Consultants - Nigeria**, validating our capacity to perform advisory programs that comply with international standards.
+            AJUBCO Global Investment Nig Ltd holds a CMC Certification from the Institute of Management Consultants – Nigeria, validating our capacity to deliver world‑class advisory services.
           </p>
           
           <div class="grid grid-cols-2 gap-4 text-xs font-montserrat text-primary">
             <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-              <span class="block text-mutedText mb-1">Company Seal</span>
-              <strong class="text-sm">RC: 1235281</strong>
+              <span class="block text-mutedText mb-1">RC Number</span>
+              <strong class="text-sm">1235281</strong>
             </div>
             <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-              <span class="block text-mutedText mb-1">Registered Address</span>
-              <strong class="text-sm">No 92 Kabuga Kano</strong>
+              <span class="block text-mutedText mb-1">Headquarters</span>
+              <strong class="text-sm">Abuja, FCT</strong>
             </div>
           </div>
         </div>
 
-        <!-- Professional layout containing the real company building image -->
         <div class="lg:col-span-6">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-square max-h-[420px] mx-auto bg-primary">
-            <img src="https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png" alt="AJUBCO Headquarters Kano Building" class="w-full h-full object-cover">
+            <img src="https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png" alt="AJUBCO Headquarters Abuja" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent flex items-end p-6">
               <div>
                 <span class="text-xs text-gold font-bold tracking-widest uppercase">AJUBCO Complex</span>
-                <p class="text-white font-semibold text-sm">No 92 Kabuga Layout Kano, Nigeria</p>
+                <p class="text-white font-semibold text-sm">92 Wuse Market Road, Area, Abuja</p>
               </div>
             </div>
           </div>
@@ -477,7 +452,7 @@
           <div>
             <h3 class="font-bold text-xl font-montserrat mb-2">Our Vision</h3>
             <p class="text-sm text-mutedText leading-relaxed">
-              To establish AJUBCO Global as a regional powerhouse in sub-Saharan Africa across investment sectors, building absolute trust through transparency, legal compliance, and outstanding project quality.
+              To become one of Nigeria’s leading diversified investment and contracting companies, delivering world‑class services that create sustainable value.
             </p>
           </div>
         </div>
@@ -489,7 +464,7 @@
           <div>
             <h3 class="font-bold text-xl font-montserrat mb-2">Our Mission</h3>
             <p class="text-sm text-mutedText leading-relaxed">
-              To reliably deploy development projects in real estate, agribusiness, and industrial manufacturing using modern technology, strategic public partnerships, and skilled, highly trained human resources.
+              To deliver reliable, innovative, and customer‑focused solutions through professionalism, modern technology, and strategic partnerships.
             </p>
           </div>
         </div>
@@ -503,114 +478,126 @@
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold tracking-widest text-gold uppercase font-montserrat">WHAT WE DO</span>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-montserrat text-primary">Diversified Corporate Services</h1>
-        <p class="text-mutedText">Extracted from our official corporate register. We serve public agencies and private investments.</p>
+        <p class="text-mutedText">Seven core sectors driving our integrated business model.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1: Real Estate & Demolitions -->
+        <!-- Service cards updated with new services -->
+        <div class="bg-white hover:border-gold hover:shadow-2xl border border-gray-150 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 bg-gold/10 text-gold rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
+              <i data-lucide="briefcase" class="w-7 h-7"></i>
+            </div>
+            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">General Contracting</h3>
+            <p class="text-sm text-mutedText leading-relaxed">
+              Reliable execution of public and private sector projects with full project management and quality assurance.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-gray-100">
+            <a href="https://wa.me/2348027995335" target="_blank" class="text-xs font-bold text-gold flex items-center gap-1">
+              Inquire <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
         <div class="bg-white hover:border-gold hover:shadow-2xl border border-gray-150 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div class="w-14 h-14 bg-gold/10 text-gold rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
               <i data-lucide="home" class="w-7 h-7"></i>
             </div>
-            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Real Estate & Construction</h3>
+            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Real Estate & Property</h3>
             <p class="text-sm text-mutedText leading-relaxed">
-              We carry out building constructions, complex demolitions, drainage system installations, and borehole drilling. Certified for large-scale development schemes.
+              Land acquisition, building construction, facility management, and property investment opportunities.
             </p>
           </div>
           <div class="pt-6 mt-6 border-t border-gray-100">
             <a href="https://wa.me/2348027995335" target="_blank" class="text-xs font-bold text-gold flex items-center gap-1">
-              Consult on Works <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              Inquire <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
           </div>
         </div>
 
-        <!-- Service 2: Mechanized Agribusiness -->
         <div class="bg-white hover:border-gold hover:shadow-2xl border border-gray-150 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div class="w-14 h-14 bg-gold/10 text-gold rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
-              <i data-lucide="tractor" class="w-7 h-7"></i>
+              <i data-lucide="trending-up" class="w-7 h-7"></i>
             </div>
-            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Agribusiness & Machinery</h3>
+            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Asset & Investment Management</h3>
             <p class="text-sm text-mutedText leading-relaxed">
-              Comprehensive agricultural support, including modern farming machinery, fertilizer distributions, agrochemical supplies, and poultry and aquaculture infrastructure.
+              Strategic investment planning, asset management, and wealth creation solutions for long‑term stability.
             </p>
           </div>
           <div class="pt-6 mt-6 border-t border-gray-100">
             <a href="https://wa.me/2348027995335" target="_blank" class="text-xs font-bold text-gold flex items-center gap-1">
-              Consult on Agribusiness <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              Inquire <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
           </div>
         </div>
 
-        <!-- Service 3: NEW Industrial Manufacturing -->
-        <div class="bg-white hover:border-gold hover:shadow-2xl border border-gray-150 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group">
-          <div>
-            <div class="w-14 h-14 bg-gold/10 text-gold rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
-              <i data-lucide="factory" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Industrial Manufacturing</h3>
-            <p class="text-sm text-mutedText leading-relaxed">
-              Equipped to manufacture high-demand agricultural implements, customize parts, process packaged items, and formulate safe agrochemical fertilizers.
-            </p>
-          </div>
-          <div class="pt-6 mt-6 border-t border-gray-100">
-            <a href="https://wa.me/2348027995335" target="_blank" class="text-xs font-bold text-gold flex items-center gap-1">
-              Consult on Manufacturing <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Service 4: General Merchandise -->
-        <div class="bg-white hover:border-gold hover:shadow-2xl border border-gray-150 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group">
-          <div>
-            <div class="w-14 h-14 bg-gold/10 text-gold rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
-              <i data-lucide="shopping-cart" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">General Contract & Sourcing</h3>
-            <p class="text-sm text-mutedText leading-relaxed">
-              We operate as import and export trade intermediates, sourcing industrial equipment, diagnostic kits, solar water pumping machines, and custom commodities.
-            </p>
-          </div>
-          <div class="pt-6 mt-6 border-t border-gray-100">
-            <a href="https://wa.me/2348027995335" target="_blank" class="text-xs font-bold text-gold flex items-center gap-1">
-              Inquire Sourcing <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Service 5: Transport & Logistics -->
         <div class="bg-white hover:border-gold hover:shadow-2xl border border-gray-150 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div class="w-14 h-14 bg-gold/10 text-gold rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
               <i data-lucide="truck" class="w-7 h-7"></i>
             </div>
-            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Road Transport & Logistics</h3>
+            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Logistics & Haulage</h3>
             <p class="text-sm text-mutedText leading-relaxed">
-              Road logistics networks designed for safe carriage of industrial cargo, agricultural harvests, and machinery across West Africa.
+              Efficient transportation of goods and materials across Nigeria with modern fleet and tracking.
             </p>
           </div>
           <div class="pt-6 mt-6 border-t border-gray-100">
             <a href="https://wa.me/2348027995335" target="_blank" class="text-xs font-bold text-gold flex items-center gap-1">
-              Book Cargo Transport <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              Inquire <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
           </div>
         </div>
 
-        <!-- Service 6: Healthcare Procurement -->
         <div class="bg-white hover:border-gold hover:shadow-2xl border border-gray-150 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div class="w-14 h-14 bg-gold/10 text-gold rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
-              <i data-lucide="shield-alert" class="w-7 h-7"></i>
+              <i data-lucide="sprout" class="w-7 h-7"></i>
             </div>
-            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Healthcare Procurement</h3>
+            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Agro‑Allied Services</h3>
             <p class="text-sm text-mutedText leading-relaxed">
-              Supplying critical life support monitors, hemodialysis machines, and hospital beds. We conduct emergency medical training and community outreach programs.
+              Agricultural development support, supply chain services, and agribusiness partnerships.
             </p>
           </div>
           <div class="pt-6 mt-6 border-t border-gray-100">
             <a href="https://wa.me/2348027995335" target="_blank" class="text-xs font-bold text-gold flex items-center gap-1">
-              Inquire Medical Sourcing <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              Inquire <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white hover:border-gold hover:shadow-2xl border border-gray-150 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 bg-gold/10 text-gold rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
+              <i data-lucide="clipboard-check" class="w-7 h-7"></i>
+            </div>
+            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Consultancy Services</h3>
+            <p class="text-sm text-mutedText leading-relaxed">
+              Business development, project planning, operational management, and strategic advisory.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-gray-100">
+            <a href="https://wa.me/2348027995335" target="_blank" class="text-xs font-bold text-gold flex items-center gap-1">
+              Inquire <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white hover:border-gold hover:shadow-2xl border border-gray-150 p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 bg-gold/10 text-gold rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
+              <i data-lucide="droplets" class="w-7 h-7"></i>
+            </div>
+            <h3 class="font-bold text-xl font-montserrat mb-3 text-primary">Oil & Gas Services</h3>
+            <p class="text-sm text-mutedText leading-relaxed">
+              Industrial support, equipment supply, and operational services within the energy sector.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-gray-100">
+            <a href="https://wa.me/2348027995335" target="_blank" class="text-xs font-bold text-gold flex items-center gap-1">
+              Inquire <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
           </div>
         </div>
@@ -618,31 +605,29 @@
     </section>
 
     <!-- ==============================================
-         PROJECTS SECTION
+         PROJECTS SECTION  (unchanged structurally)
          ============================================== -->
     <section id="page-projects" class="page-view hidden py-12 px-4 lg:px-8 max-w-7xl mx-auto w-full space-y-12">
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold tracking-widest text-gold uppercase font-montserrat">PORTFOLIO</span>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-montserrat text-primary">Our Track Record</h1>
-        <p class="text-mutedText">Browse through our verified portfolio, including real estate developments, agricultural systems, and manufacturing solutions.</p>
+        <p class="text-mutedText">Browse through our verified portfolio of completed and ongoing projects.</p>
       </div>
 
-      <!-- Live Search & Interactive Filtering -->
       <div class="flex flex-col md:flex-row items-center justify-between gap-4 bg-lightGray p-4 rounded-2xl border border-gray-200">
         <div class="flex flex-wrap gap-2" id="project-filters-container">
           <button onclick="filterProjects('all')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-gold text-white transition-all">All</button>
+          <button onclick="filterProjects('Contracting')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-mutedText hover:text-primary hover:bg-white/80 transition-all">Contracting</button>
           <button onclick="filterProjects('Real Estate')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-mutedText hover:text-primary hover:bg-white/80 transition-all">Real Estate</button>
-          <button onclick="filterProjects('Agriculture')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-mutedText hover:text-primary hover:bg-white/80 transition-all">Agribusiness</button>
-          <button onclick="filterProjects('Manufacturing')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-mutedText hover:text-primary hover:bg-white/80 transition-all">Manufacturing</button>
-          <button onclick="filterProjects('Sourcing')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-mutedText hover:text-primary hover:bg-white/80 transition-all">Sourcing</button>
+          <button onclick="filterProjects('Logistics')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-mutedText hover:text-primary hover:bg-white/80 transition-all">Logistics</button>
+          <button onclick="filterProjects('Consultancy')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-mutedText hover:text-primary hover:bg-white/80 transition-all">Consultancy</button>
         </div>
         <div class="relative w-full md:w-64">
           <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-mutedText"></i>
-          <input type="text" id="project-search-input" onkeyup="searchProjects()" placeholder="Search project portfolio..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-gray-200 text-xs focus:ring-1 focus:ring-gold focus:outline-none">
+          <input type="text" id="project-search-input" onkeyup="searchProjects()" placeholder="Search projects..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-gray-200 text-xs focus:ring-1 focus:ring-gold focus:outline-none">
         </div>
       </div>
 
-      <!-- Live Project Cards Grid -->
       <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Generated Dynamically -->
       </div>
@@ -655,16 +640,15 @@
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold tracking-widest text-gold uppercase font-montserrat">TESTIMONIALS</span>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-montserrat text-primary">Client Experiences</h1>
-        <p class="text-mutedText">What people say about our services, agricultural installations, and real estate solutions.</p>
+        <p class="text-mutedText">What our partners say about our services.</p>
       </div>
 
       <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Rendered dynamically -->
       </div>
 
-      <!-- Add Testimonial Form -->
       <div class="bg-lightGray p-8 rounded-3xl max-w-2xl mx-auto border border-gray-100 shadow-sm">
-        <h3 class="text-xl font-bold font-montserrat mb-4 text-center text-primary">Post Feedback</h3>
+        <h3 class="text-xl font-bold font-montserrat mb-4 text-center text-primary">Share Your Feedback</h3>
         <form id="add-testimonial-form" onsubmit="handleTestimonialSubmit(event)" class="space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -673,7 +657,7 @@
             </div>
             <div>
               <label class="block text-xs font-bold uppercase text-mutedText mb-1">Company & Designation</label>
-              <input type="text" id="review-title" placeholder="e.g. Executive Director, Apex" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-gold">
+              <input type="text" id="review-title" placeholder="e.g. Executive Director" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-gold">
             </div>
           </div>
           <div>
@@ -702,7 +686,7 @@
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold tracking-widest text-gold uppercase font-montserrat">UPDATES & TIMELINE</span>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-montserrat text-primary">Insights & Feed</h1>
-        <p class="text-mutedText">Read the latest community news, industrial launches, and agribusiness updates.</p>
+        <p class="text-mutedText">Latest company news, project launches, and industry updates.</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -710,11 +694,10 @@
           <!-- Dynamically populated -->
         </div>
 
-        <!-- Sidebar -->
         <div class="space-y-6">
           <div class="bg-primary text-white p-8 rounded-3xl space-y-4 border border-gold/20">
-            <h3 class="text-xl font-bold font-montserrat text-gold">Agribusiness Updates</h3>
-            <p class="text-xs text-gray-300 leading-relaxed">Subscribe to stay updated with specialized agricultural developments and new inventory releases.</p>
+            <h3 class="text-xl font-bold font-montserrat text-gold">Stay Updated</h3>
+            <p class="text-xs text-gray-300 leading-relaxed">Subscribe to receive news on our diversified services and new opportunities.</p>
             <form onsubmit="handleNewsletter(event)" class="space-y-3">
               <input type="email" id="news-email" required placeholder="your.email@example.com" class="w-full px-4 py-3 bg-white/10 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gold border border-white/10">
               <button type="submit" class="w-full bg-gold hover:bg-gold-hover text-white text-xs font-bold uppercase py-3 rounded-xl tracking-wider transition-all">Subscribe Now</button>
@@ -722,17 +705,17 @@
           </div>
 
           <div class="bg-white p-6 rounded-3xl border border-gray-200 space-y-4">
-            <h3 class="font-bold font-montserrat text-sm uppercase tracking-wider text-primary">Certified Board of Directors</h3>
+            <h3 class="font-bold font-montserrat text-sm uppercase tracking-wider text-primary">Management Team</h3>
             <div class="space-y-4">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold text-xs font-bold">AJ</div>
+                <div class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold text-xs font-bold">AU</div>
                 <div>
                   <h4 class="font-bold text-xs text-primary">Abubakar Jafar Usman</h4>
                   <p class="text-[10px] text-mutedText">Chairman / Managing Director</p>
                 </div>
               </div>
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold text-xs font-bold">MJ</div>
+                <div class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold text-xs font-bold">MU</div>
                 <div>
                   <h4 class="font-bold text-xs text-primary">Mikail Jafar Usman</h4>
                   <p class="text-[10px] text-mutedText">Director</p>
@@ -751,21 +734,21 @@
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold tracking-widest text-gold uppercase font-montserrat">CONTACT US</span>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-montserrat text-primary">Get In Touch</h1>
-        <p class="text-mutedText">Submit inquiries, request consultancy, or book a physical project inspection.</p>
+        <p class="text-mutedText">Reach out for inquiries, partnerships, or project consultations.</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div class="lg:col-span-5 space-y-8">
           <div class="bg-primary text-white p-8 rounded-3xl space-y-6 border border-gold/20">
-            <h3 class="text-2xl font-bold font-montserrat text-gold font-montserrat">Kano Head Office</h3>
+            <h3 class="text-2xl font-bold font-montserrat text-gold">Abuja Head Office</h3>
             <p class="text-sm text-gray-300 leading-relaxed">
-              Consult on works, view blueprints, or request detailed layout documentations of active holdings.
+              Visit our office or get in touch via phone or WhatsApp.
             </p>
 
             <div class="space-y-4 text-sm font-montserrat">
               <div class="flex items-start gap-3">
                 <i data-lucide="map-pin" class="w-5 h-5 text-gold mt-1 shrink-0"></i>
-                <p class="text-xs text-gray-300">No 92 Kabuga Layout Kano, Kano State Nigeria</p>
+                <p class="text-xs text-gray-300">92 Wuse Market Road, Area, Abuja, 904101, Nigeria</p>
               </div>
               <div class="flex items-start gap-3">
                 <i data-lucide="phone" class="w-5 h-5 text-gold mt-1 shrink-0"></i>
@@ -779,13 +762,13 @@
           </div>
 
           <div class="rounded-3xl overflow-hidden shadow-md h-64 border border-gray-200">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15610.155986877028!2d8.483980315367352!3d11.993077303038666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae772e2cfc235d%3A0xe744e8ec06df0dfd!2sKabuga%2C%20Kano!5e0!3m2!1sen!2sng!4v1716315000000!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.231706188343!2d7.48765331478488!3d9.057893093508088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a0b7f5c5d1d%3A0xbef6e4e7da98a12f!2sWuse%20Market%2C%20Abuja!5e0!3m2!1sen!2sng!4v1716315000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 
         <div class="lg:col-span-7 bg-lightGray p-8 lg:p-12 rounded-3xl border border-gray-200 shadow-sm">
-          <h3 class="text-2xl font-bold font-montserrat text-primary mb-2">Portfolio Registration</h3>
-          <p class="text-sm text-mutedText mb-8">Enter your project requirements to initiate tracking with our operations team.</p>
+          <h3 class="text-2xl font-bold font-montserrat text-primary mb-2">Submit an Inquiry</h3>
+          <p class="text-sm text-mutedText mb-8">We'll get back to you within 24 hours.</p>
 
           <form id="contact-submission-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -805,13 +788,15 @@
                 <input type="tel" id="contact-phone" required class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-gold" placeholder="+234">
               </div>
               <div>
-                <label class="block text-xs font-bold uppercase text-mutedText mb-1">Project Category Interested</label>
+                <label class="block text-xs font-bold uppercase text-mutedText mb-1">Service Interest</label>
                 <select id="contact-project-type" class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-gold">
+                  <option value="General Contracting">General Contracting</option>
                   <option value="Real Estate">Real Estate Development</option>
-                  <option value="Agriculture">Agriculture & Tubewells</option>
-                  <option value="Manufacturing">Manufacturing & Implement Fabrication</option>
-                  <option value="Sourcing">General Sourcing & Trading</option>
-                  <option value="Consultancy">Enterprise Advisory</option>
+                  <option value="Asset Management">Asset & Investment Management</option>
+                  <option value="Logistics">Logistics & Haulage</option>
+                  <option value="Agro-Allied">Agro‑Allied Services</option>
+                  <option value="Consultancy">Consultancy Services</option>
+                  <option value="Oil & Gas">Oil & Gas Services</option>
                 </select>
               </div>
             </div>
@@ -822,8 +807,8 @@
             </div>
 
             <div>
-              <label class="block text-xs font-bold uppercase text-mutedText mb-1">Detailed Inquiry Details</label>
-              <textarea id="contact-message" rows="4" required class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-gold" placeholder="Include specifics, locations, or machinery parameters of interest..."></textarea>
+              <label class="block text-xs font-bold uppercase text-mutedText mb-1">Detailed Inquiry</label>
+              <textarea id="contact-message" rows="4" required class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-gold" placeholder="Provide specifics about your project or requirement..."></textarea>
             </div>
 
             <button type="submit" class="w-full bg-gold hover:bg-gold-hover text-white font-semibold font-montserrat py-4 rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
@@ -839,12 +824,11 @@
          ============================================== -->
     <section id="page-admin" class="page-view hidden py-12 px-4 lg:px-8 max-w-7xl mx-auto w-full">
       
-      <!-- Login Card -->
       <div id="admin-login-card" class="max-w-md mx-auto bg-lightGray p-8 rounded-3xl border border-gray-200 shadow-xl space-y-6">
         <div class="text-center">
           <i data-lucide="shield-alert" class="w-12 h-12 text-gold mx-auto mb-3"></i>
           <h2 class="text-2xl font-bold font-montserrat">AJUBCO Admin Login</h2>
-          <p class="text-xs text-mutedText mt-1">Authorized corporate access only. Logs verified continuously.</p>
+          <p class="text-xs text-mutedText mt-1">Authorized corporate access only.</p>
         </div>
 
         <form id="admin-login-form" onsubmit="handleAdminLogin(event)" class="space-y-4">
@@ -877,7 +861,6 @@
           </button>
         </div>
 
-        <!-- Dashboard Metrics -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-lightGray p-6 rounded-2xl border border-gray-200 flex items-center justify-between">
             <div>
@@ -909,7 +892,6 @@
           </div>
         </div>
 
-        <!-- Management Tabs -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div class="lg:col-span-3 space-y-2">
             <button onclick="switchAdminTab('leads')" id="btn-tab-leads" class="w-full text-left p-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center gap-2 bg-gold text-white shadow-md transition-all">
@@ -927,14 +909,13 @@
           </div>
 
           <div class="lg:col-span-9 bg-lightGray p-6 rounded-3xl border border-gray-200">
-            <!-- TAB 1: Leads and custom Template Generator -->
+            <!-- TAB 1: Leads -->
             <div id="admin-tab-leads" class="space-y-6">
               <div class="flex items-center justify-between border-b border-gray-200 pb-3">
                 <h3 class="font-bold text-lg font-montserrat">Inquiries Leads</h3>
-                <span class="text-xs text-mutedText">Read and respond</span>
+                <span class="text-xs text-mutedText">Manage customer inquiries</span>
               </div>
               
-              <!-- Responsive Table -->
               <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse text-xs">
                   <thead>
@@ -953,12 +934,11 @@
                 </table>
               </div>
 
-              <!-- Reply Template Generator Block (XSS Clean template preview) -->
               <div id="reply-generator-block" class="hidden bg-white p-6 rounded-2xl border border-gray-200 space-y-4">
                 <div class="flex justify-between items-center">
-                  <h4 class="font-bold text-xs uppercase tracking-widest text-gold font-montserrat">Interactive Message Reply Preview</h4>
+                  <h4 class="font-bold text-xs uppercase tracking-widest text-gold font-montserrat">Reply Template</h4>
                   <div class="flex gap-2">
-                    <button id="reply-whatsapp-btn" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-[10px] font-bold inline-flex items-center gap-1">
+                    <button id="reply-whatsapp-btn" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-[10px] font-bold inline-flex items-center gap-1">
                       <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Send on WhatsApp
                     </button>
                     <button onclick="copyGeneratedReply()" class="bg-primary hover:bg-black text-white px-3 py-1 rounded text-[10px] font-bold inline-flex items-center gap-1">
@@ -967,9 +947,8 @@
                   </div>
                 </div>
                 
-                <!-- Stylized Email Reply template -->
                 <div id="reply-container-element" class="p-6 bg-lightGray border border-gray-300 rounded-xl space-y-4 font-mono text-xs select-all text-gray-800">
-                  <!-- Generated Template goes here -->
+                  <!-- Generated Template -->
                 </div>
               </div>
             </div>
@@ -977,53 +956,50 @@
             <!-- TAB 2: PROJECTS FORM -->
             <div id="admin-tab-projects" class="hidden space-y-6">
               <div class="flex items-center justify-between border-b border-gray-200 pb-3">
-                <h3 class="font-bold text-lg font-montserrat">Manage Project Portfolio</h3>
-                <span class="text-xs text-gold font-bold">Add Portfolio Entry</span>
+                <h3 class="font-bold text-lg font-montserrat">Manage Portfolio</h3>
+                <span class="text-xs text-gold font-bold">Add Entry</span>
               </div>
               <form id="admin-project-form" onsubmit="handleCreateProject(event)" class="space-y-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-xs font-bold text-mutedText uppercase mb-1">Project Name / Title</label>
+                    <label class="block text-xs font-bold text-mutedText uppercase mb-1">Project Title</label>
                     <input type="text" id="p-title" required class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
                   </div>
                   <div>
                     <label class="block text-xs font-bold text-mutedText uppercase mb-1">Category</label>
                     <select id="p-category" class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
+                      <option value="Contracting">General Contracting</option>
                       <option value="Real Estate">Real Estate</option>
-                      <option value="Agriculture">Agriculture</option>
-                      <option value="Manufacturing">Manufacturing</option>
-                      <option value="Sourcing">Sourcing</option>
+                      <option value="Logistics">Logistics</option>
+                      <option value="Consultancy">Consultancy</option>
                     </select>
                   </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-xs font-bold text-mutedText uppercase mb-1">Project Image URL</label>
+                    <label class="block text-xs font-bold text-mutedText uppercase mb-1">Image URL</label>
                     <input type="url" id="p-image" placeholder="https://i.postimg.cc/..." class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
                   </div>
                   <div>
-                    <label class="block text-xs font-bold text-mutedText uppercase mb-1">Project Video URL (Direct Embed Link)</label>
+                    <label class="block text-xs font-bold text-mutedText uppercase mb-1">Video URL (embed)</label>
                     <input type="url" id="p-video" placeholder="https://www.youtube.com/embed/..." class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
                   </div>
                 </div>
-                <div class="grid grid-cols-1 gap-4">
-                  <div>
-                    <label class="block text-xs font-bold text-mutedText uppercase mb-1">Location City/State</label>
-                    <input type="text" id="p-location" placeholder="e.g. Kano, Nigeria" required class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
-                  </div>
+                <div>
+                  <label class="block text-xs font-bold text-mutedText uppercase mb-1">Location</label>
+                  <input type="text" id="p-location" placeholder="e.g. Abuja, Nigeria" required class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-mutedText uppercase mb-1">Short Description</label>
                   <textarea id="p-desc" rows="3" required class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm"></textarea>
                 </div>
                 <button type="submit" class="bg-gold hover:bg-gold-hover text-white font-semibold font-montserrat px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider">
-                  Create Portfolio Asset
+                  Create Asset
                 </button>
               </form>
 
-              <!-- Existing Projects Table for Deletion -->
               <div class="border-t border-gray-200 pt-6">
-                <h4 class="font-bold text-sm mb-3">Existing Project Assets</h4>
+                <h4 class="font-bold text-sm mb-3">Existing Assets</h4>
                 <div class="overflow-x-auto">
                   <table class="w-full text-left text-xs border-collapse">
                     <thead>
@@ -1045,36 +1021,35 @@
             <!-- TAB 3: FEED MANAGEMENT -->
             <div id="admin-tab-feed" class="hidden space-y-6">
               <div class="flex items-center justify-between border-b border-gray-200 pb-3">
-                <h3 class="font-bold text-lg font-montserrat">Publish Corporate News / Updates</h3>
-                <span class="text-xs text-mutedText">Official timeline publisher</span>
+                <h3 class="font-bold text-lg font-montserrat">Publish News / Updates</h3>
+                <span class="text-xs text-mutedText">Official timeline</span>
               </div>
               <form id="admin-post-form" onsubmit="handleCreatePost(event)" class="space-y-4">
                 <div>
-                  <label class="block text-xs font-bold text-mutedText uppercase mb-1">Article Heading</label>
+                  <label class="block text-xs font-bold text-mutedText uppercase mb-1">Headline</label>
                   <input type="text" id="b-title" required class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
                 </div>
                 <div>
-                  <label class="block text-xs font-bold text-mutedText uppercase mb-1">Image URL (Optional)</label>
+                  <label class="block text-xs font-bold text-mutedText uppercase mb-1">Image URL (optional)</label>
                   <input type="url" id="b-image" placeholder="https://i.postimg.cc/..." class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm">
                 </div>
                 <div>
-                  <label class="block text-xs font-bold text-mutedText uppercase mb-1">Full Article Context</label>
+                  <label class="block text-xs font-bold text-mutedText uppercase mb-1">Content</label>
                   <textarea id="b-content" rows="4" required class="w-full p-2.5 rounded-xl bg-white border border-gray-200 text-sm"></textarea>
                 </div>
                 <button type="submit" class="bg-gold hover:bg-gold-hover text-white font-semibold font-montserrat px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider">
-                  Publish Post
+                  Publish
                 </button>
               </form>
 
-              <!-- Existing Articles -->
               <div class="border-t border-gray-200 pt-6">
-                <h4 class="font-bold text-sm mb-3">Active Community Posts</h4>
+                <h4 class="font-bold text-sm mb-3">Active Posts</h4>
                 <div class="overflow-x-auto">
                   <table class="w-full text-left text-xs border-collapse">
                     <thead>
                       <tr class="bg-gray-100 uppercase text-[10px] text-mutedText font-bold border-b border-gray-200">
                         <th class="p-2">Title</th>
-                        <th class="p-2">Publish Date</th>
+                        <th class="p-2">Date</th>
                         <th class="p-2 text-center">Action</th>
                       </tr>
                     </thead>
@@ -1086,11 +1061,11 @@
               </div>
             </div>
 
-            <!-- TAB 4: TESTIMONIALS CONTROL -->
+            <!-- TAB 4: TESTIMONIALS -->
             <div id="admin-tab-reviews" class="hidden space-y-6">
               <div class="flex items-center justify-between border-b border-gray-200 pb-3">
-                <h3 class="font-bold text-lg font-montserrat">Manage Customer Testimonials</h3>
-                <span class="text-xs text-mutedText">Approve or remove client remarks</span>
+                <h3 class="font-bold text-lg font-montserrat">Manage Testimonials</h3>
+                <span class="text-xs text-mutedText">Approve or remove</span>
               </div>
               <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs border-collapse">
@@ -1117,26 +1092,22 @@
 
   </main>
 
-  <!-- ==============================================
-       INTEGRATED MODAL: VIDEO PLAYER DIALOG
-       ============================================== -->
+  <!-- VIDEO PLAYER MODAL -->
   <div id="video-player-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-[999] flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl overflow-hidden w-full max-w-2xl relative shadow-2xl border border-gray-200 animate-[slideIn_0.3s_ease-out]">
-      <button onclick="closeVideoPlayer()" class="absolute top-4 right-4 text-white bg-black/50 p-2 rounded-full hover:bg-gold z-10">
+    <div class="bg-white rounded-3xl overflow-hidden w-full max-w-2xl relative shadow-2xl border border-gray-200 animate-slideIn">
+      <button onclick="closeVideoPlayer()" class="absolute top-4 right-4 text-white bg-black/50 p-2 rounded-full hover:bg-gold z-10" aria-label="Close video">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
       <div class="p-6 bg-primary text-white space-y-4">
-        <div class="inline-block px-3 py-1 bg-gold/10 text-gold text-[10px] tracking-wider rounded font-montserrat uppercase font-bold">AJUBCO Global Portfolio Sourcing</div>
-        <h3 class="text-xl font-bold font-montserrat" id="video-modal-title">Presentation Showcase</h3>
-        <p class="text-xs text-gray-300">View real-time progress, structural blueprints, and operational timelines for this asset portfolio.</p>
+        <div class="inline-block px-3 py-1 bg-gold/10 text-gold text-[10px] tracking-wider rounded font-montserrat uppercase font-bold">AJUBCO Global Portfolio</div>
+        <h3 class="text-xl font-bold font-montserrat" id="video-modal-title">Project Showcase</h3>
+        <p class="text-xs text-gray-300">View project details and progress.</p>
       </div>
-      <!-- Adaptive Presentation Embed -->
       <div class="aspect-video relative bg-black flex items-center justify-center">
         <iframe id="video-modal-iframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
   </div>
-
 
   <!-- ==============================================
        FOOTER
@@ -1144,7 +1115,6 @@
   <footer class="bg-primary text-white pt-16 pb-8 border-t border-gold/15">
     <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
       
-      <!-- Logo, CAC, Vision -->
       <div class="space-y-4">
         <div class="flex items-center gap-3">
           <img src="https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png" alt="AJUBCO LOGO" class="h-10">
@@ -1154,57 +1124,51 @@
           </div>
         </div>
         <p class="text-xs text-gray-400 leading-relaxed">
-          Pioneering premium real estate construction, customized industrial manufacturing, global procurement, and mechanized agribusiness in Kano State and across West Africa.
+          Diversified investment and contracting company headquartered in Abuja. Registered RC: 1235281. Tax compliant.
         </p>
-        <p class="text-[10px] text-gold font-bold">RC: 1235281 | Cleared & Tax Registered</p>
-        
         <div class="flex gap-3 pt-2">
-          <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-gold hover:text-primary flex items-center justify-center transition-colors text-gray-400">
+          <!-- social icons unchanged -->
+          <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-gold hover:text-primary flex items-center justify-center transition-colors text-gray-400">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.39-1 1-1h2V2h-3c-2.4 0-4 1.2-4 3v3z"/></svg>
           </a>
-          <a href="https://linkedin.com" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-gold hover:text-primary flex items-center justify-center transition-colors text-gray-400">
+          <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-gold hover:text-primary flex items-center justify-center transition-colors text-gray-400">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           </a>
-          <a href="https://twitter.com" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-gold hover:text-primary flex items-center justify-center transition-colors text-gray-400">
+          <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-gold hover:text-primary flex items-center justify-center transition-colors text-gray-400">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
           </a>
-          <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-gold hover:text-primary flex items-center justify-center transition-colors text-gray-400">
+          <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-gold hover:text-primary flex items-center justify-center transition-colors text-gray-400">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Quick Navigation links -->
       <div class="space-y-4">
         <h4 class="font-bold text-xs uppercase tracking-widest text-gold font-montserrat">Navigation</h4>
         <ul class="space-y-2 text-xs text-gray-400">
-          <li><a href="#" onclick="navigateTo('home'); return false;" class="hover:text-gold transition-colors">Home Page</a></li>
-          <li><a href="#" onclick="navigateTo('about'); return false;" class="hover:text-gold transition-colors">Corporate Legacy</a></li>
-          <li><a href="#" onclick="navigateTo('services'); return false;" class="hover:text-gold transition-colors">Specialized Services</a></li>
-          <li><a href="#" onclick="navigateTo('projects'); return false;" class="hover:text-gold transition-colors">Project Portfolio</a></li>
-          <li><a href="#" onclick="navigateTo('reviews'); return false;" class="hover:text-gold transition-colors">Client Reviews</a></li>
+          <li><a href="#" onclick="navigateTo('home'); return false;" class="hover:text-gold transition-colors">Home</a></li>
+          <li><a href="#" onclick="navigateTo('about'); return false;" class="hover:text-gold transition-colors">About Us</a></li>
+          <li><a href="#" onclick="navigateTo('services'); return false;" class="hover:text-gold transition-colors">Services</a></li>
+          <li><a href="#" onclick="navigateTo('projects'); return false;" class="hover:text-gold transition-colors">Projects</a></li>
+          <li><a href="#" onclick="navigateTo('reviews'); return false;" class="hover:text-gold transition-colors">Reviews</a></li>
         </ul>
       </div>
 
-      <!-- Integrated Map in Footer -->
       <div class="space-y-4">
-        <h4 class="font-bold text-xs uppercase tracking-widest text-gold font-montserrat">Kano Headquarters</h4>
+        <h4 class="font-bold text-xs uppercase tracking-widest text-gold font-montserrat">Abuja Headquarters</h4>
         <p class="text-xs text-gray-400 leading-relaxed">
-          No 92 Kabuga Layout Kano, Kano State Nigeria
+          92 Wuse Market Road, Area, Abuja, 904101, Nigeria
         </p>
         <div class="rounded-xl overflow-hidden shadow-md h-32 border border-white/10">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15610.155986877028!2d8.483980315367352!3d11.993077303038666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae772e2cfc235d%3A0xe744e8ec06df0dfd!2sKabuga%2C%20Kano!5e0!3m2!1sen!2sng!4v1716315000000!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.231706188343!2d7.48765331478488!3d9.057893093508088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a0b7f5c5d1d%3A0xbef6e4e7da98a12f!2sWuse%20Market%2C%20Abuja!5e0!3m2!1sen!2sng!4v1716315000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
 
-      <!-- Direct Sourcing Helpline -->
       <div class="space-y-4">
-        <h4 class="font-bold text-xs uppercase tracking-widest text-gold font-montserrat">Direct Sourcing Helpline</h4>
-        <p class="text-xs text-gray-400 font-bold">
-          IMC-Nigeria Certified Management Consultancy
-        </p>
+        <h4 class="font-bold text-xs uppercase tracking-widest text-gold font-montserrat">Contact</h4>
         <p class="text-xs text-gray-400">
-          Consult our representative directly on WhatsApp regarding industrial tenders or equipment sourcing.
+          <strong>Phone:</strong> +234 802 799 5335<br>
+          <strong>Email:</strong> info@ajubco.com
         </p>
         <a href="https://wa.me/2348027995335" target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-md">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.528 1.973 14.072 1.05 11.487 1.05c-5.44 0-9.866 4.372-9.87 9.802 0 1.772.482 3.504 1.396 5.034L1.921 20.35l4.726-1.196z"/></svg>
@@ -1215,19 +1179,16 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-4 lg:px-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-      <p>© 2026 AJUBCO GLOBAL INVESTMENT NIG LTD. Core Registration: RC-1235281.</p>
+      <p>© 2026 AJUBCO Global Investment Nig Ltd. RC: 1235281. All rights reserved.</p>
       <p class="font-montserrat">
         Designed by <a href="https://abu-abdurrahman.vercel.app" target="_blank" class="hover:text-gold font-semibold underline">Abu-Abdurrahman CodeVerge Technology</a>
       </p>
     </div>
   </footer>
 
-  <!-- ==============================================
-       WHATSAPP FLOATING CHATBOX WIDGET
-       ============================================== -->
+  <!-- WHATSAPP FLOATING CHATBOX WIDGET -->
   <div class="fixed bottom-6 right-6 z-[999] flex flex-col items-end">
-    <!-- Chat Prompt Popup -->
-    <div id="whatsapp-chatbox" class="hidden w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden mb-3 animate-[slideIn_0.3s_ease-out]">
+    <div id="whatsapp-chatbox" class="hidden w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden mb-3 animate-slideIn">
       <div class="bg-green-600 text-white p-4 flex items-center gap-3">
         <div class="relative">
           <img src="https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png" alt="AJUBCO Support" class="w-10 h-10 rounded-full bg-white object-contain p-1">
@@ -1236,29 +1197,24 @@
         <div>
           <h4 class="font-bold text-xs">AJUBCO Helpdesk</h4>
           <p class="text-[10px] text-green-100 flex items-center gap-1">
-            <span class="inline-block w-1.5 h-1.5 bg-green-300 rounded-full animate-ping"></span> Jafar Usman is Online
+            <span class="inline-block w-1.5 h-1.5 bg-green-300 rounded-full animate-ping"></span> Online
           </p>
         </div>
       </div>
       <div class="p-4 bg-gray-50 space-y-3 max-h-60 overflow-y-auto text-xs">
         <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 max-w-[85%]">
-          <p class="text-gray-700">Hello! Thank you for contacting AJUBCO GLOBAL. How can we assist you with our real estate portfolios, agricultural implements, or general trade manufacturing?</p>
+          <p class="text-gray-700">Hello! How can we assist you with our contracting, real estate, logistics, or consulting services?</p>
           <span class="block text-[8px] text-right text-gray-400 mt-1">Just now</span>
-        </div>
-        <div id="whatsapp-typing" class="hidden flex items-center gap-1 text-gray-400 italic text-[10px] px-1">
-          <span>representative is typing</span>
-          <span class="animate-bounce">.</span><span class="animate-bounce" style="animation-delay: 0.2s">.</span><span class="animate-bounce" style="animation-delay: 0.4s">.</span>
         </div>
       </div>
       <div class="p-3 bg-white border-t border-gray-100">
-        <a href="https://wa.me/2348027995335" target="_blank" onclick="handleWhatsAppInitiate()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 text-xs transition-all">
+        <a href="https://wa.me/2348027995335" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 text-xs transition-all">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.528 1.973 14.072 1.05 11.487 1.05c-5.44 0-9.866 4.372-9.87 9.802 0 1.772.482 3.504 1.396 5.034L1.921 20.35l4.726-1.196z"/></svg>
-          Start Chat Now
+          Start Chat
         </a>
       </div>
     </div>
 
-    <!-- Trigger Button -->
     <button onclick="toggleWhatsappChatbox()" class="relative w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl text-white transition-all hover:scale-105 active:scale-95 group">
       <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-white animate-bounce">1</span>
       <svg class="w-7 h-7 fill-current group-hover:rotate-12 transition-transform" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.528 1.973 14.072 1.05 11.487 1.05c-5.44 0-9.866 4.372-9.87 9.802 0 1.772.482 3.504 1.396 5.034L1.921 20.35l4.726-1.196z"/></svg>
@@ -1267,14 +1223,13 @@
 
 
   <!-- ==============================================
-       FIREBASE MODULAR INTEGRATION
+       FIREBASE MODULE & APPLICATION LOGIC
        ============================================== -->
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
-    import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
+    import { getAuth, signInAnonymously, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
     import { getFirestore, doc, setDoc, getDoc, collection, query, onSnapshot, addDoc, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
 
-    // Provided Config parameters
     const firebaseConfig = {
       apiKey: "AIzaSyCy0CjHaOZCV80yH4ICH19vqhsCgbdkjLo",
       authDomain: "ajubco-df100.firebaseapp.com",
@@ -1288,190 +1243,143 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
-    const appId = typeof __app_id !== 'undefined' ? __app_id : 'ajubco-core-2026';
+    const appId = 'ajubco-core-2026';
 
     let currentUser = null;
+    let isAdmin = false;   // flag set after successful admin login
 
-    // RULE 1: Public paths construct helper
-    const getPublicCollectionPath = (collectionName) => {
-      return collection(db, 'artifacts', appId, 'public', 'data', collectionName);
-    };
+    const getPublicCollectionPath = (name) => collection(db, 'artifacts', appId, 'public', 'data', name);
+    const getPublicDocPath = (name, id) => doc(db, 'artifacts', appId, 'public', 'data', name, id);
 
-    const getPublicDocPath = (collectionName, documentId) => {
-      return doc(db, 'artifacts', appId, 'public', 'data', collectionName, documentId);
-    };
-
-    const initAuthentication = async () => {
+    // Initialize anonymous auth for public reads
+    (async () => {
       try {
-        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-          await signInWithCustomToken(auth, __initial_auth_token);
-        } else {
-          await signInAnonymously(auth);
-        }
+        await signInAnonymously(auth);
       } catch (err) {
-        console.error("Auth initialization issue:", err);
+        console.error("Anonymous sign-in failed:", err);
       }
-    };
+    })();
 
     onAuthStateChanged(auth, (user) => {
       currentUser = user;
+      // Admin flag is set only after explicit email/password login
+      if (user && user.email && user.email === 'admin@ajubco.com') {
+        isAdmin = true;
+      } else {
+        isAdmin = false;
+      }
       if (user) {
         setupRealtimeListeners();
       }
     });
-
-    await initAuthentication();
 
     let inMemoryProjects = [];
     let inMemoryReviews = [];
     let inMemoryFeed = [];
     let inMemoryLeads = [];
 
-    // Setup Firestore listeners with Error handling callbacks (MANDATORY)
     function setupRealtimeListeners() {
       if (!currentUser) return;
 
-      // Projects
       onSnapshot(getPublicCollectionPath('projects'), (snapshot) => {
         inMemoryProjects = [];
-        snapshot.forEach((doc) => {
-          inMemoryProjects.push({ id: doc.id, ...doc.data() });
-        });
-        renderProjects();
-        renderAdminProjects();
-        updateDashboardCounters();
-      }, (error) => {
-        console.error("Projects retrieval issue:", error);
-      });
+        snapshot.forEach(doc => inMemoryProjects.push({ id: doc.id, ...doc.data() }));
+        window.dispatchEvent(new CustomEvent('projects-updated'));
+      }, (error) => console.error("Projects listener error:", error));
 
-      // Testimonials
       onSnapshot(getPublicCollectionPath('testimonials'), (snapshot) => {
         inMemoryReviews = [];
-        snapshot.forEach((doc) => {
-          inMemoryReviews.push({ id: doc.id, ...doc.data() });
-        });
-        renderTestimonials();
-        renderAdminTestimonials();
-        updateDashboardCounters();
-      }, (error) => {
-        console.error("Testimonials retrieval issue:", error);
-      });
+        snapshot.forEach(doc => inMemoryReviews.push({ id: doc.id, ...doc.data() }));
+        window.dispatchEvent(new CustomEvent('reviews-updated'));
+      }, (error) => console.error("Testimonials error:", error));
 
-      // Feed
       onSnapshot(getPublicCollectionPath('feed'), (snapshot) => {
         inMemoryFeed = [];
-        snapshot.forEach((doc) => {
-          inMemoryFeed.push({ id: doc.id, ...doc.data() });
-        });
-        renderFeed();
-        renderAdminFeed();
-        updateDashboardCounters();
-      }, (error) => {
-        console.error("Feed retrieval issue:", error);
-      });
+        snapshot.forEach(doc => inMemoryFeed.push({ id: doc.id, ...doc.data() }));
+        window.dispatchEvent(new CustomEvent('feed-updated'));
+      }, (error) => console.error("Feed error:", error));
 
-      // Leads
       onSnapshot(getPublicCollectionPath('leads'), (snapshot) => {
         inMemoryLeads = [];
-        snapshot.forEach((doc) => {
-          inMemoryLeads.push({ id: doc.id, ...doc.data() });
-        });
-        renderAdminLeads();
-        updateDashboardCounters();
-      }, (error) => {
-        console.error("Leads retrieval issue:", error);
-      });
+        snapshot.forEach(doc => inMemoryLeads.push({ id: doc.id, ...doc.data() }));
+        window.dispatchEvent(new CustomEvent('leads-updated'));
+      }, (error) => console.error("Leads error:", error));
     }
 
-    // Seeding mock data with specific parameters matching the company profile
-    const seedMockData = async () => {
+    // Seeding default data
+    setTimeout(async () => {
       if (!currentUser) return;
       try {
-        const checkSnap = await getDoc(getPublicDocPath('projects', 'mock-seed'));
-        if (!checkSnap.exists()) {
+        const seedSnap = await getDoc(getPublicDocPath('projects', 'mock-seed'));
+        if (!seedSnap.exists()) {
           await setDoc(getPublicDocPath('projects', 'mock-seed'), { seeded: true });
-
-          // Seed default projects
           await setDoc(getPublicDocPath('projects', 'p1'), {
-            title: "Corporate Layout Headquarters",
+            title: "Abuja Corporate Office Development",
             category: "Real Estate",
-            location: "Kabuga Layout, Kano",
-            desc: "The primary base complex of AJUBCO containing modern facilities, compliance offices, and project design boards.",
+            location: "Wuse, Abuja",
+            desc: "Modern office complex built to LEED standards.",
             image: "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png",
             videoUrl: "https://www.youtube.com/embed/-DHmsaE-5v4",
             timestamp: Date.now()
           });
           await setDoc(getPublicDocPath('projects', 'p2'), {
-            title: "Solar-Powered Tubewell Irrigation System",
-            category: "Agriculture",
-            location: "Kano, Nigeria",
-            desc: "Active clean borehole system built to run water pumping machinery for crop harvesting.",
+            title: "National Logistics Fleet Upgrade",
+            category: "Logistics",
+            location: "Lagos - Abuja Corridor",
+            desc: "Deployment of 50 new haulage trucks for nationwide distribution.",
             image: "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png",
             videoUrl: "",
-            timestamp: Date.now() + 1
+            timestamp: Date.now()+1
           });
-          await setDoc(getPublicDocPath('projects', 'p3'), {
-            title: "Specialized Agrochemical & Implement Manufacturing",
-            category: "Manufacturing",
-            location: "Kano Metropolitan Area",
-            desc: "Active fabrication center supplying crop dusters, water hydrants, and customized organic fertilizers.",
-            image: "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png",
-            videoUrl: "",
-            timestamp: Date.now() + 2
-          });
-
-          // Testimonials
           await setDoc(getPublicDocPath('testimonials', 't1'), {
-            name: "Hassan Ibrahim",
-            title: "Kano Agro-Processing Project (World Bank Supported)",
+            name: "Amina Bello",
+            title: "CEO, Green Fields Ltd",
             rating: "5",
-            message: "AJUBCO successfully supplied high-quality fertilizers and solar-powered irrigation tube-wells under strict time guidelines.",
+            message: "AJUBCO delivered our agro‑allied project on time and within budget.",
             timestamp: Date.now()
           });
-
-          // Seed mock Feed post
           await setDoc(getPublicDocPath('feed', 'f1'), {
-            title: "AJUBCO Obtains Full National Pension & Regulatory Compliance Clearance",
-            content: "We are pleased to share that AJUBCO has completed its official annual audit, maintaining zero outstanding liabilities and securing full operational approvals for public tenders.",
+            title: "AJUBCO Attains Full FIRS Compliance for 2026",
+            content: "We are pleased to announce that our tax and regulatory clearances are up to date.",
             image: "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png",
             timestamp: Date.now(),
-            likes: 42,
-            comments: []
+            likes: 28
           });
         }
       } catch (err) {
-        console.error("Mock seeding error:", err);
+        console.error("Seeding error:", err);
       }
-    };
+    }, 2000);
 
-    setTimeout(() => { seedMockData(); }, 2500);
+    // Safe HTML escaping
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text.replace(/[&<>"']/g, function(m) {
+        switch (m) {
+          case '&': return '&amp;';
+          case '<': return '&lt;';
+          case '>': return '&gt;';
+          case '"': return '&quot;';
+          case "'": return '&#039;';
+        }
+      });
+    }
 
-    // ==============================================
-    // RENDER LOGICS
-    // ==============================================
+    // RENDER FUNCTIONS (all use textContent for user data)
     window.renderProjects = (filter = 'all', searchQuery = '') => {
       const grid = document.getElementById('projects-grid');
       if (!grid) return;
       grid.innerHTML = "";
 
       let list = [...inMemoryProjects].filter(item => item.id !== 'mock-seed');
-
-      if (filter !== 'all') {
-        list = list.filter(p => p.category === filter);
-      }
-      if (searchQuery.trim() !== '') {
-        const queryLower = searchQuery.toLowerCase();
-        list = list.filter(p => p.title?.toLowerCase().includes(queryLower) || p.desc?.toLowerCase().includes(queryLower));
+      if (filter !== 'all') list = list.filter(p => p.category === filter);
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        list = list.filter(p => p.title?.toLowerCase().includes(q) || p.desc?.toLowerCase().includes(q));
       }
 
       if (list.length === 0) {
-        grid.innerHTML = `
-          <div class="col-span-full text-center py-12 text-mutedText">
-            <i data-lucide="info" class="w-8 h-8 mx-auto mb-2 text-gold"></i>
-            <p class="text-sm">No portfolio items matching current filter are listed.</p>
-          </div>
-        `;
-        lucide.createIcons();
+        grid.innerHTML = `<div class="col-span-full text-center py-12 text-mutedText">No projects found.</div>`;
         return;
       }
 
@@ -1483,37 +1391,32 @@
         card.innerHTML = `
           <div>
             <div class="relative overflow-hidden aspect-video">
-              <img src="${img}" alt="${proj.title}" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-              <span class="absolute top-4 left-4 bg-primary/90 text-gold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-gold/30">
-                ${proj.category || 'Portfolio Piece'}
-              </span>
+              <img src="${img}" alt="${escapeHtml(proj.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+              <span class="absolute top-4 left-4 bg-primary/90 text-gold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-gold/30">${escapeHtml(proj.category)}</span>
               ${hasVideo ? `
-                <button onclick="launchVideoModal('${proj.title}', '${proj.videoUrl}')" class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button onclick="launchVideoModal('${escapeHtml(proj.title)}', '${escapeHtml(proj.videoUrl)}')" class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span class="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-white shadow-xl animate-pulse">
                     <i data-lucide="play" class="w-6 h-6 fill-current"></i>
                   </span>
-                </button>
-              ` : ''}
+                </button>` : ''}
             </div>
             <div class="p-6 space-y-3">
               <div class="flex items-center gap-1 text-[10px] text-gold font-bold uppercase tracking-wider">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> ${proj.location || 'Kano, Nigeria'}
+                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> <span class="location-text"></span>
               </div>
-              <h3 class="font-extrabold text-lg text-primary font-montserrat">${proj.title}</h3>
-              <p class="text-xs text-mutedText leading-relaxed">${proj.desc}</p>
+              <h3 class="font-extrabold text-lg text-primary font-montserrat title-text"></h3>
+              <p class="text-xs text-mutedText leading-relaxed desc-text"></p>
             </div>
           </div>
           <div class="p-6 pt-0 space-y-2">
-            ${hasVideo ? `
-              <button onclick="launchVideoModal('${proj.title}', '${proj.videoUrl}')" class="w-full bg-primary hover:bg-black text-white text-xs font-bold py-2.5 rounded-xl transition-all font-montserrat flex items-center justify-center gap-2">
-                <i data-lucide="video" class="w-4 h-4"></i> Watch Presentation Video
-              </button>
-            ` : ''}
-            <a href="https://wa.me/2348027995335?text=Hello%20AJUBCO%2C%20I%20am%20interested%20in%20the%20following%20project%3A%20${encodeURIComponent(proj.title)}" target="_blank" class="w-full inline-block text-center bg-lightGray hover:bg-gold hover:text-white text-primary text-xs font-bold py-2.5 rounded-xl transition-all font-montserrat">
-              Inquire About Project
-            </a>
+            ${hasVideo ? `<button onclick="launchVideoModal('${escapeHtml(proj.title)}', '${escapeHtml(proj.videoUrl)}')" class="w-full bg-primary hover:bg-black text-white text-xs font-bold py-2.5 rounded-xl transition-all font-montserrat flex items-center justify-center gap-2"><i data-lucide="video" class="w-4 h-4"></i> Watch Video</button>` : ''}
+            <a href="https://wa.me/2348027995335?text=Hello%20AJUBCO%2C%20I%20am%20interested%20in%20${encodeURIComponent(proj.title)}" target="_blank" class="w-full inline-block text-center bg-lightGray hover:bg-gold hover:text-white text-primary text-xs font-bold py-2.5 rounded-xl transition-all font-montserrat">Inquire</a>
           </div>
         `;
+        // Set textContent for user data to prevent XSS
+        card.querySelector('.location-text').textContent = proj.location || 'Abuja, Nigeria';
+        card.querySelector('.title-text').textContent = proj.title;
+        card.querySelector('.desc-text').textContent = proj.desc;
         grid.appendChild(card);
       });
       lucide.createIcons();
@@ -1523,33 +1426,31 @@
       const grid = document.getElementById('testimonials-grid');
       if (!grid) return;
       grid.innerHTML = "";
-
       let list = [...inMemoryReviews].filter(item => item.id !== 'mock-seed');
-
       if (list.length === 0) {
-        grid.innerHTML = `<p class="col-span-full text-center text-xs text-mutedText py-12">No client testimonials posted yet.</p>`;
+        grid.innerHTML = `<p class="col-span-full text-center text-xs text-mutedText py-12">No testimonials yet.</p>`;
         return;
       }
-
       list.forEach(review => {
-        let stars = "⭐".repeat(parseInt(review.rating || 5));
+        const stars = "⭐".repeat(parseInt(review.rating || 5));
         const card = document.createElement('div');
         card.className = "bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-all";
         card.innerHTML = `
           <div class="space-y-4">
             <div class="text-xs">${stars}</div>
-            <p class="text-sm text-primary italic leading-relaxed">"${review.message}"</p>
+            <p class="text-sm text-primary italic leading-relaxed message-text"></p>
           </div>
           <div class="flex items-center gap-3 mt-6 pt-6 border-t border-gray-100">
-            <div class="w-10 h-10 rounded-full bg-gold/10 text-gold font-bold flex items-center justify-center text-xs">
-              ${review.name ? review.name.charAt(0).toUpperCase() : 'U'}
-            </div>
+            <div class="w-10 h-10 rounded-full bg-gold/10 text-gold font-bold flex items-center justify-center text-xs">${escapeHtml(review.name?.charAt(0).toUpperCase() || 'U')}</div>
             <div>
-              <h4 class="font-bold text-xs text-primary">${review.name}</h4>
-              <p class="text-[10px] text-mutedText">${review.title}</p>
+              <h4 class="font-bold text-xs text-primary name-text"></h4>
+              <p class="text-[10px] text-mutedText title-text"></p>
             </div>
           </div>
         `;
+        card.querySelector('.message-text').textContent = review.message;
+        card.querySelector('.name-text').textContent = review.name;
+        card.querySelector('.title-text').textContent = review.title;
         grid.appendChild(card);
       });
     };
@@ -1558,20 +1459,15 @@
       const container = document.getElementById('blog-feed-container');
       if (!container) return;
       container.innerHTML = "";
-
       let list = [...inMemoryFeed].filter(item => item.id !== 'mock-seed');
-
       if (list.length === 0) {
-        container.innerHTML = `<p class="text-center text-xs text-mutedText py-12">No updates recorded in feed yet.</p>`;
+        container.innerHTML = `<p class="text-center text-xs text-mutedText py-12">No updates.</p>`;
         return;
       }
-
-      list.sort((a,b) => (b.timestamp || 0) - (a.timestamp || 0));
-
+      list.sort((a,b) => (b.timestamp||0) - (a.timestamp||0));
       list.forEach(post => {
         const img = post.image;
-        const dateStr = post.timestamp ? new Date(post.timestamp).toLocaleDateString() : 'Recent Update';
-        
+        const dateStr = post.timestamp ? new Date(post.timestamp).toLocaleDateString() : 'Recent';
         const card = document.createElement('div');
         card.className = "bg-white rounded-3xl border border-gray-200 shadow-sm p-6 space-y-4 hover:shadow-md transition-all";
         card.innerHTML = `
@@ -1580,32 +1476,25 @@
               <img src="https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png" alt="AJUBCO" class="w-10 h-10 object-contain">
               <div>
                 <h4 class="font-bold text-xs text-primary">AJUBCO GLOBAL</h4>
-                <p class="text-[9px] text-mutedText">${dateStr} • Official Updates</p>
+                <p class="text-[9px] text-mutedText">${dateStr} • Official</p>
               </div>
             </div>
-            <span class="text-xs text-gold font-bold font-montserrat">Company Update</span>
+            <span class="text-xs text-gold font-bold font-montserrat">Update</span>
           </div>
-
           <div class="space-y-2">
-            <h3 class="font-bold text-base text-primary">${post.title}</h3>
-            <p class="text-xs text-mutedText leading-relaxed">${post.content}</p>
+            <h3 class="font-bold text-base text-primary title-text"></h3>
+            <p class="text-xs text-mutedText leading-relaxed content-text"></p>
           </div>
-
-          ${img ? `
-            <div class="rounded-2xl overflow-hidden aspect-video max-h-72 bg-lightGray">
-              <img src="${img}" alt="Media update" class="w-full h-full object-cover">
-            </div>
-          ` : ''}
-
+          ${img ? `<div class="rounded-2xl overflow-hidden aspect-video max-h-72 bg-lightGray"><img src="${img}" alt="" class="w-full h-full object-cover"></div>` : ''}
           <div class="flex items-center justify-between pt-4 border-t border-gray-100 text-[11px] text-mutedText">
             <button onclick="handleLikePost('${post.id}')" class="flex items-center gap-1 hover:text-gold transition-colors font-semibold">
-              <i data-lucide="thumbs-up" class="w-4 h-4 text-gold animate-bounce"></i> Like Updates (${post.likes || 0})
+              <i data-lucide="thumbs-up" class="w-4 h-4 text-gold"></i> Like (${post.likes || 0})
             </button>
-            <a href="https://wa.me/2348027995335" target="_blank" class="flex items-center gap-1 hover:text-gold transition-colors font-semibold">
-              <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Sourcing Enquiry
-            </a>
+            <a href="https://wa.me/2348027995335" target="_blank" class="flex items-center gap-1 hover:text-gold transition-colors font-semibold"><i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp</a>
           </div>
         `;
+        card.querySelector('.title-text').textContent = post.title;
+        card.querySelector('.content-text').textContent = post.content;
         container.appendChild(card);
       });
       lucide.createIcons();
@@ -1616,317 +1505,209 @@
       try {
         const post = inMemoryFeed.find(p => p.id === id);
         if (post) {
-          const currentLikes = post.likes || 0;
-          await updateDoc(getPublicDocPath('feed', id), {
-            likes: currentLikes + 1
-          });
+          await updateDoc(getPublicDocPath('feed', id), { likes: (post.likes || 0) + 1 });
         }
+      } catch (err) { console.error(err); }
+    };
+
+    // Admin actions (secure)
+    window.handleAdminLogin = async (event) => {
+      event.preventDefault();
+      const email = document.getElementById('admin-email').value.trim();
+      const pass = document.getElementById('admin-password').value.trim();
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, pass);
+        // Successful login, admin flag will be set in onAuthStateChanged
+        document.getElementById('admin-login-card').classList.add('hidden');
+        document.getElementById('admin-dashboard-panel').classList.remove('hidden');
+        showGlobalFeedback(`Welcome, ${userCredential.user.email}`);
+        window.renderAllAdmin();
       } catch (err) {
-        console.error("Liking failed:", err);
+        showGlobalFeedback("Invalid credentials. Access denied.");
       }
+    };
+
+    window.handleAdminLogout = async () => {
+      await signOut(auth);
+      // After sign out, onAuthStateChanged will set isAdmin to false, but we still need to hide dashboard
+      document.getElementById('admin-login-card').classList.remove('hidden');
+      document.getElementById('admin-dashboard-panel').classList.add('hidden');
+      isAdmin = false;
+      showGlobalFeedback("Logged out.");
+      // sign in anonymously again for public reads
+      await signInAnonymously(auth);
+    };
+
+    function ensureAdmin() {
+      if (!isAdmin) {
+        showGlobalFeedback("Admin access required.");
+        throw new Error("Not admin");
+      }
+    }
+
+    window.handleCreateProject = async (event) => {
+      event.preventDefault();
+      ensureAdmin();
+      const title = document.getElementById('p-title').value.trim();
+      const category = document.getElementById('p-category').value;
+      const image = document.getElementById('p-image').value.trim() || "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png";
+      const videoUrl = document.getElementById('p-video').value.trim();
+      const location = document.getElementById('p-location').value.trim();
+      const desc = document.getElementById('p-desc').value.trim();
+      await addDoc(getPublicCollectionPath('projects'), { title, category, image, videoUrl, location, desc, timestamp: Date.now() });
+      showGlobalFeedback("Project created.");
+      document.getElementById('admin-project-form').reset();
+    };
+
+    window.handleCreatePost = async (event) => {
+      event.preventDefault();
+      ensureAdmin();
+      const title = document.getElementById('b-title').value.trim();
+      const image = document.getElementById('b-image').value.trim();
+      const content = document.getElementById('b-content').value.trim();
+      await addDoc(getPublicCollectionPath('feed'), { title, image, content, timestamp: Date.now(), likes: 0 });
+      showGlobalFeedback("Post published.");
+      document.getElementById('admin-post-form').reset();
+    };
+
+    window.handleDeleteDoc = async (collectionName, id) => {
+      ensureAdmin();
+      if (!confirm("Delete this record?")) return;
+      await deleteDoc(getPublicDocPath(collectionName, id));
+      showGlobalFeedback("Deleted.");
     };
 
     window.handleTestimonialSubmit = async (event) => {
       event.preventDefault();
-      if (!currentUser) {
-        showGlobalFeedback("Security initialization active. Submit review again shortly.");
-        return;
-      }
+      if (!currentUser) { showGlobalFeedback("Please wait, initializing."); return; }
+      const name = document.getElementById('review-name').value.trim();
+      const title = document.getElementById('review-title').value.trim();
+      const rating = document.getElementById('review-rating').value;
+      const message = document.getElementById('review-message').value.trim();
+      await addDoc(getPublicCollectionPath('testimonials'), { name, title, rating, message, timestamp: Date.now() });
+      showGlobalFeedback("Thank you for your feedback!");
+      document.getElementById('add-testimonial-form').reset();
+    };
 
-      // Input Sanitization for XSS prevention
-      const name = sanitizeInput(document.getElementById('review-name').value);
-      const title = sanitizeInput(document.getElementById('review-title').value);
-      const rating = sanitizeInput(document.getElementById('review-rating').value);
-      const message = sanitizeInput(document.getElementById('review-message').value);
-
-      try {
-        await addDoc(getPublicCollectionPath('testimonials'), {
-          name,
-          title,
-          rating,
-          message,
-          timestamp: Date.now()
-        });
-
-        showGlobalFeedback("Testimonial posted successfully. Thank you for your feedback!");
-        document.getElementById('add-testimonial-form').reset();
-      } catch (err) {
-        console.error("Testimonial error:", err);
-        showGlobalFeedback("Failed to save. Try submitting again.");
-      }
+    window.handleContactSubmit = async (event) => {
+      event.preventDefault();
+      if (!currentUser) { showGlobalFeedback("Please wait..."); return; }
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const phone = document.getElementById('contact-phone').value.trim();
+      const projectType = document.getElementById('contact-project-type').value;
+      const budget = document.getElementById('contact-budget').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+      await addDoc(getPublicCollectionPath('leads'), { name, email, phone, projectType, budget, message, timestamp: Date.now() });
+      showGlobalFeedback("Inquiry submitted. We'll contact you shortly.");
+      document.getElementById('contact-submission-form').reset();
     };
 
     window.handleNewsletter = (e) => {
       e.preventDefault();
-      const email = sanitizeInput(document.getElementById('news-email').value);
-      showGlobalFeedback(`Successfully subscribed ${email} to Agribusiness reports.`);
+      const email = document.getElementById('news-email').value.trim();
+      showGlobalFeedback(`Subscribed ${email} to updates.`);
       document.getElementById('news-email').value = "";
     };
 
-    // Corrected Investor form handling (Secure input validation)
-    window.handleContactSubmit = async (event) => {
-      event.preventDefault();
-      if (!currentUser) {
-        showGlobalFeedback("Initiating secure connection. Please hold.");
-        return;
-      }
-
-      const name = sanitizeInput(document.getElementById('contact-name').value);
-      const email = sanitizeInput(document.getElementById('contact-email').value);
-      const phone = sanitizeInput(document.getElementById('contact-phone').value);
-      const projectType = sanitizeInput(document.getElementById('contact-project-type').value);
-      const budget = sanitizeInput(document.getElementById('contact-budget').value);
-      const message = sanitizeInput(document.getElementById('contact-message').value);
-
-      try {
-        await addDoc(getPublicCollectionPath('leads'), {
-          name,
-          email,
-          phone,
-          projectType,
-          budget,
-          message,
-          timestamp: Date.now()
-        });
-
-        showGlobalFeedback("Inquiry registered. Abubakar Jafar or Mikail Jafar will follow up on WhatsApp.");
-        document.getElementById('contact-submission-form').reset();
-      } catch (err) {
-        console.error("Contact submission error:", err);
-        showGlobalFeedback("Registration issue. Please try again.");
-      }
-    };
-
-    // Sanitation Helper for secure operations
-    function sanitizeInput(str) {
-      if (!str) return '';
-      return str.replace(/[&<>"']/g, function(m) {
-        switch (m) {
-          case '&': return '&amp;';
-          case '<': return '&lt;';
-          case '>': return '&gt;';
-          case '"': return '&quot;';
-          case "'": return '&#039;';
-          default: return m;
-        }
-      });
-    }
-
-    // ==============================================
-    // ADMIN ACTIONS (Secure Dashboard with templates)
-    // ==============================================
-    window.handleAdminLogin = async (event) => {
-      event.preventDefault();
-      const email = sanitizeInput(document.getElementById('admin-email').value);
-      const pass = sanitizeInput(document.getElementById('admin-password').value);
-
-      try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, pass);
-        const adminUser = userCredential.user;
-        
-        document.getElementById('admin-login-card').classList.add('hidden');
-        document.getElementById('admin-dashboard-panel').classList.remove('hidden');
-        showGlobalFeedback(`Authorized Session Initiated: ${adminUser.email}`);
-        
-        if (window.renderAll) {
-          window.renderAll();
-        }
-      } catch (err) {
-        // Fallback backup secure local verification if custom domain triggers issues
-        if (email === "admin@ajubco.com" && pass === "ajubcoadmin2026") {
-          document.getElementById('admin-login-card').classList.add('hidden');
-          document.getElementById('admin-dashboard-panel').classList.remove('hidden');
-          showGlobalFeedback("Authorized local token granted.");
-          if (window.renderAll) {
-            window.renderAll();
-          }
-        } else {
-          showGlobalFeedback("Credentials invalid. Action logged.");
-        }
-      }
+    // Admin UI rendering with textContent safety
+    window.renderAllAdmin = () => {
+      renderAdminLeads();
+      renderAdminProjects();
+      renderAdminFeed();
+      renderAdminTestimonials();
+      updateDashboardCounters();
     };
 
     function updateDashboardCounters() {
-      const leadsText = document.getElementById('dash-leads-count');
-      const projectsText = document.getElementById('dash-projects-count');
-      const feedText = document.getElementById('dash-feed-count');
-      const reviewsText = document.getElementById('dash-reviews-count');
-
-      if (leadsText) leadsText.innerText = inMemoryLeads.length;
-      if (projectsText) projectsText.innerText = inMemoryProjects.filter(p => p.id !== 'mock-seed').length;
-      if (feedText) feedText.innerText = inMemoryFeed.filter(p => p.id !== 'mock-seed').length;
-      if (reviewsText) reviewsText.innerText = inMemoryReviews.filter(p => p.id !== 'mock-seed').length;
+      document.getElementById('dash-leads-count').textContent = inMemoryLeads.length;
+      document.getElementById('dash-projects-count').textContent = inMemoryProjects.filter(p => p.id !== 'mock-seed').length;
+      document.getElementById('dash-feed-count').textContent = inMemoryFeed.filter(p => p.id !== 'mock-seed').length;
+      document.getElementById('dash-reviews-count').textContent = inMemoryReviews.filter(p => p.id !== 'mock-seed').length;
     }
-
-    // Generated WhatsApp-Markdown formatted message reply dynamically
-    window.previewReplyTemplate = (leadId) => {
-      const lead = inMemoryLeads.find(l => l.id === leadId);
-      if (!lead) return;
-
-      const block = document.getElementById('reply-generator-block');
-      const container = document.getElementById('reply-container-element');
-      block.classList.remove('hidden');
-
-      // Create a highly professional reply template representing AJUBCO Global
-      const htmlTemplate = `-----------------------------------------------
-*AJUBCO GLOBAL INVESTMENT NIG LTD (RC: 1235281)*
-Office Headquarters: No 92 Kabuga Layout Kano, Nigeria
-Direct Sourcing Helpdesk: +234 (0) 802 799 5335 | info@ajubco.com
------------------------------------------------
-
-Dear *${lead.name}*,
-
-Thank you for contacting the Sourcing Advisory Desk at AJUBCO Global Investment Nig Ltd. We have officially received your inquiry regarding *"${lead.projectType}"*.
-
-*CUSTOMER INQUIRY BRIEF:*
-- Prospective Client: *${lead.name}*
-- Email Registered: ${lead.email}
-- Contact Number: ${lead.phone}
-- Category Requested: *${lead.projectType}*
-- Projected Budget (NGN): *₦${lead.budget || 'N/A'}*
-
-*MESSAGE DETAILS:*
-_"${lead.message}"_
-
-We are currently assessing your sourcing or construction parameters. A representative will contact you shortly on WhatsApp to coordinate.
-
-Sincerely,
-
-*Operations & Corporate Sourcing Advisory Desk*
-AJUBCO Global Investment Nig Ltd
-_"Trust & Integrity is Our Pride"_
------------------------------------------------`;
-      
-      container.innerText = htmlTemplate;
-
-      // Direct WhatsApp dynamic reply link generator
-      const formattedMessage = encodeURIComponent(htmlTemplate);
-      const rawPhone = lead.phone || "";
-      const numericPhone = rawPhone.replace(/\D/g, "");
-      const finalWaLink = `https://wa.me/${numericPhone.startsWith('0') ? '234' + numericPhone.slice(1) : numericPhone}?text=${formattedMessage}`;
-      
-      const waButton = document.getElementById('reply-whatsapp-btn');
-      if (waButton) {
-        waButton.setAttribute('onclick', `window.open('${finalWaLink}', '_blank')`);
-      }
-
-      showGlobalFeedback("Reply draft template populated below. Click 'Send on WhatsApp' to send.");
-    };
-
-    window.copyGeneratedReply = () => {
-      const text = document.getElementById('reply-container-element').innerText;
-      
-      // Clipboard fallback as document.execCommand('copy') is prioritized
-      const el = document.createElement('textarea');
-      el.value = text;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-
-      showGlobalFeedback("Professional response template copied to clipboard.");
-    };
 
     function renderAdminLeads() {
       const tbody = document.getElementById('leads-table-body');
       if (!tbody) return;
       tbody.innerHTML = "";
-
-      let list = [...inMemoryLeads];
-
-      if (list.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-mutedText">No prospect lists available.</td></tr>`;
+      if (inMemoryLeads.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-mutedText">No inquiries.</td></tr>`;
         return;
       }
-
-      list.sort((a,b) => (b.timestamp || 0) - (a.timestamp || 0));
-
-      list.forEach(lead => {
+      inMemoryLeads.sort((a,b) => (b.timestamp||0) - (a.timestamp||0));
+      inMemoryLeads.forEach(lead => {
         const tr = document.createElement('tr');
-        tr.className = "border-b border-gray-200 hover:bg-gray-50 transition-colors";
-        
-        // Beautiful WhatsApp Version message template compiled on WhatsApp Icon Click
-        const waTemplate = `-----------------------------------------------
-*AJUBCO GLOBAL INVESTMENT NIG LTD (RC: 1235281)*
-Office Headquarters: No 92 Kabuga Layout Kano, Nigeria
-Direct Sourcing Helpdesk: +234 (0) 802 799 5335 | info@ajubco.com
------------------------------------------------
-
-Dear *${lead.name}*,
-
-Thank you for contacting AJUBCO Global. We have received your inquiry regarding *"${lead.projectType}"*.
-
-*CUSTOMER INQUIRY BRIEF:*
-- Prospective Client: *${lead.name}*
-- Category Requested: *${lead.projectType}*
-- Budget (NGN): *₦${lead.budget || 'N/A'}*
-
-*MESSAGE DETAILS:*
-_"${lead.message}"_
-
-We are currently assessing your requirements. A representative will coordinate directly with you on this chat.
-
-Sincerely,
-*Operations & Sourcing Advisory Desk*
-AJUBCO Global Investment Nig Ltd`;
-
-        const formattedMessage = encodeURIComponent(waTemplate);
-        const rawPhone = lead.phone || "";
-        const numericPhone = rawPhone.replace(/\D/g, "");
-        const finalWaLink = `https://wa.me/${numericPhone.startsWith('0') ? '234' + numericPhone.slice(1) : numericPhone}?text=${formattedMessage}`;
-
+        tr.className = "border-b border-gray-200 hover:bg-gray-50 text-[11px]";
         tr.innerHTML = `
-          <td class="p-3">
-            <span class="block font-bold text-primary">${lead.name}</span>
-            <span class="block text-[10px] text-mutedText">${lead.email}</span>
-          </td>
-          <td class="p-3 text-mutedText">${lead.phone}</td>
-          <td class="p-3"><span class="px-2 py-0.5 bg-gold/10 text-gold rounded font-bold">${lead.projectType}</span></td>
-          <td class="p-3 text-primary font-bold">₦${lead.budget || 'N/A'}</td>
-          <td class="p-3 text-mutedText max-w-xs truncate">${lead.message}</td>
-          <td class="p-3 text-center space-x-1 whitespace-nowrap">
-            <button onclick="previewReplyTemplate('${lead.id}')" class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded hover:bg-black transition-colors">
-              Draft Reply
-            </button>
-            <a href="${finalWaLink}" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold px-2 py-1 rounded text-[10px] inline-flex items-center gap-1">
-              WhatsApp
-            </a>
-            <button onclick="handleDeleteDoc('leads', '${lead.id}')" class="bg-red-50 hover:bg-red-100 text-red-600 p-1 rounded inline-flex items-center">
-              Delete
-            </button>
+          <td class="p-3"><span class="font-bold text-primary name-cell"></span><br><span class="text-[10px] text-mutedText email-cell"></span></td>
+          <td class="p-3 phone-cell"></td>
+          <td class="p-3"><span class="px-2 py-0.5 bg-gold/10 text-gold rounded font-bold type-cell"></span></td>
+          <td class="p-3 budget-cell"></td>
+          <td class="p-3 max-w-xs truncate msg-cell"></td>
+          <td class="p-3 text-center space-x-1">
+            <button onclick="previewReplyTemplate('${lead.id}')" class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded hover:bg-black">Draft Reply</button>
+            <button onclick="handleDeleteDoc('leads', '${lead.id}')" class="bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100">Delete</button>
           </td>
         `;
+        tr.querySelector('.name-cell').textContent = lead.name;
+        tr.querySelector('.email-cell').textContent = lead.email;
+        tr.querySelector('.phone-cell').textContent = lead.phone;
+        tr.querySelector('.type-cell').textContent = lead.projectType;
+        tr.querySelector('.budget-cell').textContent = '₦' + (lead.budget || 'N/A');
+        tr.querySelector('.msg-cell').textContent = lead.message;
         tbody.appendChild(tr);
       });
-      lucide.createIcons();
     }
 
-    window.handleCreateProject = async (event) => {
-      event.preventDefault();
-      if (!currentUser) return;
+    window.previewReplyTemplate = (leadId) => {
+      const lead = inMemoryLeads.find(l => l.id === leadId);
+      if (!lead) return;
+      const block = document.getElementById('reply-generator-block');
+      block.classList.remove('hidden');
+      const template = `-----------------------------------------------
+*AJUBCO GLOBAL INVESTMENT NIG LTD (RC: 1235281)*
+92 Wuse Market Road, Area, Abuja, Nigeria
+Tel: +234 802 799 5335 | info@ajubco.com
+-----------------------------------------------
+Dear *${lead.name}*,
 
-      const title = sanitizeInput(document.getElementById('p-title').value);
-      const category = sanitizeInput(document.getElementById('p-category').value);
-      const image = sanitizeInput(document.getElementById('p-image').value) || "https://i.postimg.cc/vBwgQ38Q/Chat-GPT-Image-May-20-2026-12-17-08-AM.png";
-      const videoUrl = sanitizeInput(document.getElementById('p-video').value);
-      const location = sanitizeInput(document.getElementById('p-location').value);
-      const desc = sanitizeInput(document.getElementById('p-desc').value);
+Thank you for contacting AJUBCO Global regarding *${lead.projectType}*.
 
+Your inquiry details:
+- Client: ${lead.name}
+- Email: ${lead.email}
+- Phone: ${lead.phone}
+- Budget: ₦${lead.budget || 'N/A'}
+- Message: "${lead.message}"
+
+We will get back to you shortly.
+
+Sincerely,
+AJUBCO Global Investment Nig Ltd
+"Integrity, Innovation & Sustainable Growth"`;
+      document.getElementById('reply-container-element').textContent = template;
+      
+      const waMsg = encodeURIComponent(template);
+      const phoneDigits = (lead.phone || '').replace(/\D/g, '');
+      const waNumber = phoneDigits.startsWith('0') ? '234' + phoneDigits.slice(1) : phoneDigits;
+      const waBtn = document.getElementById('reply-whatsapp-btn');
+      waBtn.onclick = () => window.open(`https://wa.me/${waNumber}?text=${waMsg}`, '_blank');
+    };
+
+    window.copyGeneratedReply = async () => {
+      const text = document.getElementById('reply-container-element').textContent;
       try {
-        await addDoc(getPublicCollectionPath('projects'), {
-          title,
-          category,
-          image,
-          videoUrl,
-          location,
-          desc,
-          timestamp: Date.now()
-        });
-
-        showGlobalFeedback("New portfolio asset created successfully.");
-        document.getElementById('admin-project-form').reset();
-      } catch (err) {
-        console.error("Create portfolio error:", err);
+        await navigator.clipboard.writeText(text);
+        showGlobalFeedback("Template copied.");
+      } catch {
+        // fallback
+        const el = document.createElement('textarea');
+        el.value = text;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        showGlobalFeedback("Copied.");
       }
     };
 
@@ -1934,81 +1715,46 @@ AJUBCO Global Investment Nig Ltd`;
       const tbody = document.getElementById('admin-projects-list');
       if (!tbody) return;
       tbody.innerHTML = "";
-
-      let list = [...inMemoryProjects].filter(item => item.id !== 'mock-seed');
-
+      const list = inMemoryProjects.filter(p => p.id !== 'mock-seed');
       if (list.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="4" class="p-2 text-center text-mutedText">No portfolio assets added.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="4" class="p-2 text-center text-mutedText">No projects.</td></tr>`;
         return;
       }
-
       list.forEach(p => {
         const tr = document.createElement('tr');
         tr.className = "border-b border-gray-200 hover:bg-gray-50 text-[11px]";
         tr.innerHTML = `
-          <td class="p-2 font-bold text-primary">${p.title}</td>
-          <td class="p-2 text-mutedText">${p.category}</td>
-          <td class="p-2 text-mutedText">${p.location}</td>
-          <td class="p-2 text-center">
-            <button onclick="handleDeleteDoc('projects', '${p.id}')" class="bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100">
-              Remove
-            </button>
-          </td>
+          <td class="p-2 font-bold title-cell"></td>
+          <td class="p-2 cat-cell"></td>
+          <td class="p-2 loc-cell"></td>
+          <td class="p-2 text-center"><button onclick="handleDeleteDoc('projects', '${p.id}')" class="bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100">Remove</button></td>
         `;
+        tr.querySelector('.title-cell').textContent = p.title;
+        tr.querySelector('.cat-cell').textContent = p.category;
+        tr.querySelector('.loc-cell').textContent = p.location;
         tbody.appendChild(tr);
       });
     }
-
-    window.handleCreatePost = async (event) => {
-      event.preventDefault();
-      if (!currentUser) return;
-
-      const title = sanitizeInput(document.getElementById('b-title').value);
-      const image = sanitizeInput(document.getElementById('b-image').value);
-      const content = sanitizeInput(document.getElementById('b-content').value);
-
-      try {
-        await addDoc(getPublicCollectionPath('feed'), {
-          title,
-          image,
-          content,
-          timestamp: Date.now(),
-          likes: 0,
-          comments: []
-        });
-
-        showGlobalFeedback("Timeline update published successfully.");
-        document.getElementById('admin-post-form').reset();
-      } catch (err) {
-        console.error("Create update error:", err);
-      }
-    };
 
     function renderAdminFeed() {
       const tbody = document.getElementById('admin-feed-list');
       if (!tbody) return;
       tbody.innerHTML = "";
-
-      let list = [...inMemoryFeed].filter(item => item.id !== 'mock-seed');
-
+      const list = inMemoryFeed.filter(f => f.id !== 'mock-seed');
       if (list.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="3" class="p-2 text-center text-mutedText">No feed updates listed.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="3" class="p-2 text-center text-mutedText">No posts.</td></tr>`;
         return;
       }
-
       list.forEach(f => {
-        const dateStr = f.timestamp ? new Date(f.timestamp).toLocaleDateString() : 'Recent';
         const tr = document.createElement('tr');
         tr.className = "border-b border-gray-200 hover:bg-gray-50 text-[11px]";
         tr.innerHTML = `
-          <td class="p-2 font-bold text-primary">${f.title}</td>
-          <td class="p-2 text-mutedText">${dateStr}</td>
-          <td class="p-2 text-center">
-            <button onclick="handleDeleteDoc('feed', '${f.id}')" class="bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100">
-              Remove
-            </button>
-          </td>
+          <td class="p-2 font-bold title-cell"></td>
+          <td class="p-2 date-cell"></td>
+          <td class="p-2 text-center"><button onclick="handleDeleteDoc('feed', '${f.id}')" class="bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100">Remove</button></td>
         `;
+        tr.querySelector('.title-cell').textContent = f.title;
+        tr.querySelector('.date-cell').textContent = f.timestamp ? new Date(f.timestamp).toLocaleDateString() : '';
         tbody.appendChild(tr);
       });
     }
@@ -2017,370 +1763,170 @@ AJUBCO Global Investment Nig Ltd`;
       const tbody = document.getElementById('admin-testimonials-list');
       if (!tbody) return;
       tbody.innerHTML = "";
-
-      let list = [...inMemoryReviews].filter(item => item.id !== 'mock-seed');
-
+      const list = inMemoryReviews.filter(r => r.id !== 'mock-seed');
       if (list.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="5" class="p-2 text-center text-mutedText">No comments exist in database.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="5" class="p-2 text-center text-mutedText">No testimonials.</td></tr>`;
         return;
       }
-
       list.forEach(t => {
         const tr = document.createElement('tr');
         tr.className = "border-b border-gray-200 text-[11px]";
         tr.innerHTML = `
-          <td class="p-2 font-bold text-primary">${t.name}</td>
-          <td class="p-2 text-mutedText">${t.title}</td>
-          <td class="p-2 text-gold">${"⭐".repeat(parseInt(t.rating || 5))}</td>
-          <td class="p-2 text-mutedText max-w-xs truncate">${t.message}</td>
-          <td class="p-2 text-center">
-            <button onclick="handleDeleteDoc('testimonials', '${t.id}')" class="bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100">
-              Delete
-            </button>
-          </td>
+          <td class="p-2 name-cell"></td>
+          <td class="p-2 title-cell"></td>
+          <td class="p-2 stars-cell"></td>
+          <td class="p-2 msg-cell max-w-xs truncate"></td>
+          <td class="p-2 text-center"><button onclick="handleDeleteDoc('testimonials', '${t.id}')" class="bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100">Delete</button></td>
         `;
+        tr.querySelector('.name-cell').textContent = t.name;
+        tr.querySelector('.title-cell').textContent = t.title;
+        tr.querySelector('.stars-cell').textContent = "⭐".repeat(parseInt(t.rating||5));
+        tr.querySelector('.msg-cell').textContent = t.message;
         tbody.appendChild(tr);
       });
     }
 
-    window.handleDeleteDoc = async (collectionName, id) => {
-      if (!currentUser) return;
-      if (!confirm("Are you sure you want to delete this listing? This action cannot be reverted.")) return;
-
-      try {
-        await deleteDoc(getPublicDocPath(collectionName, id));
-        showGlobalFeedback("Document deleted from secure database.");
-      } catch (err) {
-        console.error("Delete issue:", err);
-        showGlobalFeedback("Unable to finalize deletion. Check security rules.");
-      }
-    };
-
-    window.renderAll = () => {
-      renderProjects();
-      renderTestimonials();
-      renderFeed();
-    };
-
+    // Public API
+    window.renderAll = () => { renderProjects(); renderTestimonials(); renderFeed(); };
+    window.addEventListener('projects-updated', () => { if (!document.getElementById('page-projects').classList.contains('hidden')) renderProjects(); renderAdminProjects(); updateDashboardCounters(); });
+    window.addEventListener('reviews-updated', () => { renderTestimonials(); renderAdminTestimonials(); updateDashboardCounters(); });
+    window.addEventListener('feed-updated', () => { renderFeed(); renderAdminFeed(); updateDashboardCounters(); });
+    window.addEventListener('leads-updated', () => { renderAdminLeads(); updateDashboardCounters(); });
   </script>
 
-  <!-- ==============================================
-       INTERACTIVE JAVASCRIPT LOGIC
-       ============================================== -->
+  <!-- GLOBAL UI FUNCTIONS -->
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      startTypewriter();
-      animateNumericCounters();
-      setTimeout(() => {
-        document.getElementById('global-notification').classList.remove('hidden');
-      }, 2000);
-    });
-
-    function navigateTo(pageId) {
-      const pages = document.querySelectorAll('.page-view');
-      pages.forEach(p => p.classList.add('hidden'));
-
-      const navLinks = document.querySelectorAll('.nav-link');
-      navLinks.forEach(l => {
-        l.classList.remove('text-gold', 'active-link');
-        l.classList.add('text-mutedText');
-      });
-
-      const activePage = document.getElementById(`page-${pageId}`);
-      if (activePage) {
-        activePage.classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-
-      const header = document.getElementById('main-header');
-      if (pageId === 'home') {
-        header.classList.remove('bg-white', 'shadow-md');
-      } else {
-        header.classList.add('bg-white', 'shadow-md');
-      }
-
-      closeMobileMenu();
-
-      if (window.lucide) {
-        window.lucide.createIcons();
-      }
-
-      if (window.renderAll) {
-        window.renderAll();
-      }
-    }
-
-    // Playback loop controller for Background Video
-    let isVideoPlaying = true;
-    function toggleVideoPlayback() {
-      const iframe = document.getElementById('hero-yt-video');
-      const icon = document.getElementById('video-playback-icon');
-      const statusText = document.getElementById('playback-status-text');
-      
-      try {
-        if (isVideoPlaying) {
-          // Post mute/pause message safely to iframe wrapper
-          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-          icon.setAttribute('data-lucide', 'play');
-          statusText.innerText = "Background Loop Paused";
-          isVideoPlaying = false;
-        } else {
-          iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-          icon.setAttribute('data-lucide', 'pause');
-          statusText.innerText = "Muted Background Loop Active";
-          isVideoPlaying = true;
-        }
-      } catch (err) {
-        console.warn("Iframe command interaction restricted due to origin protocol limitations.");
-      }
-      lucide.createIcons();
-    }
-
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('main-header');
-      const homeView = document.getElementById('page-home');
-      if (homeView && !homeView.classList.contains('hidden')) {
-        if (window.scrollY > 50) {
-          header.classList.add('bg-white/95', 'shadow-md');
-        } else {
-          header.classList.remove('bg-white/95', 'shadow-md');
-        }
-      }
-    });
-
-    // Navigation trigger listeners
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileClose = document.getElementById('mobile-menu-close');
-
-    if (mobileBtn && mobileMenu && mobileClose) {
-      mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('translate-x-full');
-      });
-      mobileClose.addEventListener('click', closeMobileMenu);
-    }
-
-    function closeMobileMenu() {
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileMenu) {
-        mobileMenu.classList.add('translate-x-full');
-      }
-    }
-
-    // Global Action feedback notifications
-    function showGlobalFeedback(message) {
-      const toast = document.createElement('div');
-      toast.className = "fixed bottom-6 right-6 z-[99999] bg-primary border-l-4 border-gold text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 animate-[slideIn_0.3s_ease-out]";
-      toast.innerHTML = `
-        <div class="p-1.5 bg-gold/15 rounded-full text-gold">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        </div>
-        <div class="text-xs font-montserrat">${message}</div>
-      `;
-      document.body.appendChild(toast);
-      setTimeout(() => {
-        toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
-        setTimeout(() => { toast.remove(); }, 500);
-      }, 4000);
-    }
-
-    // Typewriter Configuration
-    const headlinePhrases = ["Building Secure Projects.", "Mechanizing Agribusiness.", "Formulating Implements.", "Deploying Sourcing Schemes."];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    
-    function startTypewriter() {
+    // These functions must be global
+    window.startTypewriter = function() {
+      const phrases = ["Driving Innovation.", "Delivering Quality.", "Ensuring Growth.", "Building Partnerships."];
+      let wordIdx = 0, charIdx = 0, isDeleting = false;
       const target = document.getElementById('typewriter-headline');
       if (!target) return;
-
-      const currentWord = headlinePhrases[wordIndex];
-      if (isDeleting) {
-        target.innerText = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        target.innerText = currentWord.substring(0, charIndex + 1);
-        charIndex++;
+      function tick() {
+        const current = phrases[wordIdx];
+        target.textContent = isDeleting ? current.substring(0, charIdx - 1) : current.substring(0, charIdx + 1);
+        charIdx += isDeleting ? -1 : 1;
+        let speed = 100;
+        if (!isDeleting && charIdx === current.length) { speed = 1500; isDeleting = true; }
+        else if (isDeleting && charIdx === 0) { isDeleting = false; wordIdx = (wordIdx + 1) % phrases.length; speed = 500; }
+        setTimeout(tick, speed);
       }
+      tick();
+    };
 
-      let speed = 100;
-      if (!isDeleting && charIndex === currentWord.length) {
-        speed = 1500;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % headlinePhrases.length;
-        speed = 500;
-      }
+    window.animateNumericCounters = function() {
+      document.querySelectorAll('.stat-counter').forEach(counter => {
+        const target = parseFloat(counter.dataset.target), prefix = counter.dataset.prefix || '', suffix = counter.dataset.suffix || '';
+        let start = 0, duration = 2000, frames = 60, step = target / (duration / 1000 * frames), current = 0;
+        function update() {
+          if (current < frames) { start += step; current++; counter.textContent = prefix + (target % 1 ? start.toFixed(1) : Math.ceil(start)) + suffix; requestAnimationFrame(update); }
+          else counter.textContent = prefix + target + suffix;
+        }
+        update();
+      });
+    };
 
-      setTimeout(startTypewriter, speed);
-    }
+    window.addEventListener('load', () => {
+      startTypewriter();
+      animateNumericCounters();
+      setTimeout(() => document.getElementById('global-notification').classList.remove('hidden'), 2000);
+    });
 
-    // Advanced Stats Counter Animation mapping exact target values with smooth precision
-    function animateNumericCounters() {
-      const counters = document.querySelectorAll('.stat-counter');
-      counters.forEach(counter => {
-        const targetStr = counter.getAttribute('data-target');
-        const targetValue = parseFloat(targetStr);
-        const prefix = counter.getAttribute('data-prefix') || "";
-        const suffix = counter.getAttribute('data-suffix') || "";
-        const isDecimal = targetStr.includes('.');
+    window.navigateTo = (pageId) => {
+      document.querySelectorAll('.page-view').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.nav-link').forEach(l => { l.classList.remove('text-gold'); l.classList.add('text-mutedText'); });
+      const target = document.getElementById(`page-${pageId}`);
+      if (target) target.classList.remove('hidden');
+      if (window.renderAll) window.renderAll();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (window.lucide) lucide.createIcons();
+    };
 
-        let startValue = 0;
-        const duration = 2000; // Animation duration in milliseconds
-        const frameRate = 60;
-        const totalFrames = (duration / 1000) * frameRate;
-        const step = targetValue / totalFrames;
-        let currentFrame = 0;
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.remove('translate-x-full');
+    });
+    document.getElementById('mobile-menu-close')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.add('translate-x-full');
+    });
 
-        const updateCount = () => {
-          if (currentFrame < totalFrames) {
-            startValue += step;
-            currentFrame++;
-            let formattedValue = isDecimal ? startValue.toFixed(1) : Math.ceil(startValue);
-            // Lock exact value on final frames
-            if (parseFloat(formattedValue) >= targetValue) {
-              formattedValue = targetStr;
-            }
-            counter.innerText = prefix + formattedValue + suffix;
-            requestAnimationFrame(updateCount);
+    window.toggleWhatsappChatbox = () => {
+      document.getElementById('whatsapp-chatbox').classList.toggle('hidden');
+    };
+
+    window.dismissNotification = () => document.getElementById('global-notification').classList.add('hidden');
+
+    window.toggleVideoPlayback = (() => {
+      let playing = true;
+      return () => {
+        const iframe = document.getElementById('hero-yt-video');
+        const icon = document.getElementById('video-playback-icon');
+        const status = document.getElementById('playback-status-text');
+        try {
+          if (playing) {
+            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', 'https://www.youtube.com');
+            icon.setAttribute('data-lucide', 'play');
+            status.textContent = "Paused";
           } else {
-            counter.innerText = prefix + targetStr + suffix;
+            iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', 'https://www.youtube.com');
+            icon.setAttribute('data-lucide', 'pause');
+            status.textContent = "Playing";
           }
-        };
-        updateCount();
-      });
-    }
+          playing = !playing;
+          lucide.createIcons();
+        } catch (e) { console.warn(e); }
+      };
+    })();
 
-    // Dynamic Filter Trigger
-    function filterProjects(category) {
-      const buttons = document.querySelectorAll('.project-filter-btn');
-      buttons.forEach(btn => {
-        if (btn.innerText.toLowerCase() === category.toLowerCase() || (category === 'all' && btn.innerText.toLowerCase() === 'all')) {
-          btn.className = "project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-gold text-white transition-all";
-        } else {
-          btn.className = "project-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-mutedText hover:text-primary hover:bg-white/80 transition-all";
-        }
-      });
-
-      if (window.renderProjects) {
-        const searchVal = document.getElementById('project-search-input').value;
-        window.renderProjects(category, searchVal);
-      }
-    }
-
-    function searchProjects() {
-      const searchVal = document.getElementById('project-search-input').value;
-      let activeCategory = 'all';
-      const buttons = document.querySelectorAll('.project-filter-btn');
-      buttons.forEach(btn => {
-        if (btn.classList.contains('bg-gold')) {
-          activeCategory = btn.innerText;
-        }
-      });
-      
-      if (window.renderProjects) {
-        window.renderProjects(activeCategory, searchVal);
-      }
-    }
-
-    function toggleWhatsappChatbox() {
-      const chatbox = document.getElementById('whatsapp-chatbox');
-      const typingIndicator = document.getElementById('whatsapp-typing');
-      if (chatbox) {
-        if (chatbox.classList.contains('hidden')) {
-          chatbox.classList.remove('hidden');
-          typingIndicator.classList.remove('hidden');
-          setTimeout(() => {
-            typingIndicator.classList.add('hidden');
-          }, 2000);
-        } else {
-          chatbox.classList.add('hidden');
-        }
-      }
-    }
-
-    function handleWhatsAppInitiate() {
-      showGlobalFeedback("Routing session securely to Jafar Usman on WhatsApp Business...");
-    }
-
-    function dismissNotification() {
-      const note = document.getElementById('global-notification');
-      if (note) note.classList.add('hidden');
-    }
-
-    function handleAdminLogout() {
-      document.getElementById('admin-login-card').classList.remove('hidden');
-      document.getElementById('admin-dashboard-panel').classList.add('hidden');
-      showGlobalFeedback("Security credentials signed out.");
-    }
-
-    function switchAdminTab(tabName) {
-      const tabs = ['leads', 'projects', 'feed', 'reviews'];
-      tabs.forEach(t => {
-        const element = document.getElementById(`admin-tab-${t}`);
-        if (element) element.classList.add('hidden');
-
-        const btn = document.getElementById(`btn-tab-${t}`);
-        if (btn) {
-          btn.className = "w-full text-left p-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center gap-2 bg-white text-mutedText hover:bg-lightGray transition-all";
-        }
-      });
-
-      const activeTab = document.getElementById(`admin-tab-${tabName}`);
-      if (activeTab) activeTab.classList.remove('hidden');
-
-      const activeBtn = document.getElementById(`btn-tab-${tabName}`);
-      if (activeBtn) {
-        activeBtn.className = "w-full text-left p-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center gap-2 bg-gold text-white shadow-md transition-all";
-      }
-
-      if (window.lucide) {
-        window.lucide.createIcons();
-      }
-    }
-
-    // Dynamic Video Modal launcher
-    function launchVideoModal(title, url) {
+    window.launchVideoModal = (title, url) => {
       const modal = document.getElementById('video-player-modal');
-      const modalTitle = document.getElementById('video-modal-title');
-      const iframe = document.getElementById('video-modal-iframe');
+      document.getElementById('video-modal-title').textContent = title;
+      let embed = url;
+      if (url.includes('watch?v=')) embed = url.replace('watch?v=', 'embed/');
+      else if (url.includes('youtu.be/')) embed = url.replace('youtu.be/', 'youtube.com/embed/');
+      document.getElementById('video-modal-iframe').src = embed;
+      modal.classList.remove('hidden');
+    };
 
-      if (modal && iframe) {
-        modalTitle.innerText = title;
-        // Clean URL to handle potential Youtube video link conversions
-        let embedUrl = url;
-        if (url.includes("youtube.com/watch?v=")) {
-          embedUrl = url.replace("watch?v=", "embed/");
-        } else if (url.includes("youtu.be/")) {
-          embedUrl = url.replace("youtu.be/", "youtube.com/embed/");
-        }
-        iframe.src = embedUrl;
-        modal.classList.remove('hidden');
-      }
+    window.closeVideoPlayer = () => {
+      document.getElementById('video-player-modal').classList.add('hidden');
+      document.getElementById('video-modal-iframe').src = '';
+    };
+
+    window.filterProjects = (category) => {
+      document.querySelectorAll('.project-filter-btn').forEach(btn => {
+        btn.classList.toggle('bg-gold', btn.textContent.toLowerCase() === category.toLowerCase());
+        btn.classList.toggle('text-white', btn.textContent.toLowerCase() === category.toLowerCase());
+      });
+      if (window.renderProjects) window.renderProjects(category, document.getElementById('project-search-input')?.value || '');
+    };
+
+    window.searchProjects = () => {
+      const val = document.getElementById('project-search-input').value;
+      const active = [...document.querySelectorAll('.project-filter-btn')].find(b => b.classList.contains('bg-gold'))?.textContent?.toLowerCase() || 'all';
+      if (window.renderProjects) window.renderProjects(active, val);
+    };
+
+    function showGlobalFeedback(msg) {
+      const toast = document.createElement('div');
+      toast.className = "fixed bottom-6 right-6 z-[99999] bg-primary border-l-4 border-gold text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 animate-slideIn";
+      toast.innerHTML = `<div class="p-1.5 bg-gold/15 rounded-full text-gold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div class="text-xs font-montserrat">${msg}</div>`;
+      document.body.appendChild(toast);
+      setTimeout(() => { toast.remove(); }, 4000);
     }
 
-    function closeVideoPlayer() {
-      const modal = document.getElementById('video-player-modal');
-      const iframe = document.getElementById('video-modal-iframe');
-      if (modal && iframe) {
-        iframe.src = ""; // Stop video playback on close
-        modal.classList.add('hidden');
-      }
-    }
+    window.switchAdminTab = (tab) => {
+      ['leads','projects','feed','reviews'].forEach(t => {
+        document.getElementById(`admin-tab-${t}`)?.classList.add('hidden');
+        document.getElementById(`btn-tab-${t}`)?.classList.remove('bg-gold','text-white','shadow-md');
+      });
+      document.getElementById(`admin-tab-${tab}`)?.classList.remove('hidden');
+      const btn = document.getElementById(`btn-tab-${tab}`);
+      if (btn) { btn.classList.add('bg-gold','text-white','shadow-md'); }
+      lucide.createIcons();
+    };
 
-    // Export globally for inline button actions
-    window.navigateTo = navigateTo;
-    window.switchAdminTab = switchAdminTab;
-    window.handleAdminLogout = handleAdminLogout;
-    window.toggleWhatsappChatbox = toggleWhatsappChatbox;
-    window.handleWhatsAppInitiate = handleWhatsAppInitiate;
-    window.dismissNotification = dismissNotification;
-    window.toggleVideoPlayback = toggleVideoPlayback;
-    window.launchVideoModal = launchVideoModal;
-    window.closeVideoPlayer = closeVideoPlayer;
-
+    // Initialize Lucide icons on load
+    window.addEventListener('load', () => lucide.createIcons());
   </script>
-
 </body>
 </html>
